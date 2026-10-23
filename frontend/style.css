@@ -1,0 +1,471 @@
+/* ==========================================================================
+   University Knowledge Assistant — Minimalist NMIMS Red & White Theme
+   Aesthetics:
+     - Minimal white interface with generous whitespace
+     - Restrained NMIMS red accents (#A5231D, #852019)
+     - Subtle grey borders (#E5E7EB)
+     - Single clean chat bubbles without duplicate cards
+     - Prominent, visible NMIMS logo
+   ========================================================================== */
+
+:root {
+  --primary-red: #A5231D;
+  --dark-red: #852019;
+  --red-hover: #852019;
+  --red-tint: #FFF5F5;
+  --white: #FFFFFF;
+  --page-bg: #F8F9FA;
+  --card-bg: #FFFFFF;
+  --text-main: #1F2937;
+  --text-muted: #6B7280;
+  --text-dim: #9CA3AF;
+  --border-light: #E5E7EB;
+  --border-hover: #D1D5DB;
+  
+  --font-sans: 'Open Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* ----------------- Reset & Base ----------------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--page-bg);
+  color: var(--text-main);
+  line-height: 1.55;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ----------------- Header ----------------- */
+.app-header {
+  background-color: var(--white);
+  border-top: 5px solid var(--primary-red);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-subtle);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand-group {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* Prominent, crisp NMIMS official logo seamlessly integrated */
+.nmims-logo {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: opacity 0.2s ease;
+}
+
+.nmims-logo:hover {
+  opacity: 0.92;
+}
+
+.header-text-group {
+  border-left: 1px solid var(--border-light);
+  padding-left: 18px;
+}
+
+.portal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-main);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+}
+
+.portal-subtitle {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.header-meta {
+  display: flex;
+  align-items: center;
+}
+
+.univ-tag {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  background-color: #F3F4F6;
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-light);
+}
+
+/* ----------------- Main Layout ----------------- */
+.portal-main {
+  flex: 1;
+  padding: 30px 20px 40px;
+}
+
+.portal-content {
+  max-width: 920px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ----------------- Welcome & Suggestions Container ----------------- */
+.welcome-container {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 26px 30px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.welcome-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.welcome-desc {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.suggestions-wrapper {
+  margin-top: 14px;
+}
+
+.suggestions-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-dim);
+  margin-bottom: 10px;
+}
+
+.suggestions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.chip-btn {
+  background-color: var(--white);
+  border: 1px solid var(--border-light);
+  color: #374151;
+  padding: 9px 14px;
+  border-radius: var(--radius-sm);
+  font-size: 0.86rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.15s ease;
+  line-height: 1.35;
+}
+
+.chip-btn:hover {
+  background-color: var(--red-tint);
+  border-color: var(--primary-red);
+  color: var(--primary-red);
+}
+
+/* ----------------- Chat Viewport ----------------- */
+.chat-viewport {
+  min-height: 180px;
+}
+
+.chat-stream {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Message Rows */
+.message-row {
+  display: flex;
+  width: 100%;
+}
+
+.user-row {
+  justify-content: flex-end;
+}
+
+.assistant-row {
+  justify-content: flex-start;
+}
+
+/* User Chat Bubble */
+.user-bubble {
+  background-color: #F3F4F6;
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  max-width: 82%;
+  font-size: 0.93rem;
+  font-weight: 500;
+  line-height: 1.45;
+}
+
+/* Assistant Chat Bubble (Single clean card) */
+.assistant-bubble {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  width: 100%;
+  padding: 18px 22px;
+  box-shadow: var(--shadow-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Direct Answer Text */
+.bubble-answer {
+  font-size: 0.95rem;
+  color: var(--text-main);
+  line-height: 1.6;
+}
+
+/* Supporting Quotation (Only when useful) */
+.evidence-quote {
+  background-color: #F9FAFB;
+  border-left: 3px solid var(--primary-red);
+  padding: 9px 14px;
+  border-radius: 3px;
+  font-size: 0.86rem;
+  color: #4B5563;
+  font-style: italic;
+  line-height: 1.48;
+}
+
+/* Small, Unobtrusive Citation Directly Below */
+.citation-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  border-top: 1px solid #F3F4F6;
+  padding-top: 8px;
+  margin-top: 2px;
+}
+
+.source-citation {
+  font-weight: 600;
+  color: #4B5563;
+}
+
+.refusal-citation {
+  color: #9CA3AF;
+  font-style: italic;
+}
+
+.curriculum-citation {
+  color: var(--text-muted);
+  font-size: 0.76rem;
+}
+
+/* Loading Placeholder */
+.loading-box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 6px 0;
+}
+
+.shimmer-line {
+  height: 12px;
+  background: linear-gradient(90deg, #f3f4f6 25%, #e5e7eb 50%, #f3f4f6 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+  border-radius: 3px;
+}
+
+@keyframes shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ----------------- Clean Chat Input Box ----------------- */
+.chat-input-section {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 14px 18px;
+  box-shadow: var(--shadow-subtle);
+}
+
+.chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.question-input {
+  flex: 1;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  padding: 10px 14px;
+  font-family: inherit;
+  font-size: 0.93rem;
+  color: var(--text-main);
+  background-color: #FAFAFA;
+  resize: none;
+  min-height: 42px;
+  max-height: 100px;
+  line-height: 1.4;
+  transition: all 0.15s ease;
+}
+
+.question-input:focus {
+  background-color: var(--white);
+  border-color: var(--primary-red);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(165, 35, 29, 0.1);
+}
+
+.send-btn {
+  background-color: var(--primary-red);
+  color: var(--white);
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0 20px;
+  height: 42px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background-color 0.15s ease;
+  flex-shrink: 0;
+}
+
+.send-btn:hover {
+  background-color: var(--dark-red);
+}
+
+.send-btn:disabled {
+  background-color: #D1D5DB;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.input-hint {
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+/* ----------------- Clean Footer ----------------- */
+.portal-footer {
+  background-color: var(--white);
+  border-top: 1px solid var(--border-light);
+  padding: 16px 24px;
+  margin-top: auto;
+}
+
+.footer-inner {
+  max-width: 1060px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+/* ----------------- Utilities & Accessibility ----------------- */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* ----------------- Responsive Breakpoints ----------------- */
+@media (max-width: 768px) {
+  .header-inner {
+    padding: 10px 16px;
+  }
+  .logo-link {
+    height: 56px;
+  }
+  .nmims-logo {
+    height: 88px;
+    max-height: 92px;
+    margin: -16px -16px;
+  }
+  .portal-title {
+    font-size: 1.1rem;
+  }
+  .portal-subtitle {
+    font-size: 0.76rem;
+  }
+  .univ-tag {
+    display: none;
+  }
+  .welcome-container {
+    padding: 18px 20px;
+  }
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,24 @@
+# Python environment
+.venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# Model caches & local artifacts
+data/cache/
+*.npy
+*.pkl
+week5_outputs/
+.pytest_cache/
+
+# Environment secrets
+.env
+*.env.local
+
+# IDE & OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

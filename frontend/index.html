@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>University Knowledge Assistant | SVKM's NMIMS</title>
+  <meta name="description" content="NMIMS University Knowledge Assistant for Student Resource Book 2026 policies and Curriculum Intelligence.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+<body>
+  <!-- Clean, Minimal Header with Larger NMIMS Logo -->
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="brand-group">
+        <a href="/" class="logo-link" aria-label="NMIMS Portal Home">
+          <img
+            src="assets/nmims_logo.png?v=2"
+            alt="SVKM's NMIMS Deemed to be UNIVERSITY"
+            class="nmims-logo"
+            id="nmims-logo"
+          >
+        </a>
+        <div class="header-text-group">
+          <h1 class="portal-title">University Knowledge Assistant</h1>
+          <p class="portal-subtitle">SRB 2026 | Curriculum Intelligence</p>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span class="univ-tag">SVKM's NMIMS · MPSTME</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="portal-main">
+    <div class="portal-content">
+      
+      <!-- Welcome Section & Suggestions (No duplicate cards or group jargon) -->
+      <section class="welcome-container" id="welcome-container">
+        <h2 class="welcome-title">Welcome to the University Knowledge Assistant</h2>
+        <p class="welcome-desc">
+          Ask questions about official NMIMS university regulations, attendance, examinations, passing standards, and course curricula from the <strong>Student Resource Book (SRB) 2026</strong>.
+        </p>
+
+        <div class="suggestions-wrapper">
+          <div class="suggestions-label">Suggested inquiries:</div>
+          <div class="suggestions-grid">
+            <button class="chip-btn" data-query="What is the minimum attendance required for end-semester examinations?">
+              What is the minimum attendance required for end-semester examinations?
+            </button>
+            <button class="chip-btn" data-query="What are the rules for appearing in examinations?">
+              What are the rules for appearing in examinations?
+            </button>
+            <button class="chip-btn" data-query="What are the prerequisites for Natural Language Processing?">
+              What are the prerequisites for Natural Language Processing?
+            </button>
+            <button class="chip-btn" data-query="What are the prerequisites for Machine Learning, and what is the minimum attendance and passing grade required?">
+              What are the prerequisites for Machine Learning, and what is the minimum attendance and passing grade required?
+            </button>
+            <button class="chip-btn" data-query="How can I book a badminton court on campus?">
+              How can I book a badminton court on campus?
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Chat Stream Viewport -->
+      <section class="chat-viewport">
+        <div id="chat-stream" class="chat-stream" role="log" aria-live="polite">
+          <!-- Single, clean chat bubbles dynamically appended here -->
+        </div>
+      </section>
+
+      <!-- Minimal, Clean Input Box -->
+      <section class="chat-input-section">
+        <form id="chat-form" class="chat-form">
+          <div class="input-row">
+            <label for="question-input" class="visually-hidden">Ask a question:</label>
+            <textarea
+              id="question-input"
+              class="question-input"
+              placeholder="Ask a question about attendance rules, exam policies, course prerequisites..."
+              rows="1"
+              required
+            ></textarea>
+            <button type="submit" id="submit-btn" class="send-btn" aria-label="Send inquiry">
+              <span>Send</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+          </div>
+          <div class="input-hint">Press Enter to send · Shift + Enter for new line · Grounded in Student Resource Book 2026</div>
+        </form>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Clean, Minimal Footer -->
+  <footer class="portal-footer">
+    <div class="footer-inner">
+      <span>University Knowledge Assistant · SVKM's NMIMS MPSTME 2026</span>
+      <span>Official answers grounded in Student Resource Book 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
