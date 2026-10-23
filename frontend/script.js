@@ -19,21 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Example Question Chips
-  document.querySelectorAll(".chip-btn").forEach((chip) => {
-    chip.addEventListener("click", () => {
-      const query = chip.getAttribute("data-query");
-      if (query) {
-        questionInput.value = query;
-        chatForm.requestSubmit();
-        // Scroll into view
-        const streamElem = document.querySelector(".chat-viewport");
-        if (streamElem) {
-          streamElem.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    });
-  });
+
 
   // Handle Form Submission
   chatForm.addEventListener("submit", async (e) => {
