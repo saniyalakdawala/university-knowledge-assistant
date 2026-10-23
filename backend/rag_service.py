@@ -24,7 +24,7 @@ import requests
 from rank_bm25 import BM25Okapi
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
-from sentence_transformers import SentenceTransformer, CrossEncoder
+# Note: sentence_transformers is lazily imported inside Embedder/Reranker to keep LOW_MEMORY mode under 60MB RAM
 
 from backend.config import (
     SRB_PDF_PATH,
@@ -259,6 +259,7 @@ def grounding_check(answer: str, context: str, question: str = "") -> Tuple[bool
 # ----------------- Embedder & Reranker -----------------
 class Embedder:
     def __init__(self, name: str):
+        from sentence_transformers import SentenceTransformer
         self.model = SentenceTransformer(name, device="cpu")
         self.model.eval()
         self._doc = {}
@@ -279,6 +280,7 @@ class Embedder:
 
 class SentenceReranker:
     def __init__(self, name: str):
+        from sentence_transformers import CrossEncoder
         self.model = CrossEncoder(name, device="cpu", max_length=256)
         self.cache = {}
 
@@ -308,7 +310,7 @@ class UniversityRAGService:
         self.beta = beta
         self.alpha = alpha
         self.gate = gate
-        self.n_ctx = n_ctx
+        self.n_ctx = max(n_ctx, 8) if LOW_MEMORY else n_ctx
         self.groq_api_key = GROQ_API_KEY
         self.llm_model = DEFAULT_LLM_MODEL
         self.groq_timeout = GROQ_TIMEOUT
@@ -348,18 +350,19 @@ class UniversityRAGService:
 
     def _init_models(self, emb_name: str, ce_name: str):
         t0 = time.time()
-        self.embedder = Embedder(emb_name)
         if LOW_MEMORY:
-            logger.info("LOW_MEMORY mode active: Skipping CrossEncoder initialization to stay safely under 512MB RAM.")
+            logger.info("LOW_MEMORY mode active: Completely skipping SentenceTransformer & CrossEncoder to run safely under 100MB RAM.")
+            self.embedder = None
             self.reranker = None
         else:
+            self.embedder = Embedder(emb_name)
             self.reranker = SentenceReranker(ce_name)
         logger.info(f"Loaded models in {time.time() - t0:.2f}s (LOW_MEMORY={LOW_MEMORY})")
 
     def _build_indexes(self):
         n = len(self.chunks)
         self.ids = self.chunks.chunk_id.tolist()
-        self.bm25 = BM25Okapi([tokenize(t) for t in self.chunks.text])
+        self.bm25 = BM25Okapi([tokenize(f"{c.section} {c.text}") for _, c in self.chunks.iterrows()])
         
         doc_freq = Counter(t for text in self.chunks.text for t in set(tokenize(text)))
         self.idf = {t: np.log((n + 1) / (df + 1)) + 1 for t, df in doc_freq.items()}
@@ -372,18 +375,20 @@ class UniversityRAGService:
         sections = self.chunks.section.tolist()
         self.sent_inputs = [f"{sections[ci]}: {s}" for ci, s in pairs]
         
-        # Check cached sentence embeddings
-        sent_emb_path = CACHE_DIR / "sent_emb.npy"
-        if sent_emb_path.exists():
-            try:
-                self.sent_emb = np.load(sent_emb_path)
-                logger.info(f"Loaded sentence embeddings from cache: shape {self.sent_emb.shape}")
-            except Exception:
+        if not LOW_MEMORY and self.embedder is not None:
+            sent_emb_path = CACHE_DIR / "sent_emb.npy"
+            if sent_emb_path.exists():
+                try:
+                    self.sent_emb = np.load(sent_emb_path)
+                    logger.info(f"Loaded sentence embeddings from cache: shape {self.sent_emb.shape}")
+                except Exception:
+                    self.sent_emb = self.embedder.docs(self.sent_inputs)
+                    np.save(sent_emb_path, self.sent_emb)
+            else:
                 self.sent_emb = self.embedder.docs(self.sent_inputs)
                 np.save(sent_emb_path, self.sent_emb)
         else:
-            self.sent_emb = self.embedder.docs(self.sent_inputs)
-            np.save(sent_emb_path, self.sent_emb)
+            logger.info("LOW_MEMORY: Bypassing dense embeddings to preserve container RAM.")
 
         self.chunk_sents = [np.flatnonzero(self.sent_chunk == ci) for ci in range(n)]
 
@@ -396,17 +401,23 @@ class UniversityRAGService:
         return sum(weight[t] for t in found) / sum(weight.values())
 
     def _hybrid(self, question: str) -> Tuple[np.ndarray, np.ndarray]:
-        sent_sim = self.sent_emb @ self.embedder.query(question)
-        semantic = np.full(len(self.ids), -1.0)
-        np.maximum.at(semantic, self.sent_chunk, sent_sim)
         lexical = self.bm25.get_scores(tokenize(question))
-        fused = (1 - self.beta) * minmax(lexical) + self.beta * minmax(semantic)
-        return fused, sent_sim
+        if self.embedder is not None and hasattr(self, 'sent_emb') and self.sent_emb is not None:
+            sent_sim = self.sent_emb @ self.embedder.query(question)
+            semantic = np.full(len(self.ids), -1.0)
+            np.maximum.at(semantic, self.sent_chunk, sent_sim)
+            fused = (1 - self.beta) * minmax(lexical) + self.beta * minmax(semantic)
+            return fused, sent_sim
+        else:
+            sent_sim = np.zeros(len(self.sent_chunk), dtype=float)
+            return lexical, sent_sim
 
     def _answer_text(self, ci: int, j: int) -> str:
         idx = self.chunk_sents[ci]
-        pos = int(np.flatnonzero(idx == j)[0])
+        pos = int(np.flatnonzero(idx == j)[0]) if len(idx) > 0 and j in idx else 0
         sents, passage = [self.sent_text[x] for x in idx], self.chunks.text[ci]
+        if not sents:
+            return passage[:150]
         answer = sents[pos]
         if len(answer.split()) < 8 and pos + 1 < len(sents):
             start = passage.find(answer)
@@ -414,19 +425,22 @@ class UniversityRAGService:
         return answer
 
     def _rank(self, question: str, k: int = 10):
-        hybrid, sent_sim = self._hybrid(question)
-        cand = np.argsort(-hybrid, kind="stable")[:k]
+        lex_scores = self.bm25.get_scores(tokenize(question))
+        cand = np.argsort(-lex_scores, kind="stable")[:k]
 
-        if self.reranker is None:
-            # Low-memory pure hybrid rank without CrossEncoder
+        if self.reranker is None or self.embedder is None:
+            # Low-memory pure BM25 ranking without PyTorch
             ci = int(cand[0])
             idx = self.chunk_sents[ci]
-            best_s_pos = int(np.argmax(sent_sim[idx])) if len(idx) > 0 else 0
-            j = int(idx[best_s_pos]) if len(idx) > 0 else 0
+            j = int(idx[0]) if len(idx) > 0 else 0
             ranked = [int(c) for c in cand]
-            ce_logit = float(hybrid[ci] * 4.0 - 2.0)  # Calibrated proxy logit
-            return ranked, ci, j, sent_sim, ce_logit
+            max_lex = float(lex_scores[ci])
+            conf_proxy = min(max_lex / 10.0, 1.0)
+            ce_logit = float(conf_proxy * 4.0 - 2.0)
+            return ranked, ci, j, np.zeros(len(self.sent_chunk)), ce_logit
 
+        hybrid, sent_sim = self._hybrid(question)
+        cand = np.argsort(-hybrid, kind="stable")[:k]
         sidx = np.concatenate([self.chunk_sents[c] for c in cand])
         ce = self.reranker.score(question, [self.sent_inputs[j] for j in sidx])
         owner = self.sent_chunk[sidx]
@@ -444,9 +458,11 @@ class UniversityRAGService:
         if self.reranker is not None:
             sc = self.reranker.score(question, [self.sent_inputs[j] for j in idx])
             quote = self._answer_text(ci, int(idx[int(np.argmax(sc))]))
-        else:
+        elif self.embedder is not None and hasattr(self, 'sent_emb') and self.sent_emb is not None:
             sent_sim = self.sent_emb[idx] @ self.embedder.query(question)
             quote = self._answer_text(ci, int(idx[int(np.argmax(sent_sim))]))
+        else:
+            quote = self._answer_text(ci, int(idx[0])) if len(idx) > 0 else self.chunks.text[ci][:150]
         return re.sub(r"\s+(?:[a-z]|[ivx]{1,4})\.$", "", quote)
 
     def retrieve(self, question: str) -> Dict[str, Any]:
@@ -457,9 +473,13 @@ class UniversityRAGService:
             lexical = self.keyword_coverage(question, top.text)
         except ZeroDivisionError:
             lexical = 0.0
-        semantic = max(float(sent_sim[j]), 0.0)
         ce_prob = sigmoid(ce_logit)
-        conf = round(float(np.mean([lexical, semantic, ce_prob])), 3)
+        if LOW_MEMORY or self.embedder is None:
+            conf = round(float(0.6 * lexical + 0.4 * ce_prob), 3)
+            semantic = float(lexical)
+        else:
+            semantic = max(float(sent_sim[j]), 0.0)
+            conf = round(float(np.mean([lexical, semantic, ce_prob])), 3)
         return {
             "ranked": ranked,
             "ci": ci,
