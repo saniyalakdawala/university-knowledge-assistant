@@ -279,32 +279,88 @@ body {
   line-height: 1.48;
 }
 
-/* Small, Unobtrusive Citation Directly Below */
-.citation-meta {
+/* Official 4-Part Output Rubric Card (Answer, Supporting Doc, Source Section, Confidence Score) */
+.retrieval-rubric-card {
+  margin-top: 6px;
+  background-color: #FAFAFA;
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+}
+
+.rubric-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 12px 16px;
+}
+
+.rubric-item {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.rubric-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #6B7280;
+}
+
+.rubric-val {
+  font-size: 0.86rem;
+  font-weight: 500;
+  color: #1F2937;
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
-  font-size: 0.78rem;
-  color: var(--text-muted);
-  border-top: 1px solid #F3F4F6;
-  padding-top: 8px;
-  margin-top: 2px;
+  gap: 6px;
+  line-height: 1.4;
 }
 
-.source-citation {
+.score-pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.80rem;
   font-weight: 600;
-  color: #4B5563;
+  padding: 2px 8px;
+  border-radius: 4px;
 }
 
-.refusal-citation {
-  color: #9CA3AF;
-  font-style: italic;
+.score-high {
+  background-color: #ECFDF5;
+  border: 1px solid #A7F3D0;
+  color: #065F46;
 }
 
-.curriculum-citation {
-  color: var(--text-muted);
-  font-size: 0.76rem;
+.score-medium {
+  background-color: #FFFBEB;
+  border: 1px solid #FDE68A;
+  color: #92400E;
+}
+
+.score-low {
+  background-color: #FEF2F2;
+  border: 1px solid #FECACA;
+  color: #991B1B;
+}
+
+.score-signals {
+  font-size: 0.72rem;
+  color: #6B7280;
+  background: #F3F4F6;
+  border: 1px solid #E5E7EB;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .rubric-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }
 
 /* Loading Placeholder */

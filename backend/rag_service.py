@@ -507,6 +507,8 @@ class UniversityRAGService:
             return {
                 "answer": self.NOT_FOUND,
                 "source": f"SRB 2026 | {top_chunk.part} | {top_chunk.section} | PDF page {top_chunk.page}",
+                "document": "Student Resource Book (SRB) 2026",
+                "section": str(top_chunk.section),
                 "confidence": conf,
                 "evidence_quote": "",
                 "cited_page": int(top_chunk.page),
@@ -599,6 +601,8 @@ class UniversityRAGService:
         return {
             "answer": answer,
             "source": f"SRB 2026 | {ch.part} | {ch.section} | PDF page {ch.page}",
+            "document": "Student Resource Book (SRB) 2026",
+            "section": str(ch.section),
             "confidence": conf,
             "evidence_quote": self.quote(question, cited),
             "cited_page": int(ch.page),
@@ -616,6 +620,8 @@ class UniversityRAGService:
         return {
             "answer": self.NOT_FOUND,
             "source": "",
+            "document": "Student Resource Book (SRB) 2026",
+            "section": "",
             "confidence": 0.0,
             "evidence_quote": "",
             "cited_page": None,

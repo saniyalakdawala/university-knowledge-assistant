@@ -10,6 +10,8 @@ class ChatRequest(BaseModel):
 class SRBResult(BaseModel):
     answer: str
     source: str
+    document: str = "Student Resource Book (SRB) 2026"
+    section: str = ""
     confidence: float
     evidence_quote: str = ""
     cited_page: Optional[int] = None
