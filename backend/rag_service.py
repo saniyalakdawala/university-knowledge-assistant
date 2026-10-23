@@ -2,11 +2,28 @@ import os
 os.environ["OMP_NUM_THREADS"] = "1"
 os.environ["MKL_NUM_THREADS"] = "1"
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
-try:
-    import torch
-    torch.set_num_threads(1)
-except ImportError:
-    pass
+
+from backend.config import (
+    SRB_PDF_PATH,
+    EMB_MODEL_NAME,
+    CE_MODEL_NAME,
+    RETRIEVAL_BETA,
+    RERANK_ALPHA,
+    CONFIDENCE_GATE,
+    TOP_K_PASSAGES,
+    GROQ_API_KEY,
+    DEFAULT_LLM_MODEL,
+    GROQ_TIMEOUT,
+    BASE_DIR,
+    LOW_MEMORY,
+)
+
+if not LOW_MEMORY:
+    try:
+        import torch
+        torch.set_num_threads(1)
+    except ImportError:
+        pass
 
 import re
 import json
@@ -25,21 +42,6 @@ from rank_bm25 import BM25Okapi
 from nltk.stem import PorterStemmer
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 # Note: sentence_transformers is lazily imported inside Embedder/Reranker to keep LOW_MEMORY mode under 60MB RAM
-
-from backend.config import (
-    SRB_PDF_PATH,
-    EMB_MODEL_NAME,
-    CE_MODEL_NAME,
-    RETRIEVAL_BETA,
-    RERANK_ALPHA,
-    CONFIDENCE_GATE,
-    TOP_K_PASSAGES,
-    GROQ_API_KEY,
-    DEFAULT_LLM_MODEL,
-    GROQ_TIMEOUT,
-    BASE_DIR,
-    LOW_MEMORY,
-)
 
 logger = logging.getLogger(__name__)
 

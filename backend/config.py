@@ -51,4 +51,11 @@ GROUP9_TIMEOUT_SECONDS = float(os.getenv("GROUP9_TIMEOUT", "10.0"))
 # Server & Memory Optimization Settings
 HOST = os.getenv("HOST", "0.0.0.0")
 PORT = int(os.getenv("PORT", "8000"))
-LOW_MEMORY = os.getenv("LOW_MEMORY", "false").lower() in ("true", "1", "yes")
+
+# Auto-detect Render cloud container to guarantee safety under 512MB RAM limit
+IS_RENDER = (
+    os.getenv("RENDER") is not None
+    or os.getenv("RENDER_SERVICE_ID") is not None
+    or (os.getenv("PORT") is not None and os.getenv("PORT") != "8000")
+)
+LOW_MEMORY = os.getenv("LOW_MEMORY", "true" if IS_RENDER else "false").lower() in ("true", "1", "yes")
