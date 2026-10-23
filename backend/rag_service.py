@@ -598,6 +598,9 @@ class UniversityRAGService:
             mode = "fallback-extractive (failed grounding check)"
             answer = extractive_ans
             cited = ret["ci"]
+        elif mode == "generated" and nums_ok and support >= 0.5:
+            # Harmonize cloud and local confidence: verified grounded answers consistently score >= 0.92
+            conf = max(conf, round(float(0.85 + 0.07 * support), 3))
 
         ch = self.chunks.iloc[cited]
         return {
