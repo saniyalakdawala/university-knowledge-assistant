@@ -1,4 +1,13 @@
 import os
+os.environ["OMP_NUM_THREADS"] = "1"
+os.environ["MKL_NUM_THREADS"] = "1"
+os.environ["TOKENIZERS_PARALLELISM"] = "false"
+try:
+    import torch
+    torch.set_num_threads(1)
+except ImportError:
+    pass
+
 import re
 import json
 import time
@@ -29,6 +38,7 @@ from backend.config import (
     DEFAULT_LLM_MODEL,
     GROQ_TIMEOUT,
     BASE_DIR,
+    LOW_MEMORY,
 )
 
 logger = logging.getLogger(__name__)
@@ -339,8 +349,12 @@ class UniversityRAGService:
     def _init_models(self, emb_name: str, ce_name: str):
         t0 = time.time()
         self.embedder = Embedder(emb_name)
-        self.reranker = SentenceReranker(ce_name)
-        logger.info(f"Loaded embedding and cross-encoder models in {time.time() - t0:.2f}s")
+        if LOW_MEMORY:
+            logger.info("LOW_MEMORY mode active: Skipping CrossEncoder initialization to stay safely under 512MB RAM.")
+            self.reranker = None
+        else:
+            self.reranker = SentenceReranker(ce_name)
+        logger.info(f"Loaded models in {time.time() - t0:.2f}s (LOW_MEMORY={LOW_MEMORY})")
 
     def _build_indexes(self):
         n = len(self.chunks)
@@ -402,6 +416,17 @@ class UniversityRAGService:
     def _rank(self, question: str, k: int = 10):
         hybrid, sent_sim = self._hybrid(question)
         cand = np.argsort(-hybrid, kind="stable")[:k]
+
+        if self.reranker is None:
+            # Low-memory pure hybrid rank without CrossEncoder
+            ci = int(cand[0])
+            idx = self.chunk_sents[ci]
+            best_s_pos = int(np.argmax(sent_sim[idx])) if len(idx) > 0 else 0
+            j = int(idx[best_s_pos]) if len(idx) > 0 else 0
+            ranked = [int(c) for c in cand]
+            ce_logit = float(hybrid[ci] * 4.0 - 2.0)  # Calibrated proxy logit
+            return ranked, ci, j, sent_sim, ce_logit
+
         sidx = np.concatenate([self.chunk_sents[c] for c in cand])
         ce = self.reranker.score(question, [self.sent_inputs[j] for j in sidx])
         owner = self.sent_chunk[sidx]
@@ -416,8 +441,12 @@ class UniversityRAGService:
 
     def quote(self, question: str, ci: int) -> str:
         idx = self.chunk_sents[ci]
-        sc = self.reranker.score(question, [self.sent_inputs[j] for j in idx])
-        quote = self._answer_text(ci, int(idx[int(np.argmax(sc))]))
+        if self.reranker is not None:
+            sc = self.reranker.score(question, [self.sent_inputs[j] for j in idx])
+            quote = self._answer_text(ci, int(idx[int(np.argmax(sc))]))
+        else:
+            sent_sim = self.sent_emb[idx] @ self.embedder.query(question)
+            quote = self._answer_text(ci, int(idx[int(np.argmax(sent_sim))]))
         return re.sub(r"\s+(?:[a-z]|[ivx]{1,4})\.$", "", quote)
 
     def retrieve(self, question: str) -> Dict[str, Any]:

@@ -48,6 +48,7 @@ LLM_CACHE_FILE = str(BASE_DIR / "week5_outputs" / "llm_cache.json")
 GROUP9_API_URL = os.getenv("GROUP9_API_URL", "http://localhost:8001")
 GROUP9_TIMEOUT_SECONDS = float(os.getenv("GROUP9_TIMEOUT", "10.0"))
 
-# Server Settings
+# Server & Memory Optimization Settings
 HOST = os.getenv("HOST", "0.0.0.0")
 PORT = int(os.getenv("PORT", "8000"))
+LOW_MEMORY = os.getenv("LOW_MEMORY", "false").lower() in ("true", "1", "yes")

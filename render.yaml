@@ -15,3 +15,7 @@ services:
         value: qwen/qwen3.8-27b
       - key: GROUP9_API_URL
         value: https://curriculum-intelligence-engine.onrender.com
+      - key: LOW_MEMORY
+        value: "true"
+      - key: OMP_NUM_THREADS
+        value: "1"

@@ -7,9 +7,9 @@ __pycache__/
 *.pyd
 
 # Model caches & local artifacts
-data/cache/
-*.npy
-*.pkl
+data/cache/*
+!data/cache/chunks.pkl
+!data/cache/sent_emb.npy
 week5_outputs/
 .pytest_cache/
 
