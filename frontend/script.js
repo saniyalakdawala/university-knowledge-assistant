@@ -156,7 +156,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let scoreVal = 0.0;
     let scoreLevel = "low";
     let scoreLabel = "";
-    let scoreSignals = "";
 
     if (srb) {
       scoreVal = typeof srb.confidence === "number" ? srb.confidence : 0.0;
@@ -182,12 +181,6 @@ document.addEventListener("DOMContentLoaded", () => {
         scoreLevel = "low";
         scoreLabel = "Below Policy Threshold";
       }
-
-      if (srb.lexical_coverage || srb.ce_prob) {
-        const lexPct = Math.round((srb.lexical_coverage || 0) * 100);
-        const cePct = Math.round((srb.ce_prob || 0) * 100);
-        scoreSignals = `BM25: ${lexPct}% · Cross-Encoder: ${cePct}%`;
-      }
     } else if (curr) {
       docText = "Curriculum Reference Catalog (Group 9)";
       sectionText = curr.course ? `${curr.course.code || ''} - ${curr.course.title || ''}` : "Course Catalog";
@@ -200,7 +193,7 @@ document.addEventListener("DOMContentLoaded", () => {
       docText += " + Curriculum API";
     }
 
-    const pctText = `${scoreVal.toFixed(2)} (${Math.round(scoreVal * 100)}%)`;
+    const scoreDisplay = `${scoreVal.toFixed(2)} · ${scoreLabel}`;
 
     rubricCard.innerHTML = `
       <div class="rubric-grid">
@@ -215,8 +208,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="rubric-item">
           <div class="rubric-label">Confidence / Retrieval Score</div>
           <div class="rubric-val">
-            <span class="score-pill score-${scoreLevel}">${escapeHtml(pctText)} · ${escapeHtml(scoreLabel)}</span>
-            ${scoreSignals ? `<span class="score-signals" title="Retrieval Signal Decomposition">${escapeHtml(scoreSignals)}</span>` : ''}
+            <span class="score-pill score-${scoreLevel}">${escapeHtml(scoreDisplay)}</span>
           </div>
         </div>
       </div>
