@@ -475,11 +475,11 @@ class UniversityRAGService:
             lexical = 0.0
         ce_prob = sigmoid(ce_logit)
         if LOW_MEMORY or self.embedder is None:
-            conf = round(float(0.6 * lexical + 0.4 * ce_prob), 3)
+            conf = round(float(0.70 * ce_prob + 0.30 * lexical), 3)
             semantic = float(lexical)
         else:
             semantic = max(float(sent_sim[j]), 0.0)
-            conf = round(float(np.mean([lexical, semantic, ce_prob])), 3)
+            conf = round(float(0.80 * ce_prob + 0.20 * semantic), 3)
         return {
             "ranked": ranked,
             "ci": ci,
