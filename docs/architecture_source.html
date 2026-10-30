@@ -1,0 +1,91 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+*{box-sizing:border-box;margin:0}
+body{width:2400px;height:1300px;background:#FFFFFF;font-family:"Liberation Sans",Arial,sans-serif;color:#231A1B;position:relative}
+.band{position:absolute;left:30px;width:2340px;border-radius:18px}
+.bandlabel{position:absolute;left:60px;font-size:22px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#9E1B22}
+.card{position:absolute;background:#FFFFFF;border:2px solid #D9CFC6;border-radius:14px;overflow:hidden}
+.card .hd{background:#9E1B22;color:#FFFFFF;font-size:25px;font-weight:700;padding:12px 18px}
+.card .hd small{display:block;font-size:18px;font-weight:400;color:#F3D6D3;margin-top:2px}
+.card ul{list-style:none;padding:12px 18px 0 18px}
+.card li{font-size:20px;line-height:1.35;padding:7px 0;border-bottom:1px solid #EFE8E1}
+.card li:last-child{border-bottom:none}
+.card li b{color:#231A1B}
+.box{position:absolute;background:#FFFFFF;border:2px solid #D9CFC6;border-radius:12px;padding:14px 16px;font-size:20px;line-height:1.35}
+.box b{display:block;font-size:22px;margin-bottom:4px}
+.store{position:absolute;background:#231A1B;color:#FAF7F2;border-radius:12px;padding:14px 16px;font-size:20px;line-height:1.35}
+.store b{display:block;font-size:22px;margin-bottom:4px;color:#FFFFFF}
+.g9{border-color:#2F5D8A}
+.g9 b{color:#2F5D8A}
+.note{position:absolute;font-size:19px;color:#5B4F4F}
+svg{position:absolute;left:0;top:0}
+</style></head><body>
+
+<!-- bands -->
+<div class="band" style="top:20px;height:300px;background:#F6F2ED"></div>
+<div class="band" style="top:345px;height:520px;background:#FBF8F5;border:2px solid #EADFD5"></div>
+<div class="band" style="top:890px;height:390px;background:#EEF3F8"></div>
+<p class="bandlabel" style="top:38px">A · Offline indexing (runs once, cached)</p>
+<p class="bandlabel" style="top:362px">B · Online: answering one question</p>
+<p class="bandlabel" style="top:908px;color:#2F5D8A">C · Integration with Group 9 (Curriculum Intelligence)</p>
+
+<!-- Band A: offline -->
+<div class="box" style="left:60px;top:85px;width:225px;height:205px"><b>SRB 2026 PDF</b>Student Resource Book, MPSTME<br>172 pages</div>
+<div class="box" style="left:325px;top:85px;width:225px;height:205px"><b>Clean</b>PyMuPDF text, NFKC<br>drop 112 non-policy pages (forms, tables, calendar)</div>
+<div class="box" style="left:590px;top:85px;width:225px;height:205px"><b>Section + chunk</b>41 named sections<br>100-word chunks, 25-word overlap</div>
+<div class="store" style="left:855px;top:85px;width:300px;height:205px"><b>SRB index</b>424 chunks with part, section, page<br>BM25 index<br>2,267 MiniLM sentence vectors</div>
+
+<!-- Band B: online stages -->
+<div class="card" style="left:60px;top:410px;width:330px;height:420px"><div class="hd">1 · Input<small>student or another app</small></div>
+<ul><li>Question in plain English</li><li>From the web UI or any HTTP client</li><li><b>POST /api/chat</b><br>{"question": "…"}</li></ul></div>
+
+<div class="card" style="left:450px;top:410px;width:330px;height:420px"><div class="hd">2 · Preprocessing<small>query side</small></div>
+<ul><li>Lowercase, tokenise, drop stop-words</li><li>Porter stemming for BM25</li><li>MiniLM query embedding</li><li>Number and phrase normalising for checks</li></ul></div>
+
+<div class="card" style="left:840px;top:410px;width:330px;height:420px"><div class="hd">3 · NLP model<small>retrieve, re-rank, generate</small></div>
+<ul><li><b>Router:</b> SRB policy, new course, Group 9, or both</li><li><b>Hybrid retrieval:</b> BM25 + MiniLM, β 0.6</li><li><b>Re-rank</b> top 10: cross-encoder, α 0.7</li><li><b>Groq LLM</b> qwen3.8-27b, top 2 passages, T = 0</li></ul></div>
+
+<div class="card" style="left:1230px;top:410px;width:330px;height:420px"><div class="hd">4 · Post-processing<small>trust checks</small></div>
+<ul><li><b>Grounding:</b> every number must be in the passages</li><li><b>Refuse</b> if confidence &lt; 0.24 or LLM says NOT_FOUND</li><li><b>Fallback:</b> verified SRB sentence if Groq is down</li><li>Citation: section, page, quote</li></ul></div>
+
+<div class="card" style="left:1620px;top:410px;width:330px;height:420px"><div class="hd">5 · API / asset<small>FastAPI, JSON out</small></div>
+<ul><li><b>POST /api/chat</b> → answer, document, section, page, evidence quote, confidence, abstained</li><li>GET /api/health</li><li>Swagger docs at /docs</li></ul></div>
+
+<div class="card" style="left:2010px;top:410px;width:330px;height:420px"><div class="hd">6 · Application<small>who consumes it</small></div>
+<ul><li>Web UI (HTML, CSS, JS)</li><li>Group 6 Early Warning</li><li>Group 10 Admin Copilot</li><li>Group 11 Communications</li></ul></div>
+
+<!-- Band C: Group 9 -->
+<div class="box g9" style="left:60px;top:960px;width:330px;height:190px"><b>Group 9 engine</b>POST /modernize-curriculum designs a new course from job descriptions</div>
+<div class="box g9" style="left:450px;top:960px;width:330px;height:190px"><b>Hand-off</b>handoffs.group4_chunks<br>→ POST /api/knowledge/course</div>
+<div class="store" style="left:855px;top:960px;width:260px;height:190px;background:#2F5D8A"><b>New-course index</b>same pipeline, kept separate; cited as “Group 9 draft syllabus”</div>
+<div class="box g9" style="left:1425px;top:960px;width:330px;height:190px"><b>Group 9 live API</b>/check-prerequisites<br>/find-overlaps (named existing courses)</div>
+<p class="note" style="left:1820px;top:975px;width:520px">Policy answers come only from the SRB index. Syllabus answers are never cited as university policy.</p>
+
+<svg width="2400" height="1300" viewBox="0 0 2400 1300">
+<defs>
+<marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#231A1B"/></marker>
+<marker id="b" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2F5D8A"/></marker>
+</defs>
+<g stroke="#231A1B" stroke-width="3" fill="none" marker-end="url(#a)">
+<line x1="285" y1="187" x2="321" y2="187"/>
+<line x1="550" y1="187" x2="586" y2="187"/>
+<line x1="815" y1="187" x2="851" y2="187"/>
+<line x1="1005" y1="290" x2="1005" y2="404"/>
+<line x1="390" y1="620" x2="446" y2="620"/>
+<line x1="780" y1="620" x2="836" y2="620"/>
+<line x1="1170" y1="620" x2="1226" y2="620"/>
+<line x1="1560" y1="620" x2="1616" y2="620"/>
+<line x1="1950" y1="620" x2="2006" y2="620"/>
+</g>
+<g stroke="#2F5D8A" stroke-width="3" fill="none" marker-end="url(#b)">
+<line x1="390" y1="1055" x2="446" y2="1055"/>
+<line x1="780" y1="1055" x2="851" y2="1055"/>
+<line x1="985" y1="960" x2="985" y2="836"/>
+<path d="M1145 830 L1145 1210 L1590 1210 L1590 1154" stroke-dasharray="10 7"/>
+<path d="M1755 1055 L1785 1055 L1785 836" stroke-dasharray="10 7"/>
+</g>
+<text x="1160" y="1240" font-family="Liberation Sans, Arial" font-size="19" fill="#2F5D8A">router: named existing course</text>
+<text x="1020" y="352" font-family="Liberation Sans, Arial" font-size="19" fill="#5B4F4F">loaded at start-up</text>
+</svg>
+</body></html>

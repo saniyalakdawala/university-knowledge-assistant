@@ -1,0 +1,6 @@
+system,week,test_A_accuracy,test_B_accuracy,AB_accuracy,AB_accuracy_95CI,AB_hallucination_rate,AB_end_to_end
+Baseline: BM25 keyword retrieval + extractive sentence,2,0.370,0.546,0.488,"[0.41, 0.56]",0.200,0.522
+v1: hybrid BM25 + MiniLM retrieval,3,0.611,0.657,0.642,"[0.57, 0.71]",0.250,0.654
+v2: + cross-encoder re-ranking,4,0.704,0.694,0.698,"[0.62, 0.76]",0.250,0.703
+v3-local: + Qwen2.5-1.5B on laptop CPU,5,0.759,0.796,0.784,"[0.71, 0.84]",0.250,0.780
+v3 (final): + Groq qwen3.8-27b + grounding check + two-stage refusal,5-6,0.926,0.880,0.895,"[0.84, 0.93]",0.000,0.907

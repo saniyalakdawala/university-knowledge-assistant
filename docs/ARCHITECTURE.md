@@ -42,7 +42,7 @@ flowchart TD
         MiniLM["Semantic Retriever\n(all-MiniLM-L6-v2 Embeddings)"]
         Hybrid["Hybrid Rank Fusion\n(beta = 0.6)"]
         Reranker["Cross-Encoder Reranker\n(ms-marco-MiniLM-L-6-v2, alpha = 0.7)"]
-        Gate["Calibrated Gate Filter\n(Confidence >= 0.46)"]
+        Gate["Calibrated Gate Filter\n(Confidence >= 0.24)"]
         Verifier["Grounding Verifier &\nExtractive Fallback"]
         Citations["SRB Citation Generator\n(Part, Section, Page, Verbatim Evidence)"]
 
@@ -95,7 +95,7 @@ flowchart TD
    - **Semantic Search:** `sentence-transformers/all-MiniLM-L6-v2` queries the cached sentence-level embeddings.
    - **Hybrid Fusion:** Combines scores using $\beta = 0.6$.
    - **Cross-Encoder Reranking:** Top passages are reranked via `cross-encoder/ms-marco-MiniLM-L-6-v2` ($\alpha = 0.7$).
-   - **Confidence Gating:** If retrieval confidence $< 0.46$, the system abstains with `NOT_FOUND` ("I could not find this in the Student Resource Book.").
+   - **Confidence Gating:** If retrieval confidence $< 0.24$, the system abstains with `NOT_FOUND` ("I could not find this in the Student Resource Book.").
    - **Grounding Verification:** Numbers and percentages in any generated text must strictly match the passage; otherwise, it falls back immediately to the verified verbatim sentence.
    - **Citation Assembly:** Attaches part, section name, PDF page number, and verbatim evidence quote.
 4. **Group 9 Curriculum Client Execution:**

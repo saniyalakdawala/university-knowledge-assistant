@@ -18,7 +18,8 @@ def test_srb_policy_question():
     assert "attendance" in srb["answer"].lower() or "80" in srb["answer"] or "75" in srb["answer"]
     assert "srb 2026" in srb["source"].lower()
     assert srb["cited_page"] is not None
-    assert srb["confidence"] >= 0.46
+    from backend.rag_service import get_rag_service
+    assert srb["confidence"] >= get_rag_service().gate
     assert len(srb["evidence_quote"]) > 0
 
 def test_curriculum_question_with_fallback():
@@ -59,7 +60,7 @@ def test_out_of_scope_refusal():
     srb = data["srb"]
     assert srb["abstained"] is True
     assert "could not find" in srb["answer"].lower() or "not_found" in srb["answer"].lower()
-    assert srb["confidence"] < 0.46
+    assert srb["confidence"] < 0.5  # refused by the retrieval gate or by the LLM (NOT_FOUND)
 
 def test_group9_unreachable_fallback(monkeypatch):
     """Test Group 9 client gracefully handles connection timeout or server downtime."""
@@ -142,6 +143,7 @@ def test_groq_fallback_when_unavailable(monkeypatch):
     def mock_post(*args, **kwargs):
         raise requests.ConnectionError("Mocked Groq service unreachable")
 
+    monkeypatch.setattr(rag_inst, "groq_api_key", "test-key-not-real")  # exercise the network-failure path even without a .env
     monkeypatch.setattr(rag_inst.http_session, "post", mock_post)
     res = rag_inst.ask("What is the minimum attendance required to appear for the end-semester exam?")
     assert not res["abstained"]

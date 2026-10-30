@@ -34,8 +34,9 @@ CE_MODEL_NAME = os.getenv("CE_MODEL", "cross-encoder/ms-marco-MiniLM-L-6-v2")
 # Retrieval & Gate hyperparameters
 RETRIEVAL_BETA = float(os.getenv("RETRIEVAL_BETA", "0.6"))     # Hybrid lexical vs semantic weight
 RERANK_ALPHA = float(os.getenv("RERANK_ALPHA", "0.7"))         # Cross-encoder rank weight
-CONFIDENCE_GATE = float(os.getenv("CONFIDENCE_GATE", "0.46"))  # Dev-tuned refusal threshold
-TOP_K_PASSAGES = int(os.getenv("TOP_K_PASSAGES", "3"))         # Top-k passages fed to answerer
+# Week 5/6 evaluated v3 configuration (notebook V3_CONFIG): passages_k = 2, gate = 0.24 (tuned on the dev set only).
+CONFIDENCE_GATE = float(os.getenv("CONFIDENCE_GATE", "0.24"))  # Dev-tuned refusal threshold
+TOP_K_PASSAGES = int(os.getenv("TOP_K_PASSAGES", "2"))         # Top-k passages fed to the LLM
 
 # Mandatory Groq LLM Configurations
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
@@ -53,9 +54,9 @@ HOST = os.getenv("HOST", "0.0.0.0")
 PORT = int(os.getenv("PORT", "8000"))
 
 # Auto-detect Render cloud container to guarantee safety under 512MB RAM limit
-IS_RENDER = (
-    os.getenv("RENDER") is not None
-    or os.getenv("RENDER_SERVICE_ID") is not None
-    or (os.getenv("PORT") is not None and os.getenv("PORT") != "8000")
-)
+# (Only Render's own variables count: running locally on another port must NOT silently switch to the lite pipeline.)
+IS_RENDER = os.getenv("RENDER") is not None or os.getenv("RENDER_SERVICE_ID") is not None
 LOW_MEMORY = os.getenv("LOW_MEMORY", "true" if IS_RENDER else "false").lower() in ("true", "1", "yes")
+
+# Group 9 draft-syllabus passages (their POST /modernize-curriculum -> handoffs.group4_chunks, or data/week7/group4_chunks.csv)
+COURSE_PASSAGES_CSV = os.getenv("COURSE_PASSAGES_CSV", str(DATA_DIR / "group9" / "group4_chunks.csv"))

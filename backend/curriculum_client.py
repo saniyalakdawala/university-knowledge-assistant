@@ -9,8 +9,9 @@ from backend.schemas import CurriculumResult
 
 logger = logging.getLogger(__name__)
 
-# Documented offline knowledge base from Group 9 repository (curriculum_engine dataset / reference syllabi)
-# Used only when Group 9's live FastAPI service is temporarily offline or unreachable.
+# Reference stand-in used ONLY when Group 9's live FastAPI service is unreachable. It is NOT Group 9 model output:
+# every reply built from it is marked is_fallback=True and prefixed "[Curriculum Engine Reference Stand-in]".
+# It deliberately holds no overlap scores: overlap percentages and confidences come only from Group 9's live engine.
 OFFLINE_COURSE_CATALOG = {
     "natural language processing": {
         "id": "nm_nlp_01",
@@ -27,8 +28,8 @@ OFFLINE_COURSE_CATALOG = {
             "Unit 6: Transformer Architectures, Pretrained LLMs (BERT, GPT), Applications"
         ],
         "overlaps": [
-            {"course": "Deep Learning", "overlap_percent": "38.2%", "confidence": 0.81},
-            {"course": "Machine Learning", "overlap_percent": "24.5%", "confidence": 0.74}
+            {"course": "Deep Learning"},
+            {"course": "Machine Learning"}
         ]
     },
     "machine learning": {
@@ -45,8 +46,8 @@ OFFLINE_COURSE_CATALOG = {
             "Unit 5: Ensemble Methods (Random Forest, Gradient Boosting, XGBoost)"
         ],
         "overlaps": [
-            {"course": "Deep Learning", "overlap_percent": "46.7%", "confidence": 0.88},
-            {"course": "Natural Language Processing", "overlap_percent": "24.5%", "confidence": 0.74}
+            {"course": "Deep Learning"},
+            {"course": "Natural Language Processing"}
         ]
     },
     "deep learning": {
@@ -63,8 +64,8 @@ OFFLINE_COURSE_CATALOG = {
             "Unit 5: Generative Models: Autoencoders, GANs, and Diffusion Models"
         ],
         "overlaps": [
-            {"course": "Machine Learning", "overlap_percent": "46.7%", "confidence": 0.88},
-            {"course": "Natural Language Processing", "overlap_percent": "38.2%", "confidence": 0.81}
+            {"course": "Machine Learning"},
+            {"course": "Natural Language Processing"}
         ]
     },
     "operating systems": {
@@ -81,7 +82,7 @@ OFFLINE_COURSE_CATALOG = {
             "Unit 5: File Systems, Storage Management, Disk Scheduling"
         ],
         "overlaps": [
-            {"course": "System Programming", "overlap_percent": "32.0%", "confidence": 0.79}
+            {"course": "System Programming"}
         ]
     }
 }
@@ -249,7 +250,12 @@ class CurriculumClient:
                     break
 
         if not detected_course:
-            detected_course = "Natural Language Processing"
+            # Do not guess a course (it used to silently default to NLP): ask the student to name it.
+            return CurriculumResult(
+                connected=False, is_fallback=True,
+                status_note="No course name recognised in the question.",
+                summary="Which course do you mean? Please include the course name, e.g. 'What are the prerequisites for Machine Learning?'",
+            )
 
         # Check intent: overlap vs prerequisite
         if any(w in q_lower for w in ["overlap", "similar", "redundant", "duplication", "compare"]):
@@ -303,8 +309,9 @@ class CurriculumClient:
 
         if matched and matched.get("overlaps"):
             overlaps = matched["overlaps"]
-            overlap_str = ", ".join([f"{o['course']} ({o['overlap_percent']} overlap)" for o in overlaps])
-            summary = f"[Curriculum Engine Reference Stand-in] '{matched['name']}' has documented syllabus overlap with: {overlap_str}."
+            related = ", ".join(o["course"] for o in overlaps)
+            summary = (f"[Curriculum Engine Reference Stand-in] Group 9's engine is offline, so no overlap score can be computed. "
+                       f"Courses usually compared with '{matched['name']}': {related}.")
             return CurriculumResult(
                 connected=False,
                 is_fallback=True,

@@ -29,9 +29,9 @@ In an academic institution, hallucinations have severe real-world ramifications:
 To prevent hallucination, Group 4 implements a three-tier defensive pipeline:
 1. **Verbatim Evidence Quoting:** Every answer extracts and highlights an exact sentence quotation directly from the underlying SRB PDF passage (`evidence_quote`).
 2. **Strict Grounding Checks:** Before returning any generated response, `grounding_check()` parses all numerical figures, monetary amounts (e.g. `Rs. 500`), and percentages (e.g. `80 %`). If any number in the output was not present in the cited source context, the generation is flagged as ungrounded and immediately rejected in favor of the verbatim extractive sentence.
-3. **Calibrated Confidence Gating ($\ge 0.46$):** The system computes a composite confidence score:
+3. **Calibrated Confidence Gating ($\ge 0.24$):** The system computes a composite confidence score:
    $$\text{Confidence} = \frac{\text{LexicalCoverage} + \text{SemanticSimilarity} + \sigma(\text{CrossEncoderLogit})}{3}$$
-   Queries scoring below $0.46$ trigger an automatic refusal: `"I could not find this in the Student Resource Book."`
+   Queries scoring below $0.24$ trigger an automatic refusal: `"I could not find this in the Student Resource Book."`
 
 ---
 
@@ -44,7 +44,7 @@ A vital responsible-AI design choice in our Week 7 web architecture is the **str
 | **Authoritative Status** | **Official Policy:** Binding rules enacted by SVKM's NMIMS Academic Council. | **Advisory Analysis:** Machine-learning inferences from syllabus texts and reference job descriptions. |
 | **Ground Truth Source** | Student Resource Book 2026 (PDF text layer). | NMIMS syllabus archive + LLM-annotated reference labels. |
 | **Human Supervision** | Published university regulations. | Draft syllabus suggestions intended for curriculum committees; **no automated syllabus pruning**. |
-| **Frontend Representation** | Blue Card with official citations (Part, Section, Page). | Purple Card explicitly labeled with `"Curriculum Engine"` and `"Live API"` or `"Reference Stand-in"`. |
+| **Frontend Representation** | Source card with document, section, PDF page and confidence. New-course answers are labelled "Group 9 draft syllabus", never SRB. | Card labelled "Group 9 Curriculum Intelligence API (live)" or "Curriculum reference stand-in (Group 9 offline)", with no confidence score shown for the stand-in. |
 
 Group 9's predictions (e.g., missing prerequisites or overlap percentages) are **never** presented as ratified university rules.
 
@@ -53,7 +53,8 @@ Group 9's predictions (e.g., missing prerequisites or overlap percentages) are *
 ## 4. Limitations of Retrieval Confidence Scores
 
 Confidence scores must not instill a false sense of security:
-- **Heuristic Nature:** While our dev set tuned the refusal threshold at $0.46$, semantic cosine similarities can occasionally score high on plausible-sounding but irrelevant university clauses.
+- **Lite cloud mode:** The free Render deployment runs keyword-only retrieval (no embeddings, no re-ranker) to fit in 512 MB. It was not evaluated, and in our tests it answered an out-of-scope question and missed the attendance rule. All reported metrics refer to the full pipeline.
+- **Heuristic Nature:** While our dev set tuned the refusal threshold at $0.24$, semantic cosine similarities can occasionally score high on plausible-sounding but irrelevant university clauses.
 - **Lexical Outliers:** Acronyms or unique phrases outside the vocabulary may reduce keyword coverage even when the relevant passage is found.
 - **Uncalibrated Output:** As documented by Group 9 in their Week 4 evaluation, logistic confidence models over TF-IDF and MaxSim are relative and require cautious interpretation rather than absolute probabilistic reliance.
 
@@ -70,7 +71,7 @@ A responsible system must know what it does **not** know.
 ## 6. Privacy, Anonymity, and Data Minimization
 
 - **No Student PII Collection:** The assistant does not require login, student roll numbers (SAP IDs), grades, or email addresses.
-- **Zero Logging of Sensitive Queries:** All interactions remain session-scoped in memory.
+- **No Logging of Question Text:** The server logs only the question length and the route taken, never the question itself, and stores no chat history.
 - **Zero Credential Leakage:** API keys (such as `GROQ_API_KEY`) reside exclusively in server-side environment variables and are never transmitted to JavaScript clients or emitted in error traces.
 
 ---

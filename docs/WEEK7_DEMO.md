@@ -78,9 +78,9 @@
 - **Action:** Click the quick prompt chip **"🚫 Out-of-Scope Test"** or type:
   > *"How can I book a badminton court on campus?"*
 - **What to show:**
-  - Retrieval confidence falls to $\approx 0.12$, well below the dev-tuned gate of $0.46$.
+  - Retrieval confidence falls to $\approx 0.12$, well below the dev-tuned gate of $0.24$.
   - The system displays a prominent red warning banner:
-    *`⚠️ Refusal / Out-of-Scope: Retrieval confidence below policy gate (0.46). I could not find this in the Student Resource Book.`*
+    *`⚠️ Refusal / Out-of-Scope: Retrieval confidence below policy gate (0.24). I could not find this in the Student Resource Book.`*
 - **Key Takeaway:**
   > *"In our Week 6 benchmark evaluation, our system refused 20 out of 20 out-of-scope questions with 0 hallucinations. We preserve this strict safety standard in the production web interface."*
 

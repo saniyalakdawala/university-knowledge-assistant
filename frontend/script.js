@@ -103,85 +103,61 @@ document.addEventListener("DOMContentLoaded", () => {
     const bubble = document.createElement("div");
     bubble.className = "assistant-bubble";
 
-    // 1. Direct Answer Text
+    const srb = data.srb;
+    const course = data.course;
+    const curr = data.curriculum;
+    const ragResults = [course, srb].filter(Boolean);
+    const answered = ragResults.filter((r) => !r.abstained);
+
+    // 1. Direct answer text
     const answerDiv = document.createElement("div");
     answerDiv.className = "bubble-answer";
-
-    const srb = data.srb;
-    const curr = data.curriculum;
-    const isAbstained = srb && srb.abstained;
-
-    let mainText = "";
-    if (isAbstained && (!curr || curr.is_fallback)) {
-      mainText = "I could not find this information in the Student Resource Book 2026.";
-    } else {
-      mainText = data.synthesized_answer || (srb ? srb.answer : (curr ? curr.summary : "No answer available."));
+    let mainText = data.synthesized_answer || "No answer available.";
+    if (ragResults.length && !answered.length && !curr) {
+      mainText = course
+        ? "I could not find this in the new course's syllabus or in the Student Resource Book 2026."
+        : "I could not find this information in the Student Resource Book 2026.";
     }
-
     answerDiv.textContent = mainText;
     bubble.appendChild(answerDiv);
 
-    // 2. Supporting Quotation (only when it provides useful, relevant evidence)
-    if (srb && !isAbstained && srb.evidence_quote) {
-      const quoteText = srb.evidence_quote.trim();
-      // Show only if substantial and not redundant with the answer
+    // 2. Evidence quote(s) and one rubric card per knowledge base that answered
+    answered.forEach((r) => {
+      const quoteText = (r.evidence_quote || "").trim();
       if (quoteText.length > 20 && quoteText !== mainText.trim()) {
         const quoteDiv = document.createElement("blockquote");
         quoteDiv.className = "evidence-quote";
         quoteDiv.textContent = `“${quoteText}”`;
         bubble.appendChild(quoteDiv);
       }
+      const score = typeof r.confidence === "number" ? r.confidence : 0;
+      const level = score >= 0.7 ? "high" : score >= 0.46 ? "medium" : "low";
+      const label = level === "high" ? "High Confidence" : level === "medium" ? "Moderate Confidence" : "Low Confidence";
+      const page = r.cited_page ? (course === r ? ` · Section ${r.cited_page}` : ` · Page ${r.cited_page}`) : "";
+      bubble.appendChild(rubricCard(`${r.document}${page}`, r.section || "", `${score.toFixed(2)} · ${label}`, level));
+    });
+
+    if (ragResults.length && !answered.length && !curr) {
+      const r = ragResults[ragResults.length - 1];
+      const score = typeof r.confidence === "number" ? r.confidence : 0;
+      bubble.appendChild(rubricCard(r.document, r.section ? `${r.section} (closest match)` : "Not located", `${score.toFixed(2)} · Below policy threshold`, "low"));
     }
 
-    // 3. Official Rubric Output Verification (Fulfills exact rubric: Answer, Supporting Doc, Section, Confidence Score)
-    const rubricCard = document.createElement("div");
-    rubricCard.className = "retrieval-rubric-card";
-
-    let docText = "Student Resource Book (SRB) 2026";
-    let sectionText = "General University Regulations";
-    let scoreVal = 0.0;
-    let scoreLevel = "low";
-    let scoreLabel = "";
-
-    if (srb) {
-      scoreVal = typeof srb.confidence === "number" ? srb.confidence : 0.0;
-      if (!isAbstained) {
-        docText = srb.document || "Student Resource Book (SRB) 2026";
-        if (srb.cited_page) {
-          docText += ` · Page ${srb.cited_page}`;
-        }
-        sectionText = srb.section || "Academic Regulations & Policies";
-        if (scoreVal >= 0.70) {
-          scoreLevel = "high";
-          scoreLabel = "High Confidence";
-        } else if (scoreVal >= 0.45) {
-          scoreLevel = "medium";
-          scoreLabel = "Moderate Confidence";
-        } else {
-          scoreLevel = "low";
-          scoreLabel = "Low Confidence";
-        }
-      } else {
-        docText = srb.document || "Student Resource Book (SRB) 2026";
-        sectionText = srb.section ? `${srb.section} (Candidate Match)` : "Not Located in Document";
-        scoreLevel = "low";
-        scoreLabel = "Below Policy Threshold";
-      }
-    } else if (curr) {
-      docText = "Curriculum Reference Catalog (Group 9)";
-      sectionText = curr.course ? `${curr.course.code || ''} - ${curr.course.title || ''}` : "Course Catalog";
-      scoreVal = 1.0;
-      scoreLevel = "high";
-      scoreLabel = curr.is_fallback ? "Catalog Stand-In" : "Live API Verified";
+    // 3. Group 9 live API / stand-in: no invented confidence
+    if (curr) {
+      const name = curr.course ? (curr.course.course_name || curr.course.name || "") : "";
+      const docText = curr.is_fallback ? "Curriculum reference stand-in (Group 9 offline)" : "Group 9 Curriculum Intelligence API (live)";
+      bubble.appendChild(rubricCard(docText, name || "Course catalogue", curr.is_fallback ? "n/a · stand-in, not model output" : "see Group 9 response", curr.is_fallback ? "low" : "medium"));
     }
 
-    if (curr && srb && !curr.is_fallback) {
-      docText += " + Curriculum API";
-    }
+    row.appendChild(bubble);
+    chatStream.appendChild(row);
+  }
 
-    const scoreDisplay = `${scoreVal.toFixed(2)} · ${scoreLabel}`;
-
-    rubricCard.innerHTML = `
+  function rubricCard(docText, sectionText, scoreDisplay, scoreLevel) {
+    const card = document.createElement("div");
+    card.className = "retrieval-rubric-card";
+    card.innerHTML = `
       <div class="rubric-grid">
         <div class="rubric-item">
           <div class="rubric-label">Supporting Document</div>
@@ -199,11 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
         </div>
       </div>
     `;
-
-    bubble.appendChild(rubricCard);
-
-    row.appendChild(bubble);
-    chatStream.appendChild(row);
+    return card;
   }
 
   function appendErrorMessage(msg) {

@@ -17,7 +17,7 @@ The **AI University Knowledge Assistant** is a production-grade, retrieval-augme
 University regulations—ranging from attendance criteria (75%–80% thresholds) and grade progression (ATKT) to fee refunds and disciplinary codes—carry high legal and academic stakes where hallucinated answers are unacceptable. Simultaneously, course curriculum questions—such as prerequisite dependency graphs, syllabus overlap, and Bloom's taxonomy alignment—require specialized structural analysis.
 
 This project delivers:
-1. **A Calibrated Hybrid RAG Pipeline (Group 4):** Combines Porter-stemmed BM25Okapi lexical retrieval with dense sentence embeddings (`sentence-transformers/all-MiniLM-L6-v2`) and cross-encoder reranking (`cross-encoder/ms-marco-MiniLM-L-6-v2`). Answers are generated via Groq (`qwen/qwen3.8-27b`) under strict numerical grounding verifiers, confidence gating ($\ge 0.46$), PDF page citations, and verbatim evidence quotes.
+1. **A Calibrated Hybrid RAG Pipeline (Group 4):** Combines Porter-stemmed BM25Okapi lexical retrieval with dense sentence embeddings (`sentence-transformers/all-MiniLM-L6-v2`) and cross-encoder reranking (`cross-encoder/ms-marco-MiniLM-L-6-v2`). Answers are generated via Groq (`qwen/qwen3.8-27b`) under strict numerical grounding verifiers, confidence gating ($\ge 0.24$), PDF page citations, and verbatim evidence quotes.
 2. **Unified Microservice Coordinator (FastAPI):** Dynamically inspects student queries, automatically dispatches intents to the SRB 2026 policy engine, the Group 9 Curriculum Intelligence Engine, or synthesizes unified responses for hybrid inquiries.
 3. **Resilient Offline Stand-in:** When the external Group 9 microservice is unreachable, the system automatically falls back to an offline reference catalog of core computer engineering courses, ensuring 100% uptime.
 4. **Institutional NMIMS Portal UI:** A minimalist, authentic portal interface built with plain HTML5, CSS3, and vanilla JavaScript—featuring the official SVKM's NMIMS emblem, a 5px crimson top band, single-bubble answers, and unobtrusive citations.
@@ -43,7 +43,7 @@ The platform explicitly disentangles binding administrative policy from advisory
 | **Domain Scope** | Attendance, Examinations, ATKT, Refund, Conduct, Scholarships | Course prerequisites, syllabus overlaps, Bloom's levels, industry fit |
 | **Legal Status** | **Binding Official Policy** ratified by Academic Council | **Advisory Analysis** for course planning and curriculum committees |
 | **Ground Truth** | Student Resource Book 2026 text layer | MPSTME B.Tech syllabus repository & reference industry benchmarks |
-| **Failure Mode Handling** | Explicit refusal (`NOT_FOUND`) if confidence $< 0.46$ | Graceful fallback to verified offline reference catalog |
+| **Failure Mode Handling** | Explicit refusal (`NOT_FOUND`) if confidence $< 0.24$ | Graceful fallback to verified offline reference catalog |
 
 ---
 
@@ -63,7 +63,7 @@ FastAPI Unified Coordinator (app.py)
       │       ├── Semantic Retrieval: sentence-transformers/all-MiniLM-L6-v2
       │       ├── Hybrid Fusion: Score = 0.4 * BM25 + 0.6 * Semantic (beta = 0.6)
       │       ├── Cross-Encoder Reranker: cross-encoder/ms-marco-MiniLM-L-6-v2 (alpha = 0.7)
-      │       ├── Calibrated Confidence Gate: Threshold >= 0.46
+      │       ├── Calibrated Confidence Gate: Threshold >= 0.24
       │       ├── LLM Generation: Groq API (qwen/qwen3.8-27b)
       │       ├── Grounding Check: Numerical figures & percentages verified against source
       │       ├── Fallback: Verbatim extractive sentence if numbers deviate
@@ -109,7 +109,7 @@ where $\alpha = 0.7$, promoting passages with strong sentence-level cross-attent
 To govern model abstention, the system evaluates three distinct orthogonal signals:
 $$\text{Confidence} = \frac{\text{KeywordCoverage} + \text{SemanticSimilarity} + \sigma(\text{Logit}_{\text{CE}})}{3}$$
 where $\sigma(z) = \frac{1}{1 + e^{-z}}$.
-- **Gate Threshold ($\ge 0.46$):** If $\text{Confidence} < 0.46$, the system abstains with:
+- **Gate Threshold ($\ge 0.24$):** If $\text{Confidence} < 0.24$, the system abstains with:
   > *"I could not find this in the Student Resource Book."*
 This threshold was chosen on the development set to minimize false abstentions while achieving high out-of-scope rejection.
 
@@ -191,7 +191,7 @@ The system includes 12 automated unit and integration tests executing under `pyt
 
 ## 8. Cloud Deployment on Render
 
-- **Configuration:** [render.yaml](file:///c:/Projects/snlp_project/render.yaml), [Procfile](file:///c:/Projects/snlp_project/Procfile), and [.python-version](file:///c:/Projects/snlp_project/.python-version) (Python 3.11.9).
+- **Configuration:** [render.yaml](render.yaml), [Procfile](Procfile), and [.python-version](.python-version) (Python 3.11.9).
 - **CPU PyTorch Optimization:** 
   ```bash
   pip install --upgrade pip && pip install --no-cache-dir torch --index-url https://download.pytorch.org/whl/cpu && pip install --no-cache-dir -r requirements.txt
@@ -203,6 +203,6 @@ The system includes 12 automated unit and integration tests executing under `pyt
 ## 9. Responsible AI & Governance
 
 1. **Epistemic Boundaries:** Clear disclaimers that responses are grounded in SRB 2026 and subject to official dean confirmation.
-2. **Anti-Hallucination Guardrails:** Confidence threshold gating ($\ge 0.46$) paired with strict numerical fact checking.
+2. **Anti-Hallucination Guardrails:** Confidence threshold gating ($\ge 0.24$) paired with strict numerical fact checking.
 3. **Privacy by Design:** Zero student credential storage, zero chat log retention on disk.
 4. **Transparent Citations:** Direct link to exact PDF page number and verbatim text for auditability.

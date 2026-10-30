@@ -1,0 +1,10 @@
+chunk_id,page,section,part,text
+G9C0000,1,Course overview,Group 9 draft syllabus: Natural Language Processing and Large Language Models,"The new course Natural Language Processing and Large Language Models is offered to the programmes B.Tech COMP, B.Tech AIML, MBA Tech from the academic year 2027-28. The course modernises the NLP syllabi with fine-tuning and evaluation of large language models."
+G9C0001,2,Credits and teaching scheme,Group 9 draft syllabus: Natural Language Processing and Large Language Models,"The course carries 4 credits, with 3 lecture hours, 2 practical hours and 0 tutorial hours per week."
+G9C0002,3,Prerequisites,Group 9 draft syllabus: Natural Language Processing and Large Language Models,"The prerequisites for this course are: Machine Learning, Python Programming, Probability and Statistics."
+G9C0003,4,Unit 1: Text processing and language models,Group 9 draft syllabus: Natural Language Processing and Large Language Models,"Text processing and language models (8 hours). Tokenisation, n-gram models, perplexity."
+G9C0004,5,Unit 2: Transformers,Group 9 draft syllabus: Natural Language Processing and Large Language Models,"Transformers (10 hours). Self-attention, encoder and decoder models, BERT and GPT."
+G9C0005,6,Unit 3: Fine-tuning LLMs,Group 9 draft syllabus: Natural Language Processing and Large Language Models,"Fine-tuning LLMs (10 hours). Instruction tuning, LoRA and parameter-efficient fine-tuning."
+G9C0006,7,Lab work,Group 9 draft syllabus: Natural Language Processing and Large Language Models,"The course has lab work: fine-tune a small model with LoRA; build a retrieval-augmented QA system. Lab environment: Python, PyTorch, Hugging Face."
+G9C0007,8,Assessment and examination,Group 9 draft syllabus: Natural Language Processing and Large Language Models,How the course is assessed and examined: Internal continuous assessment of 50 marks and a term-end examination of 50 marks.
+G9C0008,9,Learning outcomes,Group 9 draft syllabus: Natural Language Processing and Large Language Models,Explain transformer architectures. Fine-tune a language model for a task.
