@@ -1,3 +1,9 @@
+> **Work in progress (branch `feature/rag-v2-curriculum`).** Sections below still describe the old system in places.
+> Added: section-aware chunks, BM25 + dense RRF, Groq query rewriting, reranking, multi-passage citations, query routing (`backend/router.py`), and Curriculum Intelligence inside the app (`backend/curriculum/`, vendored `curriculum_engine/` from jainamsethia/Curriculum-Intelligence-Engine; that repo has no licence file, so confirm reuse with its authors).
+> Curriculum results on SRB data compare course **names**, not syllabus content; add `data/curriculum/courses.jsonl` for unit-level results.
+> Still to do: run `evaluation/run_benchmark.py --pipeline legacy --split test` and `--pipeline improved --split test` for the final comparison; fix "Who is the Vice-Chancellor?" with Groq off (`tests/test_integration.py::test_week6_regression_cases`); browser check; update the docs.
+> Setup: `pip install -r requirements.txt`, then put the team `GROQ_API_KEY` in `.env` (never commit it).
+
 # AI University Assistant: Group 4 × Group 9 Integration
 
 **Course:** Natural Language Processing (SNLP)  

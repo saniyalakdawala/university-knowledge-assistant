@@ -1,0 +1,15 @@
+{
+ "features": [
+  "tfidf_cosine",
+  "maxsim_minilm",
+  "max_unit_minilm"
+ ],
+ "coef": [
+  1.5476,
+  1.6914,
+  2.2568
+ ],
+ "intercept": -3.0684,
+ "fitted_on": "validation reference labels (any overlap)",
+ "encoder": "all-MiniLM-L6-v2"
+}

@@ -1,0 +1,64 @@
+{
+ "redundancy": {
+  "baseline": {
+   "flags_labelled": 20,
+   "uncertain": 0,
+   "precision": 0.25
+  },
+  "core": {
+   "flags_labelled": 20,
+   "uncertain": 0,
+   "precision": 0.8
+  }
+ },
+ "prerequisite": {
+  "baseline": {
+   "flags_labelled": 20,
+   "uncertain": 0,
+   "precision": 0.05
+  },
+  "core": {
+   "flags_labelled": 20,
+   "uncertain": 0,
+   "precision": 0.1
+  }
+ },
+ "emerging_gap": {
+  "core": {
+   "flags_labelled": 5,
+   "uncertain": 0,
+   "precision": 1.0
+  }
+ },
+ "emerging_covered": {
+  "core": {
+   "flags_labelled": 62,
+   "uncertain": 0,
+   "precision": 0.339
+  }
+ },
+ "topic_label": {
+  "core": {
+   "flags_labelled": 40,
+   "uncertain": 0,
+   "precision": 0.7
+  }
+ },
+ "emerging_gap_recall": 0.109,
+ "emerging_real_gaps": 46,
+ "agreement_pass1_vs_pass2": {
+  "n_items": 187,
+  "n_both_labelled": 187,
+  "percent_agreement": 0.973,
+  "cohen_kappa": 0.945,
+  "kappa_weights": "none",
+  "status": {
+   "agreed": 182,
+   "majority": 5
+  },
+  "consensus": {
+   "correct": 78,
+   "wrong": 109
+  }
+ }
+}

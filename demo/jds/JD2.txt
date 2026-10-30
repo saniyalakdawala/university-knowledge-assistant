@@ -1,0 +1,11 @@
+SYNTHETIC SAMPLE JOB DESCRIPTION, written for the Group 9 demo (not a real posting)
+Role: NLP Research Engineer, Domain Adaptation of LLMs (Legal and Healthcare)
+Responsibilities:
+- Adapt large language models to legal and clinical text through continued pre-training and supervised fine-tuning.
+- Align models with human preferences using reinforcement learning from human feedback and direct preference optimisation.
+- Curate, deduplicate and filter domain corpora, and design annotation guidelines for preference data.
+- Evaluate models for factual accuracy, bias and safety before release.
+Requirements:
+- Solid foundations in probability, linear algebra and deep learning.
+- Experience with transformer language models, tokenizers and the Hugging Face ecosystem.
+- Familiarity with responsible AI practices and model documentation.

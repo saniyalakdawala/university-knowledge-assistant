@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const chatForm = document.getElementById("chat-form");
   const questionInput = document.getElementById("question-input");
   const submitBtn = document.getElementById("submit-btn");
+  const sessionId = `web-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 
   // Auto-resize input textarea and handle Enter to submit
   questionInput.addEventListener("keydown", (e) => {
@@ -42,7 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           question: question,
-          route: "auto"
+          route: "auto",
+          session_id: sessionId
         })
       });
 
@@ -112,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const isAbstained = srb && srb.abstained;
 
     let mainText = "";
-    if (isAbstained && (!curr || curr.is_fallback)) {
+    if (isAbstained && !curr) {
       mainText = "I could not find this information in the Student Resource Book 2026.";
     } else {
       mainText = data.synthesized_answer || (srb ? srb.answer : (curr ? curr.summary : "No answer available."));
@@ -131,6 +133,36 @@ document.addEventListener("DOMContentLoaded", () => {
         quoteDiv.textContent = `“${quoteText}”`;
         bubble.appendChild(quoteDiv);
       }
+    }
+
+    // Further sources when an answer draws on several passages
+    if (srb && !isAbstained && Array.isArray(srb.citations) && srb.citations.length > 1) {
+      srb.citations.slice(1).forEach((c) => {
+        if (c.quote && c.quote.length > 20) {
+          const extra = document.createElement("blockquote");
+          extra.className = "evidence-quote";
+          extra.textContent = `\u201c${c.quote}\u201d (${c.section}, page ${c.page})`;
+          bubble.appendChild(extra);
+        }
+      });
+    }
+
+    // Curriculum details and what the result rests on
+    if (curr && Array.isArray(curr.details) && curr.details.length) {
+      const list = document.createElement("ul");
+      list.className = "curriculum-details";
+      curr.details.forEach((d) => {
+        const li = document.createElement("li");
+        li.textContent = `${d.label}: ${d.value}`;
+        list.appendChild(li);
+      });
+      bubble.appendChild(list);
+    }
+    if (curr && curr.note) {
+      const note = document.createElement("div");
+      note.className = "curriculum-note";
+      note.textContent = curr.note;
+      bubble.appendChild(note);
     }
 
     // 3. Official Rubric Output Verification (Fulfills exact rubric: Answer, Supporting Doc, Section, Confidence Score)
@@ -168,18 +200,25 @@ document.addEventListener("DOMContentLoaded", () => {
         scoreLabel = "Below Policy Threshold";
       }
     } else if (curr) {
-      docText = "Curriculum Reference Catalog (Group 9)";
-      sectionText = curr.course ? `${curr.course.code || ''} - ${curr.course.title || ''}` : "Course Catalog";
-      scoreVal = 1.0;
-      scoreLevel = "high";
-      scoreLabel = curr.is_fallback ? "Catalog Stand-In" : "Live API Verified";
+      const page = (curr.citations && curr.citations[0] && curr.citations[0].page) || (curr.course && curr.course.page);
+      docText = "Curriculum Intelligence · SRB 2026 programme structures" + (page ? ` · Page ${page}` : "");
+      sectionText = (curr.intent || "curriculum").replace(/_/g, " ");
+      scoreVal = typeof curr.confidence === "number" ? curr.confidence : null;
+      scoreLevel = curr.data_basis === "full_syllabus" || curr.data_basis === "srb_structure" ? "high" : "medium";
+      scoreLabel = {
+        full_syllabus: "Syllabus Content",
+        srb_structure: "Printed in SRB",
+        name_only: "Course Names Only",
+        outcome_text: "Outcome Text",
+      }[curr.data_basis] || "Curriculum";
+      if (curr.is_fallback) scoreLabel = "Remote Engine Offline";
     }
 
     if (curr && srb && !curr.is_fallback) {
-      docText += " + Curriculum API";
+      docText += " + Curriculum Intelligence";
     }
 
-    const scoreDisplay = `${scoreVal.toFixed(2)} · ${scoreLabel}`;
+    const scoreDisplay = scoreVal === null ? scoreLabel : `${scoreVal.toFixed(2)} \u00b7 ${scoreLabel}`;
 
     rubricCard.innerHTML = `
       <div class="rubric-grid">

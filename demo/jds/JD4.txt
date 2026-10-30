@@ -1,0 +1,11 @@
+SYNTHETIC SAMPLE JOB DESCRIPTION, written for the Group 9 demo (not a real posting)
+Role: Applied Scientist, Multilingual and Indic Language Models
+Responsibilities:
+- Fine-tune multilingual large language models for Indian languages, including Hindi and Marathi.
+- Handle tokenization, transliteration and code-mixed text in training data.
+- Compress fine-tuned models through knowledge distillation and quantization for mobile deployment.
+- Build evaluation benchmarks for machine translation, summarization and question answering.
+Requirements:
+- Background in natural language processing, sequence-to-sequence models and attention.
+- Experience with transfer learning and fine-tuning pre-trained transformers.
+- Strong experimental design and statistical evaluation skills.

@@ -1,0 +1,11 @@
+SYNTHETIC SAMPLE JOB DESCRIPTION, written for the Group 9 demo (not a real posting)
+Role: Machine Learning Engineer, Retrieval-Augmented Generation
+Responsibilities:
+- Build retrieval-augmented generation systems that combine vector search with fine-tuned language models.
+- Fine-tune sentence embedding models with contrastive learning to improve retrieval quality.
+- Index documents in vector databases and evaluate retrieval with recall and ranking metrics.
+- Design prompts and guardrails that keep generated answers grounded in retrieved sources.
+Requirements:
+- Experience with word embeddings, sentence transformers and semantic similarity.
+- Knowledge of information retrieval, BM25 and evaluation of search systems.
+- Python, PyTorch and REST API development.

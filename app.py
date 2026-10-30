@@ -1,29 +1,34 @@
 import os
-os.environ["OMP_NUM_THREADS"] = "1"
-os.environ["MKL_NUM_THREADS"] = "1"
+os.environ.setdefault("OMP_NUM_THREADS", os.getenv("TORCH_THREADS", "4"))
+os.environ.setdefault("MKL_NUM_THREADS", os.getenv("TORCH_THREADS", "4"))
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 try:
     import torch
-    torch.set_num_threads(1)
+    torch.set_num_threads(int(os.environ["OMP_NUM_THREADS"]))
 except ImportError:
     pass
 
 import re
 import time
 import logging
+from collections import OrderedDict
 from datetime import datetime, timezone
 from pathlib import Path
 from contextlib import asynccontextmanager
+from typing import Dict, List, Optional
 
 from fastapi import FastAPI, HTTPException, Request, Depends
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.middleware.cors import CORSMiddleware
 
-from backend.config import BASE_DIR, PORT, HOST, GROQ_API_KEY, GROQ_MODEL, GROUP9_API_URL
-from backend.schemas import ChatRequest, ChatResponse, HealthStatus, SRBResult, CurriculumResult
+from backend.config import BASE_DIR, PORT, HOST, GROQ_API_KEY, GROQ_MODEL, GROUP9_API_URL, CURRICULUM_BACKEND, EMB_MODEL_NAME, CE_MODEL_NAME
+from backend.schemas import (ChatRequest, ChatResponse, HealthStatus, SRBResult, CurriculumResult, CourseCompareRequest, ProgrammeCompareRequest,
+                             OverlapRequest, ProgrammeRequest, PrerequisiteRequest, BloomRequest, ModernizeRequest)
 from backend.rag_service import get_rag_service, UniversityRAGService
 from backend.curriculum_client import CurriculumClient
+from backend.curriculum.service import get_curriculum_service
+from backend.router import route_question
 
 # Setup logging
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s: %(message)s")
@@ -49,13 +54,18 @@ async def lifespan(app: FastAPI):
         logger.info(f"Group 4 RAG Service loaded with {len(rag.chunks)} chunks.")
     except Exception as e:
         logger.error(f"Error initializing RAG Service: {e}")
+    try:
+        get_curriculum_service().warm()
+        logger.info("Curriculum Intelligence service ready.")
+    except Exception as e:
+        logger.error(f"Error initializing Curriculum service: {e}")
     yield
     logger.info("Shutting down University AI Assistant server...")
 
 app = FastAPI(
     title="AI University Assistant API",
-    description="Group 4 (University Knowledge Assistant) × Group 9 (Curriculum Intelligence Engine) Integration API",
-    version="1.0.0",
+    description="University Knowledge RAG and Curriculum Intelligence behind one chat API",
+    version="2.0.0",
     lifespan=lifespan
 )
 
@@ -70,38 +80,43 @@ app.add_middleware(
 
 FRONTEND_DIR = BASE_DIR / "frontend"
 
-# ----------------- Router Logic -----------------
-def determine_route(question: str, requested_route: str = "auto") -> str:
-    """Intelligently route the question to 'srb', 'curriculum', or 'both'."""
-    if requested_route in ("srb", "curriculum", "both"):
-        return requested_route
+# ----------------- Conversation memory -----------------
+_SESSIONS: "OrderedDict[str, List[Dict[str, str]]]" = OrderedDict()
+MAX_SESSIONS, MAX_TURNS = 500, 6
 
-    q = question.lower()
-    
-    # Curriculum keywords
-    curr_keywords = [
-        "prerequisite", "prereq", "syllabus", "overlap", "redundancy", "course content",
-        "units", "bloom", "curriculum", "machine learning", "deep learning", "nlp",
-        "natural language processing", "operating systems", "modernize"
-    ]
-    # SRB policy keywords
-    srb_keywords = [
-        "attendance", "grade", "grading", "cgpa", "exam", "re-exam", "re-examination",
-        "fee", "fees", "refund", "scholarship", "library", "dean", "council", "atkt",
-        "passing standard", "rules", "conduct", "ragging", "disciplinary", "leave",
-        "deferment", "break", "convocation", "portal", "credit", "minimum"
-    ]
 
-    has_curr = any(kw in q for kw in curr_keywords)
-    has_srb = any(kw in q for kw in srb_keywords)
+def session_history(session_id: Optional[str]) -> List[Dict[str, str]]:
+    return list(_SESSIONS.get(session_id, [])) if session_id else []
 
-    if has_curr and has_srb:
-        return "both"
-    elif has_curr:
-        return "curriculum"
-    else:
-        # Default to SRB (Group 4 Knowledge base)
-        return "srb"
+
+def remember(session_id: Optional[str], question: str, answer: str) -> None:
+    if not session_id:
+        return
+    turns = _SESSIONS.setdefault(session_id, [])
+    turns.append({"question": question, "answer": answer})
+    del turns[:-MAX_TURNS]
+    _SESSIONS.move_to_end(session_id)
+    while len(_SESSIONS) > MAX_SESSIONS:
+        _SESSIONS.popitem(last=False)
+
+
+def groq_for_routing():
+    """The RAG service's Groq client, when a key is configured."""
+    try:
+        rag = get_rag_service()
+    except Exception:
+        return None
+    return (lambda messages, max_tokens: rag._chat(messages, max_tokens, json_mode=True)) if rag.groq_api_key else None
+
+
+def determine_route(question: str, requested_route: str = "auto") -> Dict:
+    """Decide which service answers: rules for clear questions, Groq for ambiguous ones."""
+    try:
+        detect = get_curriculum_service().detect_courses
+    except Exception as e:
+        logger.warning(f"Curriculum service unavailable for routing: {e}")
+        detect = None
+    return route_question(question, requested_route, detect, groq_for_routing())
 
 
 # ----------------- API Endpoints -----------------
@@ -116,23 +131,22 @@ def health_check():
             "pdf_path": rag.pdf_path,
             "chunks_count": len(rag.chunks),
             "gate": rag.gate,
-            "embedder": "sentence-transformers/all-MiniLM-L6-v2",
-            "reranker": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+            "embedder": EMB_MODEL_NAME,
+            "reranker": CE_MODEL_NAME,
             "groq_configured": bool(rag.groq_api_key),
             "groq_model": rag.llm_model,
         }
     except Exception as e:
         group4_info = {"status": "error", "error": str(e)}
 
-    # Check Group 9
-    group9_health = curriculum_client.check_health()
-    group9_info = {
-        "status": "online" if group9_health["connected"] else "stand-in (offline fallback)",
-        "connected": group9_health["connected"],
-        "endpoint": curriculum_client.base_url,
-        "details": group9_health.get("details"),
-        "error": group9_health.get("error")
-    }
+    # Curriculum Intelligence: built in, with an optional remote engine
+    try:
+        group9_info = {"status": "ready", "backend": CURRICULUM_BACKEND, "connected": True, **get_curriculum_service().stats()}
+    except Exception as e:
+        group9_info = {"status": "error", "backend": CURRICULUM_BACKEND, "connected": False, "error": str(e)}
+    if CURRICULUM_BACKEND == "remote":
+        remote = curriculum_client.check_health()
+        group9_info.update(remote_connected=remote["connected"], endpoint=curriculum_client.base_url, error=remote.get("error"))
 
     return {
         "status": "ok",
@@ -149,57 +163,46 @@ def chat_endpoint(req: ChatRequest):
     if not question:
         raise HTTPException(status_code=422, detail="Question cannot be empty.")
 
-    route = determine_route(question, req.route or "auto")
-    logger.info(f"Received query: '{question}' | Route: {route}")
+    routing = determine_route(question, req.route or "auto")
+    route = routing["route"]
+    history = session_history(req.session_id)
+    logger.info(f"Received query | route: {route} ({routing['decided_by']})")
 
     srb_res: Optional[SRBResult] = None
     curriculum_res: Optional[CurriculumResult] = None
     synth_parts = []
 
-    # 1. Execute Group 4 RAG query if route is 'srb' or 'both'
+    # 1. University Knowledge RAG
     if route in ("srb", "both"):
         try:
-            rag = get_rag_service()
-            raw_srb = rag.ask(question)
-            # If composite query in both mode abstains, try targeting the policy-specific clause
-            if raw_srb.get("abstained") and route == "both":
-                parts = re.split(r",\s*(?:and\s+)?|\s+and\s+", question, flags=re.I)
-                srb_kws = ["attendance", "grade", "exam", "passing", "rule", "fee", "cgpa", "atkt", "minimum", "credit"]
-                srb_parts = [p for p in parts if any(k in p.lower() for k in srb_kws)]
-                if srb_parts:
-                    sub_q = " ".join(srb_parts)
-                    sub_res = rag.ask(sub_q)
-                    if not sub_res.get("abstained"):
-                        raw_srb = sub_res
-
-            srb_res = SRBResult(**raw_srb)
-            if not srb_res.abstained:
-                synth_parts.append(f"Official University Policy (SRB 2026): {srb_res.answer}")
-            else:
-                synth_parts.append(f"Official University Policy: {srb_res.answer}")
+            raw_srb = get_rag_service().ask(routing["srb_question"] if route == "both" else question, history)
+            srb_res = SRBResult(**{k: v for k, v in raw_srb.items() if k in SRBResult.model_fields})
+            prefix = "Official University Policy (SRB 2026)" if not srb_res.abstained else "Official University Policy"
+            synth_parts.append(f"{prefix}: {srb_res.answer}")
         except Exception as e:
-            logger.error(f"Error during Group 4 RAG retrieval: {e}")
+            logger.error(f"Error during RAG retrieval: {e}")
             srb_res = SRBResult(
                 answer="Error querying Student Resource Book.",
                 source="System Error",
                 confidence=0.0,
                 abstained=True,
-                refusal_reason=str(e),
+                refusal_reason="The knowledge base could not be queried.",
                 mode="error"
             )
 
-    # 2. Execute Group 9 Curriculum query if route is 'curriculum' or 'both'
+    # 2. Curriculum Intelligence
     if route in ("curriculum", "both"):
         try:
-            curriculum_res = curriculum_client.query(question, req.course_context)
+            asked = routing["curriculum_question"] if route == "both" else question
+            curriculum_res = curriculum_client.query(asked, req.course_context, routing["curriculum_plan"])
             if curriculum_res.summary:
-                synth_parts.append(f"Curriculum Intelligence (Group 9): {curriculum_res.summary}")
+                synth_parts.append(f"Curriculum Intelligence: {curriculum_res.summary}")
         except Exception as e:
-            logger.error(f"Error querying Group 9 Curriculum Engine: {e}")
+            logger.error(f"Error querying Curriculum Intelligence: {e}")
             curriculum_res = CurriculumResult(
                 connected=False,
                 is_fallback=True,
-                status_note=f"Error contacting Group 9: {e}",
+                status_note="Curriculum Intelligence could not process this request.",
                 summary="Curriculum details could not be processed at this time."
             )
 
@@ -213,14 +216,92 @@ def chat_endpoint(req: ChatRequest):
     else:
         synthesized_text = "No answer could be generated for this request."
 
+    remember(req.session_id, question, synthesized_text)
     return ChatResponse(
         question=question,
         route_taken=route,  # type: ignore
         synthesized_answer=synthesized_text,
         srb=srb_res,
         curriculum=curriculum_res,
-        timestamp=datetime.now(timezone.utc).isoformat()
+        timestamp=datetime.now(timezone.utc).isoformat(),
+        routed_by=routing["decided_by"],
+        session_id=req.session_id,
     )
+
+
+# ----------------- Curriculum Intelligence API -----------------
+def curriculum_call(fn, *args, **kwargs):
+    try:
+        return fn(*args, **kwargs)
+    except KeyError as e:
+        raise HTTPException(status_code=404, detail=str(e.args[0]))
+
+
+def known_course(name: str) -> str:
+    resolved = get_curriculum_service().resolve_name(name)
+    if not resolved:
+        raise HTTPException(status_code=404, detail=f"no course matching {name!r}")
+    return resolved
+
+
+def known_programme(code: str) -> str:
+    svc = get_curriculum_service()
+    if code in svc.eng.view:
+        return code
+    found = svc.detect_programmes(code)
+    if found:
+        return found[0]
+    raise HTTPException(status_code=404, detail=f"unknown programme {code!r}; known: {svc.programmes()}")
+
+
+@app.get("/api/curriculum/programmes")
+def curriculum_programmes():
+    return {"programmes": get_curriculum_service().payload["programmes"], "codes": get_curriculum_service().programmes()}
+
+
+@app.get("/api/curriculum/courses")
+def curriculum_search(q: str = "", programme: Optional[str] = None, k: int = 10):
+    return get_curriculum_service().search(q, known_programme(programme) if programme else None, min(max(k, 1), 50))
+
+
+@app.post("/api/curriculum/compare-courses")
+def curriculum_compare_courses(req: CourseCompareRequest):
+    return curriculum_call(get_curriculum_service().compare_courses, known_course(req.course_a), known_course(req.course_b), req.programme)
+
+
+@app.post("/api/curriculum/compare-programmes")
+def curriculum_compare_programmes(req: ProgrammeCompareRequest):
+    return get_curriculum_service().compare_programmes(known_programme(req.programme_a), known_programme(req.programme_b))
+
+
+@app.post("/api/curriculum/overlaps")
+def curriculum_overlaps(req: OverlapRequest):
+    return curriculum_call(get_curriculum_service().find_overlaps, known_course(req.course), req.k, req.programme)
+
+
+@app.post("/api/curriculum/redundancy")
+def curriculum_redundancy(req: ProgrammeRequest):
+    return get_curriculum_service().detect_redundancy(known_programme(req.programme))
+
+
+@app.post("/api/curriculum/missing-topics")
+def curriculum_missing_topics(req: ProgrammeRequest):
+    return get_curriculum_service().missing_topics(known_programme(req.programme))
+
+
+@app.post("/api/curriculum/prerequisites")
+def curriculum_prerequisites(req: PrerequisiteRequest):
+    return curriculum_call(get_curriculum_service().prerequisites, known_course(req.course), req.programme, req.topics)
+
+
+@app.post("/api/curriculum/bloom")
+def curriculum_bloom(req: BloomRequest):
+    return get_curriculum_service().bloom(req.outcomes, req.department)
+
+
+@app.post("/api/curriculum/modernize")
+def curriculum_modernize(req: ModernizeRequest):
+    return curriculum_call(get_curriculum_service().modernize, [known_course(c) for c in req.courses], req.job_descriptions, req.title, req.programme)
 
 
 # ----------------- Static Frontend Hosting -----------------

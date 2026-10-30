@@ -10,6 +10,11 @@ __pycache__/
 data/cache/*
 !data/cache/chunks.pkl
 !data/cache/sent_emb.npy
+data/cache/v2/
+data/cache/legacy/
+data/curriculum/interim/
+data/curriculum/courses.jsonl
+evaluation/results/llm_cache.json
 week5_outputs/
 .pytest_cache/
 
@@ -22,3 +27,4 @@ week5_outputs/
 .idea/
 .DS_Store
 Thumbs.db
+evaluation/results/llm_cache_legacy.json

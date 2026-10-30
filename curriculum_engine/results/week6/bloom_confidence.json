@@ -1,0 +1,16 @@
+{
+ "Analyze": 1.0,
+ "Apply": 0.786,
+ "Create": 0.429,
+ "Evaluate": 1.0,
+ "Remember": 0.875,
+ "Understand": 0.704,
+ "_n": {
+  "Analyze": 9,
+  "Apply": 28,
+  "Create": 7,
+  "Evaluate": 6,
+  "Remember": 8,
+  "Understand": 27
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "status": "DRAFT - pending approval by Group 9 (9 Oct 2026). Only 'verified' entries are used in metrics.",
+ "sources": {
+  "WEF2026": {"title": "World Economic Forum, Top 10 Emerging Technologies of 2026 (published 23 June 2026)", "url": "https://www.weforum.org/publications/top-10-emerging-technologies-of-2026/", "verified": "page opened 9 Oct 2026"},
+  "WEF2025": {"title": "World Economic Forum, Top 10 Emerging Technologies of 2025 (published 24 June 2025)", "url": "https://www.weforum.org/publications/top-10-emerging-technologies-of-2025/digest/", "verified": "page opened 9 Oct 2026"},
+  "AIINDEX2026": {"title": "Stanford HAI, The 2026 AI Index Report (top takeaways)", "url": "https://hai.stanford.edu/ai-index/2026-ai-index-report", "verified": "page opened 9 Oct 2026"},
+  "AIINDEX2025": {"title": "Stanford HAI, The 2025 AI Index Report (top takeaways)", "url": "https://hai.stanford.edu/ai-index/2025-ai-index-report", "verified": "page opened 9 Oct 2026"},
+  "AICTE-QIP": {"title": "AICTE-QIP-PG Certificate Programme in Emerging Areas (areas under the programme)", "url": "https://facilities.aicte-india.org/QIP-PG/", "verified": "page opened 9 Oct 2026"}
+ },
+ "topics": [
+  {"topic": "Large language models and generative AI", "description": "transformer language models, pre-training and fine-tuning, prompting, generative AI for text, images and code", "programmes": ["AI", "COMP", "CSBS", "CSE-CYBER", "CSE-DS", "DS", "IT"], "source": "AIINDEX2026", "verified": true},
+  {"topic": "AI agents", "description": "autonomous AI agents that plan and use tools to complete multi-step computer tasks", "programmes": ["AI", "COMP", "CSE-DS", "DS", "IT"], "source": "AIINDEX2026", "verified": true},
+  {"topic": "Responsible AI and AI safety evaluation", "description": "AI safety, fairness, transparency, responsible AI benchmarks and AI governance", "programmes": ["AI", "COMP", "CSBS", "CSE-DS", "DS", "IT"], "source": "AIINDEX2026", "verified": true},
+  {"topic": "Efficient small AI models and edge AI", "description": "efficient small machine learning models, model compression and low-cost inference on edge devices", "programmes": ["AI", "COMP", "CSE-DS", "DS", "EXTC", "IT"], "source": "AIINDEX2025", "verified": true},
+  {"topic": "AI chips and data-centre hardware", "description": "AI accelerators, GPUs, semiconductor fabrication and energy use of data centres", "programmes": ["COMP", "EXTC"], "source": "AIINDEX2026", "verified": true},
+  {"topic": "World models", "description": "AI world models that learn the dynamics of physical environments from multimodal data for simulation and reasoning", "programmes": ["AI", "CSE-DS", "DS"], "source": "WEF2026", "verified": true},
+  {"topic": "Lattice-based and post-quantum cryptography", "description": "post-quantum cryptography, lattice-based encryption and migration to quantum-safe standards", "programmes": ["COMP", "CSE-CYBER", "IT"], "source": "WEF2026", "verified": true},
+  {"topic": "Quantum computing and quantum simulation", "description": "qubits, quantum algorithms and quantum simulation of molecules", "programmes": ["AI", "COMP", "CSE-DS", "DS", "IT"], "source": "WEF2026", "verified": true},
+  {"topic": "Generative AI watermarking", "description": "watermarking AI-generated text, images and audio to verify authenticity and trace origin", "programmes": ["AI", "CSE-CYBER", "DS"], "source": "WEF2025", "verified": true},
+  {"topic": "Collaborative sensing", "description": "networks of connected sensors in homes, cities and vehicles with AI for shared real-time decisions", "programmes": ["EXTC", "MECHATRONICS", "IT"], "source": "WEF2025", "verified": true},
+  {"topic": "Everything-to-grid energy", "description": "vehicle-to-grid and building-to-grid energy storage, distributed energy resources and smart grid coordination", "programmes": ["EXTC", "MECHANICAL", "MECHATRONICS"], "source": "WEF2026", "verified": true},
+  {"topic": "Structural battery composites", "description": "composite materials that store energy and carry structural load in vehicles and aircraft", "programmes": ["MECHANICAL", "MECHATRONICS"], "source": "WEF2025", "verified": true},
+  {"topic": "Advanced nuclear technologies", "description": "small modular nuclear reactors and next-generation reactor cooling systems", "programmes": ["MECHANICAL"], "source": "WEF2025", "verified": true},
+  {"topic": "Osmotic power", "description": "salinity-gradient osmotic power generation with membranes", "programmes": ["MECHANICAL", "CIVIL"], "source": "WEF2025", "verified": true},
+  {"topic": "Passive radiative cooling materials", "description": "passive radiative cooling paints, films and roof materials that cool buildings without electricity", "programmes": ["CIVIL", "MECHANICAL"], "source": "WEF2026", "verified": true},
+  {"topic": "PFAS destruction", "description": "destruction of PFAS forever chemicals in groundwater and industrial wastewater treatment", "programmes": ["CIVIL"], "source": "WEF2026", "verified": true},
+  {"topic": "Drone technology", "description": "unmanned aerial vehicles, drone design, flight control and drone applications", "programmes": ["EXTC", "MECHANICAL", "MECHATRONICS"], "source": "AICTE-QIP", "verified": true},
+  {"topic": "Intelligent transport systems", "description": "intelligent transportation systems, connected vehicles, traffic sensing and control", "programmes": ["CIVIL", "MECHANICAL"], "source": "AICTE-QIP", "verified": true},
+  {"topic": "3D printing and additive manufacturing", "description": "additive manufacturing processes, 3D printing technologies and design for additive manufacturing", "programmes": ["MECHANICAL", "MECHATRONICS"], "source": "AICTE-QIP", "verified": true},
+  {"topic": "AR / VR and cyber-physical systems", "description": "augmented, mixed and virtual reality, and cyber-physical systems", "programmes": ["COMP", "IT", "MECHATRONICS"], "source": "AICTE-QIP", "verified": true},
+  {"topic": "Robotics", "description": "robot kinematics, robot control, industrial robots and robot programming", "programmes": ["AI", "MECHANICAL", "MECHATRONICS"], "source": "AICTE-QIP", "verified": true},
+  {"topic": "Retrieval-augmented generation", "description": "retrieval-augmented generation with vector databases and language models", "programmes": ["AI", "COMP", "DS"], "source": null, "verified": false, "note": "unverified, to confirm: no verified source opened yet"},
+  {"topic": "MLOps", "description": "deploying, monitoring and maintaining machine learning models in production", "programmes": ["AI", "CSE-DS", "DS"], "source": null, "verified": false, "note": "unverified, to confirm: no verified source opened yet"},
+  {"topic": "Blockchain", "description": "blockchain, distributed ledgers and smart contracts", "programmes": ["COMP", "CSE-CYBER", "IT"], "source": null, "verified": false, "note": "unverified, to confirm: AICTE nine-area list seen only in a search summary, no AICTE page opened"}
+ ]
+}

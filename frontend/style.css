@@ -485,3 +485,18 @@ body {
     align-items: flex-start;
   }
 }
+
+/* Curriculum Intelligence results */
+.curriculum-details {
+  margin: 10px 0 0;
+  padding-left: 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.curriculum-note {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  line-height: 1.45;
+  color: #5b6472;
+}

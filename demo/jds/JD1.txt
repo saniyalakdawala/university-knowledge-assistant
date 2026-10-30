@@ -1,0 +1,11 @@
+SYNTHETIC SAMPLE JOB DESCRIPTION, written for the Group 9 demo (not a real posting)
+Role: LLM Fine-Tuning Engineer, Customer Support Assistant
+Responsibilities:
+- Fine-tune open-weight large language models for multi-turn customer support conversations using supervised fine-tuning.
+- Apply parameter-efficient fine-tuning methods such as LoRA and QLoRA with the Hugging Face Transformers and PEFT libraries.
+- Build and clean instruction-tuning datasets from support tickets, removing personal data before training.
+- Evaluate fine-tuned models with automatic metrics and human evaluation, and track hallucination rates.
+Requirements:
+- Strong Python and PyTorch skills, and experience training transformer models on GPUs.
+- Understanding of tokenization, attention and the transformer architecture.
+- Experience with prompt engineering and few-shot prompting as a baseline before fine-tuning.

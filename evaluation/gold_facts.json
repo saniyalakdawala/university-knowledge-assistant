@@ -1,0 +1,1416 @@
+{
+ "facts": {
+  "Q001": {
+   "question": "What is the minimum attendance required to appear for the end-semester exam?",
+   "answer": "You need at least 80% attendance in each individual course.",
+   "key": "80%",
+   "evidence": "Students who have maintained 80% or higher attendance in individual courses",
+   "page": 11
+  },
+  "Q002": {
+   "question": "I was marked absent even though I was in class. What should I do?",
+   "answer": "Inform the concerned faculty immediately with a written application stating you were present, and keep a copy.",
+   "key": "written application",
+   "evidence": "he/she should immediately inform the concerned faculty by submitting a written application",
+   "page": 10
+  },
+  "Q003": {
+   "question": "How many days do I have to report a mistake in the monthly attendance report?",
+   "answer": "Within 3 days of the attendance record being published; no claims are accepted after that.",
+   "key": "3 days",
+   "evidence": "within 3 days of the publication of the attendance record",
+   "page": 10
+  },
+  "Q004": {
+   "question": "When will my parents be informed about my attendance?",
+   "answer": "If your monthly attendance is below 80%, parents are informed by email/WhatsApp.",
+   "key": "less than 80%",
+   "evidence": "if the student has less than 80% attendance monthly through email/WhatsApp",
+   "page": 10
+  },
+  "Q005": {
+   "question": "By when should I submit a medical certificate after coming back from medical leave?",
+   "answer": "Within 3 days of resuming classes, along with copies of all medical reports.",
+   "key": "within 3 days of resuming",
+   "evidence": "within 3 days of resuming classes after medical leave",
+   "page": 10
+  },
+  "Q006": {
+   "question": "What happens if my attendance in a subject goes below 80%?",
+   "answer": "You will have to take re-admission, either in the same semester or for the full year in the next academic year.",
+   "key": "re-admission",
+   "evidence": "Students will be required to take re-admission. Students can opt",
+   "page": 11
+  },
+  "Q007": {
+   "question": "Am I marked present in regular classes on the day I write a re-exam?",
+   "answer": "Yes. You are marked present for all applicable subjects on the day of your re-examination.",
+   "key": "marked present",
+   "evidence": "such students shall be marked present for all applicable subjects on that day",
+   "page": 10
+  },
+  "Q008": {
+   "question": "How much absence can be relaxed for medical reasons or extra-curricular activities?",
+   "answer": "Up to 20% absence can be relaxed, as long as attendance stays at 80% or above in each course.",
+   "key": "20%",
+   "evidence": "A maximum relaxation of up to 20% absence may be granted",
+   "page": 11
+  },
+  "Q009": {
+   "question": "What is the minimum duration of a term end exam?",
+   "answer": "At least 2 hours.",
+   "key": "2 hrs",
+   "evidence": "Minimum duration of Term End Examinations: 2 hrs",
+   "page": 13
+  },
+  "Q010": {
+   "question": "What do I need to score to pass a course that has only ICA and no final exam?",
+   "answer": "At least 40% of the total ICA marks.",
+   "key": "40%",
+   "evidence": "The passing criteria for such ONLY ICA courses will be at 40% minimum of total of ICA marks",
+   "page": 13
+  },
+  "Q011": {
+   "question": "Is there a re-exam if I fail an only-ICA course?",
+   "answer": "No. There is no re-exam for only-ICA courses; you must take re-admission.",
+   "key": "no re-examination",
+   "evidence": "there will be no re-examination for Only ICA Courses",
+   "page": 13
+  },
+  "Q012": {
+   "question": "Can grace marks be added to my internal (ICA) marks?",
+   "answer": "No. Grace marks are never awarded on the ICA component.",
+   "key": "never",
+   "evidence": "Grace Marks will never be awarded on the ICA (Internal Continuous Assessment) component|Grace marks will never to be awarded on ICA",
+   "page": 13
+  },
+  "Q013": {
+   "question": "How long do I have to raise an issue about my ICA marks on the portal?",
+   "answer": "Within two days of the marks being published.",
+   "key": "two days",
+   "evidence": "should be informed and resolved within two days of publication on the portal",
+   "page": 13
+  },
+  "Q014": {
+   "question": "If I am caught copying in an assignment and allowed to resubmit, how many marks can I get?",
+   "answer": "50% of the total marks or your actual marks, whichever is lower (for group work this applies to everyone).",
+   "key": "50%",
+   "evidence": "the student will be awarded 50% of the total marks or actual marks, whichever is lower",
+   "page": 14
+  },
+  "Q015": {
+   "question": "How many interdisciplinary courses can I take?",
+   "answer": "A maximum of 2: one in the fall session and one in the winter session.",
+   "key": "maximum of 2",
+   "evidence": "allowed to choose a maximum of 2 courses",
+   "page": 14
+  },
+  "Q016": {
+   "question": "Can first-year undergraduate students take CBCS courses?",
+   "answer": "No. First-year UG students are not eligible for CBCS courses.",
+   "key": "not eligible",
+   "evidence": "are not eligible to opt CBCS courses",
+   "page": 14
+  },
+  "Q017": {
+   "question": "How long is the Coursera license valid?",
+   "answer": "For one academic year only.",
+   "key": "one academic year",
+   "evidence": "Coursera license which will be valid for one academic year only",
+   "page": 15
+  },
+  "Q018": {
+   "question": "Where do I email an academic grievance?",
+   "answer": "Write to grievance.academic@nmims.edu.",
+   "key": "grievance.academic@nmims.edu",
+   "evidence": "the student may write to grievance.academic@nmims.edu",
+   "page": 15
+  },
+  "Q019": {
+   "question": "How early should I reach the exam hall?",
+   "answer": "At least 30 minutes before the exam starts.",
+   "key": "30 minutes before",
+   "evidence": "at least 30 minutes before the scheduled time of the commencement of the examination",
+   "page": 16
+  },
+  "Q020": {
+   "question": "Can I still write the exam if I come more than 30 minutes late?",
+   "answer": "No. Students arriving after 30 minutes are not allowed under any circumstances.",
+   "key": "not be allowed",
+   "evidence": "will not be allowed to write examination under any circumstances",
+   "page": 16
+  },
+  "Q021": {
+   "question": "Is a smart watch allowed in the exam hall?",
+   "answer": "No. Smart watches and similar devices are forbidden and will be confiscated.",
+   "key": "smart watch",
+   "evidence": "notes, scribbling papers, mobile phones, smart watch",
+   "page": 16
+  },
+  "Q022": {
+   "question": "Can I write my name or roll number on the answer book?",
+   "answer": "No. Answer books are QR coded; revealing your identity is treated as unfair means.",
+   "key": "qr coded|not write",
+   "evidence": "The answer books of the term-end examinations will be QR coded",
+   "page": 17
+  },
+  "Q023": {
+   "question": "What is the punishment for impersonation in an exam?",
+   "answer": "Permanent expulsion from the University.",
+   "key": "permanent expulsion",
+   "evidence": "Impersonation for a student or impersonation by a student in University or other examinations",
+   "page": 19
+  },
+  "Q024": {
+   "question": "What happens if a student is caught using unfair means more than twice?",
+   "answer": "Permanent expulsion from the University.",
+   "key": "permanent expulsion",
+   "evidence": "Student involved in uses of Unfair Means more than two occasions",
+   "page": 20
+  },
+  "Q025": {
+   "question": "What is the punishment for trying to bribe an examiner?",
+   "answer": "Exclusion from four additional examinations; the money goes to the Students Welfare Fund.",
+   "key": "four additional examinations",
+   "evidence": "Insertion of currency notes/ bribing or attempt to bribe",
+   "page": 19
+  },
+  "Q026": {
+   "question": "How much extra time does a student with a scribe get?",
+   "answer": "20 minutes per hour (e.g. 40 minutes for a 2-hour exam).",
+   "key": "20 minutes per hour",
+   "evidence": "compensatory time of 20 minutes per hour will be allowed",
+   "page": 17
+  },
+  "Q027": {
+   "question": "How early do I need to arrange a scribe for my exam?",
+   "answer": "At least one week before the exam, and inform the examination office.",
+   "key": "one week",
+   "evidence": "at least one week before the examination",
+   "page": 17
+  },
+  "Q028": {
+   "question": "Which hospitals can issue the learning disability certificate for the Mumbai campus?",
+   "answer": "Only Sion Hospital or Nair Hospital.",
+   "key": "sion hospital|nair hospital",
+   "evidence": "medical certificate from Sion Hospital / Nair Hospital only would be accepted",
+   "page": 18
+  },
+  "Q029": {
+   "question": "Can students with dyslexia get grace marks?",
+   "answer": "Yes, up to 3% of the aggregate marks of the subjects appeared in.",
+   "key": "3 per cent",
+   "evidence": "eligible for grace marks up to 3 per cent of the aggregate",
+   "page": 18
+  },
+  "Q030": {
+   "question": "Within how many days of the result can I ask for a photocopy of my answer sheet?",
+   "answer": "Within 2 days from the date of result declaration (including holidays).",
+   "key": "2 days",
+   "evidence": "Application for Photocopy/ Softcopy of the Answer Script Within 2 days",
+   "page": 21
+  },
+  "Q031": {
+   "question": "What is the deadline to apply for retotalling of marks?",
+   "answer": "Within 3 days from the date of result declaration (including holidays).",
+   "key": "3 days",
+   "evidence": "Application for Verification (retotalling of marks)",
+   "page": 21
+  },
+  "Q032": {
+   "question": "Can I apply for revaluation without taking a photocopy of my answer script?",
+   "answer": "No. You must first apply for the photocopy to be eligible for revaluation.",
+   "key": "not be eligible",
+   "evidence": "Students will not be eligible to apply for revaluation if they do not apply for a Photocopy",
+   "page": 21
+  },
+  "Q033": {
+   "question": "What happens if revaluation changes my marks by more than 20%?",
+   "answer": "A second revaluation is done and the better of the two revaluations becomes final.",
+   "key": "second revaluation",
+   "evidence": "Second revaluation of the said answer book shall be done",
+   "page": 22
+  },
+  "Q034": {
+   "question": "How long does the whole grievance redressal process take?",
+   "answer": "It is completed within 15 working days of receiving the application.",
+   "key": "15 working days",
+   "evidence": "completed within a period of 15 working days",
+   "page": 23
+  },
+  "Q035": {
+   "question": "How many grace marks can a student who fails get?",
+   "answer": "Up to 2% of aggregate marks, maximum 6 marks overall, and not more than 3% per subject.",
+   "key": "2 per cent|6 marks",
+   "evidence": "grace marks up to 2 per cent of the marks on the aggregate marks",
+   "page": 23
+  },
+  "Q036": {
+   "question": "Can I apply for revaluation of my viva or lab exam?",
+   "answer": "No. Grievance redressal applies only to term-end exams, not practicals, labs, viva or projects.",
+   "key": "will not apply",
+   "evidence": "The above mechanism will not apply to practicals / Labs / oral examinations",
+   "page": 21
+  },
+  "Q037": {
+   "question": "What percentage of students make it to the Dean's list?",
+   "answer": "The top 10% of the batch by CGPA.",
+   "key": "10%",
+   "evidence": "10% of the batch (top 10% students) on the basis of highest CGPA",
+   "page": 23
+  },
+  "Q038": {
+   "question": "How many prizes are given if my batch has 30 students?",
+   "answer": "Two prizes (for batches of 21 to 59 students).",
+   "key": "two prizes",
+   "evidence": "two prizes will be awarded where the number of students in the batch/stream is between 21 and 59",
+   "page": 23
+  },
+  "Q039": {
+   "question": "Can a student with an ATKT be on the rank holder list?",
+   "answer": "No. Students with F grades/ATKT or misconduct are ineligible.",
+   "key": "ineligible",
+   "evidence": "Students obtaining F grades/ATKT/ involved in unfair means or any misconduct will be ineligible",
+   "page": 23
+  },
+  "Q040": {
+   "question": "Who gets disqualified from the awards and scholarships process?",
+   "answer": "Students with an F grade, a misconduct record or low attendance are automatically disqualified.",
+   "key": "automatically disqualified",
+   "evidence": "will be automatically disqualified from the awards process",
+   "page": 24
+  },
+  "Q041": {
+   "question": "Where can I apply for government scholarships?",
+   "answer": "Through the National Scholarship Portal (NSP), scholarships.gov.in.",
+   "key": "national scholarship portal|nsp",
+   "evidence": "can avail national scholarship through the National Scholarship Portal (NSP)",
+   "page": 24
+  },
+  "Q042": {
+   "question": "Is there any scholarship for girls in technical courses?",
+   "answer": "Yes, the AICTE Pragati Scholarship Scheme for Girl Students, via NSP.",
+   "key": "pragati",
+   "evidence": "Pragati Scholarship Scheme for Girl Students",
+   "page": 24
+  },
+  "Q043": {
+   "question": "For what reasons can I defer my admission?",
+   "answer": "Serious medical illness or serious family-related reasons.",
+   "key": "medical illness|family-related",
+   "evidence": "Serious medical illness",
+   "page": 25
+  },
+  "Q044": {
+   "question": "Can a second-year student get admission deferment?",
+   "answer": "No. Admission deferment can be approved only for the first year.",
+   "key": "only for first year|first-year students",
+   "evidence": "Admission deferment can be approved only for first year|Deferred admission may only be granted to first-year students",
+   "page": 25
+  },
+  "Q045": {
+   "question": "On what grounds can I take an academic break?",
+   "answer": "Serious medical reasons, serious family issues, or financial constraints.",
+   "key": "medical|financial constraints",
+   "evidence": "Serious personal medical reasons involving hospitalisation",
+   "page": 26
+  },
+  "Q046": {
+   "question": "How many times can I take an academic break during my program?",
+   "answer": "At most twice, as long as the total break does not exceed one year.",
+   "key": "twice",
+   "evidence": "granted to any student at best twice during the programme",
+   "page": 26
+  },
+  "Q047": {
+   "question": "How much is the re-admission fee?",
+   "answer": "25% of the total fee prevailing at the time of re-admission.",
+   "key": "25%",
+   "evidence": "he / she has to pay 25% of the total fee prevalent",
+   "page": 27
+  },
+  "Q048": {
+   "question": "Can the 25% re-admission fee ever be waived?",
+   "answer": "Yes, if the break is on health grounds and attendance was below 20%.",
+   "key": "waived",
+   "evidence": "the 25% fee for re-admission could be waived off",
+   "page": 27
+  },
+  "Q049": {
+   "question": "How many times can I take re-admission in the same year of my program?",
+   "answer": "Only once.",
+   "key": "only once",
+   "evidence": "Students can take re-admission in the said year of the program only once",
+   "page": 27
+  },
+  "Q050": {
+   "question": "What happens if I don't pay my fees even after the late-fee period?",
+   "answer": "Your studentship in the program is cancelled.",
+   "key": "cancellation of the studentship",
+   "evidence": "Non-payment of fees within the stipulated time, including the late fee period",
+   "page": 26
+  },
+  "Q051": {
+   "question": "Are mobile phones allowed on campus?",
+   "answer": "No. Mobile phones, smart glasses and similar devices are not permitted on campus.",
+   "key": "not permitted",
+   "evidence": "The use of mobile phones, Meta Smart Glasses, or any similar electronic devices on campus is not permitted",
+   "page": 5
+  },
+  "Q052": {
+   "question": "Can I eat in the classroom?",
+   "answer": "No. Only drinking water is allowed inside the classroom.",
+   "key": "drinking water",
+   "evidence": "Only drinking water is allowed inside the classroom",
+   "page": 5
+  },
+  "Q053": {
+   "question": "What should I do if I forget my ID card?",
+   "answer": "Approach security and complete the process to get access; ID grievances go to biometricregistration@svkm.ac.in.",
+   "key": "approach security",
+   "evidence": "In case a student forgets to carry an ID card, they should approach security",
+   "page": 6
+  },
+  "Q054": {
+   "question": "What is the dress code for university events and guest lectures?",
+   "answer": "Formals with the institute blazer, tie/cravat and lapel pin.",
+   "key": "blazer",
+   "evidence": "dress in formals, Institute blazer, Tie/ Cravat, and Lapel Pin",
+   "page": 9
+  },
+  "Q055": {
+   "question": "Who hears appeals in disciplinary cases?",
+   "answer": "The Chancellor of the University is the appellate authority.",
+   "key": "chancellor",
+   "evidence": "the Chancellor of the University will be the appellate authority",
+   "page": 9
+  },
+  "Q056": {
+   "question": "Who sits on the school's disciplinary committee?",
+   "answer": "The Chairperson/Head of Department, one faculty member and one staff member.",
+   "key": "one staff member",
+   "evidence": "The committee comprises the Chairperson / Head of the Department, one faculty member and one staff member",
+   "page": 9
+  },
+  "Q057": {
+   "question": "Do I need permission to travel out of the city during the term?",
+   "answer": "Yes, prior permission from the HOD/Director/Dean is required.",
+   "key": "prior permission",
+   "evidence": "they are required to obtain prior permission from the HOD/Director/Dean",
+   "page": 9
+  },
+  "Q058": {
+   "question": "Where do I fill the anti-ragging undertaking?",
+   "answer": "Online at www.antiragging.in or www.amanmovement.org.",
+   "key": "antiragging.in|amanmovement.org",
+   "evidence": "www.amanmovement.org (OR) www.antiragging.in",
+   "page": 40
+  },
+  "Q059": {
+   "question": "Who is the chairperson of the MPSTME anti-ragging committee?",
+   "answer": "Dr. Koteswararao Anne.",
+   "key": "koteswararao anne",
+   "evidence": "1.5.1 Anti-Ragging Committee 1. Dr. Koteswararao Anne Chairperson",
+   "page": 71
+  },
+  "Q060": {
+   "question": "Who heads the University's Internal Complaints Committee for sexual harassment?",
+   "answer": "Dr. Meena Galliara (Chairperson).",
+   "key": "meena galliara",
+   "evidence": "1. Dr. Meena Galliara, Director, (Jasani Centre",
+   "page": 41
+  },
+  "Q061": {
+   "question": "How many library books can I borrow and for how long?",
+   "answer": "Two books for ten days, with one renewal if the book is not in demand.",
+   "key": "two books for ten days",
+   "evidence": "Borrowing entitlement: Two books for ten days",
+   "page": 30
+  },
+  "Q062": {
+   "question": "What is the fine for returning a library book late?",
+   "answer": "Rs. 3 per day per book.",
+   "key": "rs.3.00|rs. 3",
+   "evidence": "A fine of Rs.3.00 per day per book is levied on overdue books",
+   "page": 30
+  },
+  "Q063": {
+   "question": "What happens if I use my phone in the library?",
+   "answer": "It can lead to a fine, exclusion from the library and/or a three-week suspension.",
+   "key": "three week suspension",
+   "evidence": "Violating the rules will lead to a student's penalty and /or three week suspension",
+   "page": 30
+  },
+  "Q064": {
+   "question": "Will I get my degree if I still have library books or fines pending?",
+   "answer": "No. The award of the qualification is deferred until all books are returned and fines paid.",
+   "key": "deferred",
+   "evidence": "The award of SVKM's NMIMS qualification will be deferred until all books",
+   "page": 30
+  },
+  "Q065": {
+   "question": "How much OneDrive storage do students get?",
+   "answer": "50 GB.",
+   "key": "50 gb",
+   "evidence": "Students will get 50 GB of space in OneDrive",
+   "page": 32
+  },
+  "Q066": {
+   "question": "How early should I ask IT for extra internet bandwidth for an event?",
+   "answer": "At least 72 hours in advance.",
+   "key": "72 hours",
+   "evidence": "a request should reach the IT helpdesk minimum 72 hours in advance",
+   "page": 33
+  },
+  "Q067": {
+   "question": "What is my default username for the student portal?",
+   "answer": "Your SAP number; the password is mailed by the admin/course coordinator.",
+   "key": "sap number",
+   "evidence": "Default User ID is the student's SAP number",
+   "page": 34
+  },
+  "Q068": {
+   "question": "Can I plug my pen drive into the classroom smartboard?",
+   "answer": "No. Personal pen drives and laptops cannot be connected to classroom systems/smartboards.",
+   "key": "not allowed",
+   "evidence": "Students are not allowed to connect personal pen drives/ Laptops to the systems/smartboard",
+   "page": 32
+  },
+  "Q069": {
+   "question": "How do I get access to a website that is blocked on the campus network?",
+   "answer": "Email ITHelpdesk@nmims.edu; access is granted if the content is found appropriate.",
+   "key": "ithelpdesk@nmims.edu",
+   "evidence": "request to send an email to ITHelpdesk@nmims.edu",
+   "page": 32
+  },
+  "Q070": {
+   "question": "Can I book a hostel room through the student portal?",
+   "answer": "Yes, hostel booking is available on the portal once online admission and full payment are done.",
+   "key": "book a hostel",
+   "evidence": "Students can book a hostel through the portal",
+   "page": 34
+  },
+  "Q071": {
+   "question": "Do I get travel reimbursement for a Grade B contest?",
+   "answer": "Only if you win 1st or 2nd place; then travel is reimbursed 100% (non-AC sleeper/3-tier).",
+   "key": "1st or 2nd",
+   "evidence": "provided that they have won the contest (1st or 2nd place only)",
+   "page": 37
+  },
+  "Q072": {
+   "question": "How soon after winning a contest must I submit the details?",
+   "answer": "Within 7 days of winning, or it won't be considered for appraisal.",
+   "key": "7 days",
+   "evidence": "within 7 days of winning the contest",
+   "page": 37
+  },
+  "Q073": {
+   "question": "How long does it take to get my hostel deposit refunded?",
+   "answer": "Allow 3 weeks after submitting the signed receipt and refund application to Accounts.",
+   "key": "3 weeks",
+   "evidence": "procure the signature of the Hostel in-charge on the receipt",
+   "page": 39
+  },
+  "Q074": {
+   "question": "How quickly must expenses for a student activity be settled?",
+   "answer": "Within 72 hours, along with the activity report.",
+   "key": "72 hours",
+   "evidence": "they must be settled within 72 hours along with the report of activities",
+   "page": 39
+  },
+  "Q075": {
+   "question": "How can MPSTME students reach the university psychologist?",
+   "answer": "Call 022-42332225 / 022-42334090 or email Nazneen.raimalwala@nmims.edu or ketaki.gokhale@nmims.edu.",
+   "key": "nazneen.raimalwala@nmims.edu|ketaki.gokhale@nmims.edu",
+   "evidence": "email Nazneen.raimalwala@nmims.edu",
+   "page": 36
+  },
+  "Q076": {
+   "question": "If I'm found ineligible for my degree at convocation, by when can I appeal?",
+   "answer": "At least 48 hours before the convocation ceremony.",
+   "key": "48 hours",
+   "evidence": "at least 48 hours before the Annual Convocation",
+   "page": 37
+  },
+  "Q077": {
+   "question": "Is Maharashtra Day a university holiday?",
+   "answer": "Yes, 1 May (Maharashtra Day) is a holiday and one of the national holidays when no classes are held.",
+   "key": "maharashtra day",
+   "evidence": "01-May-25 Thursday Maharashtra Day",
+   "page": 171
+  },
+  "Q078": {
+   "question": "What do I need to score to pass a course?",
+   "answer": "At least 40% in the semester-end exam and at least 40% aggregate (ICA + exam).",
+   "key": "40%",
+   "evidence": "Secure a minimum of 40% marks in the Term / Semester end examination of that course",
+   "page": 77
+  },
+  "Q079": {
+   "question": "How many F grades can I have and still move to the next year in B Tech?",
+   "answer": "Up to two F grades after re-exams; you then re-appear for those courses next year.",
+   "key": "up to two",
+   "evidence": "A student who has obtained up to two 'F' grades in B Tech / MBA Tech/ Diploma program",
+   "page": 78
+  },
+  "Q080": {
+   "question": "What happens if I get more than two F grades in a year?",
+   "answer": "You are not promoted; you can take re-admission for the whole year or take a 'year back' and re-appear only for the failed exams.",
+   "key": "not be promoted",
+   "evidence": "would not be promoted to the next year of the programme",
+   "page": 78
+  },
+  "Q081": {
+   "question": "What is the re-exam fee per subject?",
+   "answer": "Rs. 1,000 per subject.",
+   "key": "1,000",
+   "evidence": "The fee for submission of a re-examination application shall be Rs. 1,000/-",
+   "page": 80
+  },
+  "Q082": {
+   "question": "What is the late fee if I miss the re-exam application deadline?",
+   "answer": "Rs. 5,000 (in addition to Rs. 1,000 per subject), payable in a 24-hour late window.",
+   "key": "5,000|5000",
+   "evidence": "allowed to submit their application with late fees of Rs. 5000/-",
+   "page": 80
+  },
+  "Q083": {
+   "question": "For how many days is the re-exam application portal open?",
+   "answer": "Three days; it closes at 4:00 PM on the third day.",
+   "key": "three (3) days|4:00 pm",
+   "evidence": "will remain open for three (3) days",
+   "page": 80
+  },
+  "Q084": {
+   "question": "How are the marks split between internals and the semester-end exam?",
+   "answer": "ICA is 50 marks and the semester-end exam is 100 marks scaled down to 50, for a total of 100.",
+   "key": "scaled down to 50",
+   "evidence": "100 (scaled down to 50 marks)",
+   "page": 77
+  },
+  "Q085": {
+   "question": "What happens if I am absent for a semester-end exam?",
+   "answer": "You are marked 'AB' for that course and can appear for the re-examination.",
+   "key": "marked as 'ab'",
+   "evidence": "shall be marked as 'AB' in the result",
+   "page": 81
+  },
+  "Q086": {
+   "question": "How long is the internship for B Tech students?",
+   "answer": "An entire semester (the last semester of the year).",
+   "key": "entire semester",
+   "evidence": "Internship duration for B Tech, and MCA - entire semester",
+   "page": 74
+  },
+  "Q087": {
+   "question": "What if I don't want to sit for campus placements?",
+   "answer": "Formally notify the Placement Office using the 'Opted Out Form' with your reason.",
+   "key": "opted out form",
+   "evidence": "formally notify the Placement Office vide the 'Opted Out Form'",
+   "page": 74
+  },
+  "Q088": {
+   "question": "What CGPA does a D.Voc student need to join B Tech first year?",
+   "answer": "A minimum of 6.5 based on first- and second-year exams.",
+   "key": "6.5",
+   "evidence": "Candidates must have secured a minimum CGPS of 6.5",
+   "page": 82
+  },
+  "Q089": {
+   "question": "When is the community service course done?",
+   "answer": "Any three consecutive weeks in the summer vacation between Semester II and Semester III.",
+   "key": "three weeks",
+   "evidence": "any consecutive three weeks during the summer vacation between Semester-II and Semester-III",
+   "page": 82
+  },
+  "Q090": {
+   "question": "How is the class representative (CR) chosen?",
+   "answer": "The top three students by Class XII aggregate are nominated; the HoD selects the final CR after interaction.",
+   "key": "class xii",
+   "evidence": "The first three students, based on their Class XII aggregate marks",
+   "page": 72
+  },
+  "B001": {
+   "question": "Which court has jurisdiction over disputes between a student and the University?",
+   "answer": "Only the Mumbai Court.",
+   "key": "mumbai court|mumbai",
+   "evidence": "shall be subject to the jurisdiction of the Mumbai Court only",
+   "page": 5
+  },
+  "B002": {
+   "question": "How often are students expected to check the Student Portal, email and notice board?",
+   "answer": "At least once a day.",
+   "key": "once a day|1 time a day|daily",
+   "evidence": "Students are advised to check the Student Portal/email/Notice Board at least once a day",
+   "page": 5
+  },
+  "B003": {
+   "question": "What should I do if I lose my original ID card?",
+   "answer": "The school issues a duplicate ID card on payment of a prescribed fee.",
+   "key": "duplicate",
+   "evidence": "a duplicate ID card will be issued by the school by paying a prescribed fee",
+   "page": 6
+  },
+  "B004": {
+   "question": "Is photography or video recording allowed in class?",
+   "answer": "No. Photography, filming, videotaping and audio-recording in class or on campus are strictly prohibited.",
+   "key": "prohibited|not allowed|not permitted",
+   "evidence": "Photography, filming, videotaping and audio-recording in the Class/ Campus/ University is strictly prohibited",
+   "page": 7
+  },
+  "B005": {
+   "question": "What happens to a student caught consuming alcohol or drugs on campus?",
+   "answer": "The student is rusticated from the hostel, school and campus with immediate effect.",
+   "key": "rusticat",
+   "evidence": "will be rusticated from the hostel, school and the campus with immediate effect",
+   "page": 9
+  },
+  "B006": {
+   "question": "Who sits on a school's woman grievance redressal committee?",
+   "answer": "The Chairperson/Head of Department, one lady member from faculty or staff, and two more members of the school.",
+   "key": "lady member|1 lady",
+   "evidence": "comprises the Chairperson / Head of the department, one lady member (from faculty or staff), and two more members",
+   "page": 9
+  },
+  "B007": {
+   "question": "Can I ask a faculty member to extend a submission deadline?",
+   "answer": "No. Students cannot approach faculty members or others to change or extend deadlines.",
+   "key": "can not approach|can not|not allowed|not permitted",
+   "evidence": "Students cannot approach faculty members or others to change or extend deadlines.",
+   "page": 9
+  },
+  "B008": {
+   "question": "What is the action for disorderly conduct such as excessive noise the first time?",
+   "answer": "A warning for the first default.",
+   "key": "warning",
+   "evidence": "Warning for first default",
+   "page": 8
+  },
+  "B009": {
+   "question": "Can I contact a faculty member directly to get into an elective course?",
+   "answer": "No. Elective options must be routed through the Course Co-ordinators or Program Chairs.",
+   "key": "course co-ordinators|course coordinators|program chairs|programme chairs",
+   "evidence": "They must route their option through Course Co-ordinators or Program Chairs.",
+   "page": 6
+  },
+  "B010": {
+   "question": "When should I clear doubts about my attendance with the faculty?",
+   "answer": "At the end of each class, during recess, or at the end of class hours that day.",
+   "key": "end of each class|recess",
+   "evidence": "at the end of each class, during recess or at the end of class hours of the day",
+   "page": 10
+  },
+  "B011": {
+   "question": "From which date is attendance counted for a student admitted late?",
+   "answer": "From the date of that student's admission.",
+   "key": "date of such admission|date of admission|date of their admission",
+   "evidence": "attendance will be considered from the date of such admission",
+   "page": 11
+  },
+  "B012": {
+   "question": "Do ONLY ICA courses count when the school finalises attendance defaulters?",
+   "answer": "Yes. ONLY ICA courses must also be considered when finalising attendance defaulters.",
+   "key": "consider|count",
+   "evidence": "ONLY ICA courses, must also be considered while finalising attendance defaulters",
+   "page": 11
+  },
+  "B013": {
+   "question": "What is the minimum duration of a mid-term exam?",
+   "answer": "At least 1 hour.",
+   "key": "1 hr|1 hour",
+   "evidence": "Minimum duration of Mid -Term Examinations: 1 hr",
+   "page": 13
+  },
+  "B014": {
+   "question": "What is the minimum number of credits a programme generally requires per academic year?",
+   "answer": "Generally a minimum of 40 credits per academic year.",
+   "key": "40 credits",
+   "evidence": "generally aligned with a minimum of 40 credits per academic year",
+   "page": 12
+  },
+  "B015": {
+   "question": "How many teaching hours make one credit of a theory course in a semester?",
+   "answer": "15 hours per credit.",
+   "key": "15 hour",
+   "evidence": "Semester Theory Courses 1 credit 15 hrs",
+   "page": 12
+  },
+  "B016": {
+   "question": "How many students are needed for an elective course to be offered?",
+   "answer": "A minimum of 15 students or 40% of the total number of students.",
+   "key": "15 students|15 number of students|40%",
+   "evidence": "The minimum 15 number of students or 40% of the total number of students, to offer an elective",
+   "page": 13
+  },
+  "B017": {
+   "question": "Within how many days after an ICA component are students told their marks?",
+   "answer": "Within seven days of the ICA component being conducted.",
+   "key": "7 days",
+   "evidence": "within seven days of the conduct of ICA components",
+   "page": 13
+  },
+  "B018": {
+   "question": "If I fail an ONLY ICA course, can I still write the term-end exams of my other courses?",
+   "answer": "Possibly not. A student who fails any only-ICA course may not be allowed to appear in the term-end exams of other courses.",
+   "key": "not be allowed|not allowed",
+   "evidence": "The student who fails in any only ICA Course may not be allowed to appear in the Term End Examinations",
+   "page": 13
+  },
+  "B019": {
+   "question": "What happens to an ICA component in which unfair practice is reported?",
+   "answer": "That component is cancelled and not considered for evaluation.",
+   "key": "cancel",
+   "evidence": "that component will get cancelled and will not be considered for evaluation",
+   "page": 14
+  },
+  "B020": {
+   "question": "Can a student caught using unfair means in ICA be on the Dean's list?",
+   "answer": "No. Such a student is not considered for the Dean's list or scholastic awards.",
+   "key": "not be considered|not considered|not eligible|ineligible",
+   "evidence": "Such student shall not be considered for Dean's list and scholastic awards",
+   "page": 14
+  },
+  "B021": {
+   "question": "When is the fall session for interdisciplinary courses held?",
+   "answer": "From the second week of July to the third week of November.",
+   "key": "july",
+   "evidence": "Fall Session (II week of July - III week of Nov)",
+   "page": 14
+  },
+  "B022": {
+   "question": "Where do students register for interdisciplinary courses?",
+   "answer": "Only through the Students portal.",
+   "key": "portal",
+   "evidence": "The students have to register through the Students portal only",
+   "page": 14
+  },
+  "B023": {
+   "question": "Can I take a CBCS course as an audit course?",
+   "answer": "Yes. CBCS courses can be taken as an additional subject for extra credit, as a credit or audit course.",
+   "key": "audit",
+   "evidence": "choose CBCS courses as an additional subject for extra credit as a credit course or audit course",
+   "page": 14
+  },
+  "B024": {
+   "question": "How are the curated Coursera courses assessed?",
+   "answer": "Coursera and NMIMS assess each student jointly, with equal weightage to the two assessments.",
+   "key": "equal weightage|jointly",
+   "evidence": "Coursera and NMIMS will assess each student jointly. Equal weightage will be given to the 2 assessments.",
+   "page": 15
+  },
+  "B025": {
+   "question": "How much time does faculty give every week to the Coursera initiative?",
+   "answer": "One hour every week.",
+   "key": "1 hour",
+   "evidence": "Faculty will engage one hour every week to address the queries of students",
+   "page": 15
+  },
+  "B026": {
+   "question": "What can happen if I do not carry my University ID card to an exam?",
+   "answer": "Admission to the examination hall may be denied.",
+   "key": "denied",
+   "evidence": "Admission to the examination hall may be denied if University identity card is not produced",
+   "page": 16
+  },
+  "B027": {
+   "question": "Can I leave the exam hall during the last ten minutes?",
+   "answer": "No. Students are not allowed to leave the examination hall, especially during the last ten minutes.",
+   "key": "not be allowed|not allowed|not permitted",
+   "evidence": "Students will not be allowed to leave the examination hall during the examination and especially during the last ten minutes",
+   "page": 17
+  },
+  "B028": {
+   "question": "What is the punishment for being caught with a mobile phone in the exam hall?",
+   "answer": "Annulment of the student's performance at the University examination in full.",
+   "key": "annul",
+   "evidence": "A student is found in possession / making use of any electronic device (including mobile phone",
+   "page": 18
+  },
+  "B029": {
+   "question": "What is the punishment for mass copying in an exam?",
+   "answer": "Exclusion of all the students involved from two additional examinations.",
+   "key": "2 additional exam",
+   "evidence": "Mutual/ Mass copying. Exclusion of all the students from concerned University Examination for two additional examinations",
+   "page": 18
+  },
+  "B030": {
+   "question": "What happens if a student assaults an invigilator during an exam?",
+   "answer": "Permanent expulsion from the University.",
+   "key": "permanent expulsion|expelled|expulsion",
+   "evidence": "A student is guilty of assault or inflicting any injury on invigilator on duty",
+   "page": 20
+  },
+  "B031": {
+   "question": "What is the penalty for revealing my identity in the answer book?",
+   "answer": "Annulment of the performance in the subject concerned.",
+   "key": "annul",
+   "evidence": "Revealing the identity in any form (Name, Roll No, G.R. No., religious invocation etc.",
+   "page": 19
+  },
+  "B032": {
+   "question": "What punishment can a student get for a second unfair-means case?",
+   "answer": "Annulment of performance in full, and enhanced punishment of up to double the normal punishment.",
+   "key": "double|enhanced",
+   "evidence": "This enhanced punishment may extend to double the punishment provided for the offence",
+   "page": 20
+  },
+  "B033": {
+   "question": "How do I apply for grievance redressal of my exam marks?",
+   "answer": "Online only, through the Student Portal (Result Portal - SAP); offline applications are not considered.",
+   "key": "online|student portal|result portal",
+   "evidence": "can be made online only through the Student Portal (Result Portal - SAP)",
+   "page": 21
+  },
+  "B034": {
+   "question": "Is the revaluation fee refunded if I do not give specific reasons for re-evaluation?",
+   "answer": "No. The answer book is not re-evaluated and the fee paid is not refunded.",
+   "key": "not be refunded|not refunded",
+   "evidence": "In such cases, fees paid will not be refunded.",
+   "page": 21
+  },
+  "B035": {
+   "question": "What is the deadline to apply for re-valuation of an answer script?",
+   "answer": "Within 3 days from the date of result declaration (including holidays).",
+   "key": "3 days",
+   "evidence": "Application for Re-valuation of the answer scripts Within 3 days from the date of result declaration",
+   "page": 22
+  },
+  "B036": {
+   "question": "Can I get a photocopy of my re-evaluated answer book?",
+   "answer": "No. Photocopies of re-evaluated answer books are not provided.",
+   "key": "not be provided|not provided",
+   "evidence": "the photo copies of re-evaluated answer-books shall not be provided to the student/s",
+   "page": 23
+  },
+  "B037": {
+   "question": "Can I ask to keep my original marks after the re-evaluation result is declared?",
+   "answer": "No. Requests to retain the original marks are not entertained under any circumstances.",
+   "key": "not be entertained|not entertained|not accepted",
+   "evidence": "request to retain the original marks will not be entertained under any circumstances",
+   "page": 23
+  },
+  "B038": {
+   "question": "How often do students receive a Statement of Grades?",
+   "answer": "Upon completion of each academic year.",
+   "key": "each academic year|every academic year|every year|each year",
+   "evidence": "All students shall receive a Statement of Grades upon completion of each academic year",
+   "page": 23
+  },
+  "B039": {
+   "question": "How many prizes are given when a batch has more than 60 students?",
+   "answer": "Three prizes.",
+   "key": "3 prizes",
+   "evidence": "three prizes will be awarded where the number of students in the batch / stream is > 60",
+   "page": 23
+  },
+  "B040": {
+   "question": "On what basis are university prizes awarded?",
+   "answer": "The highest CGPA across all years of the programme.",
+   "key": "highest cgpa|cgpa",
+   "evidence": "The criteria for award of prizes will be highest CGPA obtained by the students",
+   "page": 23
+  },
+  "B041": {
+   "question": "Does my performance at a partner university during an exchange count for awards?",
+   "answer": "No. Performance at the partner University is not considered for the award.",
+   "key": "not be considered|not considered|not count",
+   "evidence": "performance at the partner University shall not be considered for award",
+   "page": 23
+  },
+  "B042": {
+   "question": "Through whom must I apply for a scholarship?",
+   "answer": "Through the school's academic office.",
+   "key": "academic office",
+   "evidence": "will have to go through the school's academic office",
+   "page": 24
+  },
+  "B043": {
+   "question": "Who is eligible to apply for admission deferment?",
+   "answer": "Only candidates who have paid the full fee or have approval for part payment.",
+   "key": "full fee|part payment",
+   "evidence": "Only those candidates who have paid the full fee or got an approval for part payment can apply",
+   "page": 25
+  },
+  "B044": {
+   "question": "Can a financial aid offer be deferred along with my admission?",
+   "answer": "No. Financial aid offers cannot be deferred; students must reapply.",
+   "key": "reapply|can not be deferred|not be deferred",
+   "evidence": "Financial aid offers cannot be deferred. Students must reapply for financial aid.",
+   "page": 25
+  },
+  "B045": {
+   "question": "Where do I apply online to withdraw my admission?",
+   "answer": "Using the form at https://nmims.edu/admission-cancellation on the NMIMS website.",
+   "key": "nmims.edu/admission-cancellation|admission-cancellation",
+   "evidence": "should fill the application form using the URL https://nmims.edu/admission-cancellation",
+   "page": 25
+  },
+  "B046": {
+   "question": "What happens if I do not submit my mandatory admission documents on time?",
+   "answer": "The admission is cancelled and the admission fees are not refunded.",
+   "key": "cancel",
+   "evidence": "mandatory documents after the stipulated time declared by the admission department will lead to the cancellation of admission",
+   "page": 26
+  },
+  "B047": {
+   "question": "What is the maximum period of an academic break?",
+   "answer": "One year only.",
+   "key": "1 year",
+   "evidence": "The maximum period for an academic break is one year only",
+   "page": 26
+  },
+  "B048": {
+   "question": "Who grants an academic break?",
+   "answer": "The respective Dean/Director of the school or campus.",
+   "key": "dean|director",
+   "evidence": "The academic break can be granted to any student by respective Dean/Director of School/campus",
+   "page": 26
+  },
+  "B049": {
+   "question": "If I take re-admission and still fail to get promoted, can I take re-admission again in the same year?",
+   "answer": "No. The student will not be given a second chance for re-admission in the same year of the program.",
+   "key": "second chance|2nd chance",
+   "evidence": "the student will not be given a second chance for re-admission in the same year of the program",
+   "page": 27
+  },
+  "B050": {
+   "question": "Within how many years can a student who exited a UG programme be re-admitted?",
+   "answer": "Within a maximum of seven years from the date of admission to the programme.",
+   "key": "7 years",
+   "evidence": "subject to the maximum permissible period of seven years from the date of admission to the programme",
+   "page": 27
+  },
+  "B051": {
+   "question": "What happens if I am absent for more than 21 days at a stretch without informing anyone?",
+   "answer": "The Dean/Director sends a formal communication to the student and parents; if no cancellation request comes within a week, the school starts cancelling the admission.",
+   "key": "formal communication|cancel",
+   "evidence": "After 21 days of continuous absenteeism at a stretch, at any point in time, formal communication from the Dean/Director",
+   "page": 29
+  },
+  "B052": {
+   "question": "How soon must a formal cancellation application be submitted after the Dean's communication?",
+   "answer": "Within a week.",
+   "key": "week|7 days",
+   "evidence": "a formal cancellation application must be submitted within a week by the respective student/parents",
+   "page": 28
+  },
+  "B053": {
+   "question": "Can I eat or drink in the library?",
+   "answer": "No. Food and beverages are not permitted in the library, except bottled water.",
+   "key": "bottled water|not permitted|not allowed",
+   "evidence": "The consumption of food and beverages (except for bottled water) and personal audio equipment are not permitted in the Library",
+   "page": 30
+  },
+  "B054": {
+   "question": "What do I have to pay if I lose a borrowed library book?",
+   "answer": "The replacement cost plus an administrative charge.",
+   "key": "replacement cost",
+   "evidence": "pay for any damage to, or loss of, material borrowed at replacement cost, plus an administrative charge",
+   "page": 30
+  },
+  "B055": {
+   "question": "Can I take reference books home from the library?",
+   "answer": "No. Reference books, journals and audio/video material are to be used in the library only.",
+   "key": "library only|only in the library|in the library",
+   "evidence": "Reference books, Journals / magazines and Audio/Video material are strictly to be used / viewed in the library only",
+   "page": 30
+  },
+  "B056": {
+   "question": "How are library books issued?",
+   "answer": "At the self-check-in kiosk only, as the library is RFID enabled.",
+   "key": "kiosk|self-check",
+   "evidence": "the issue of the books will be done at self-check-in kiosk only",
+   "page": 30
+  },
+  "B057": {
+   "question": "Which plagiarism check software does NMIMS subscribe to?",
+   "answer": "Turnitin and DrillBit.",
+   "key": "turnitin|drillbit",
+   "evidence": "Plagiarism Check Softwares Turnitin 4. DrillBit",
+   "page": 31
+  },
+  "B058": {
+   "question": "Which database is subscribed for the finance lab?",
+   "answer": "Bloomberg.",
+   "key": "bloomberg",
+   "evidence": "FINANCE LAB Bloomberg",
+   "page": 31
+  },
+  "B059": {
+   "question": "What is the recommended minimum length of a strong password?",
+   "answer": "At least 8 characters.",
+   "key": "8 characters",
+   "evidence": "a strong password be at least 8 characters long",
+   "page": 33
+  },
+  "B060": {
+   "question": "Where do I report a cyber security incident?",
+   "answer": "Contact reportsecurityincidents@svkm.ac.in.",
+   "key": "reportsecurityincidents@svkm.ac.in",
+   "evidence": "please contact reportsecurityincidents@svkm.ac.in",
+   "page": 33
+  },
+  "B061": {
+   "question": "How do I lodge a complaint about the computing facilities?",
+   "answer": "By a written complaint in the Complaints Register in the Computer Lab; verbal complaints are not acted on.",
+   "key": "complaints register|written complaint",
+   "evidence": "students should lodge a written complaint in the Complaints Register available in the Computer Lab",
+   "page": 32
+  },
+  "B062": {
+   "question": "Are food and drinks allowed in the Computer Centre?",
+   "answer": "No. Food and beverages, except drinking water, are not permitted in the Computer Centre.",
+   "key": "drinking water|not be permitted|not permitted|not allowed",
+   "evidence": "Food and/or beverages (except drinking water) will not be permitted in the Computer Centre",
+   "page": 32
+  },
+  "B063": {
+   "question": "What is the web address of the student portal?",
+   "answer": "https://portal.svkm.ac.in/usermgmt/login",
+   "key": "portal.svkm.ac.in",
+   "evidence": "Access Portal through https://portal.svkm.ac.in/usermgmt/login",
+   "page": 34
+  },
+  "B064": {
+   "question": "Whom do I contact for help with the student portal?",
+   "answer": "Mail portal_app_team@svkm.ac.in or call 022-46152650.",
+   "key": "portal_app_team@svkm.ac.in|46152650",
+   "evidence": "mail to portal_app_team@svkm.ac.in or phone no: 022 - 46152650",
+   "page": 34
+  },
+  "B065": {
+   "question": "What should I do if I forget my portal password?",
+   "answer": "Reset it using the Forgot Password option.",
+   "key": "forgot password",
+   "evidence": "can reset their password by clicking on the Forgot Password option",
+   "page": 34
+  },
+  "B066": {
+   "question": "When is the first student feedback taken in each term?",
+   "answer": "At the end of the third week of every trimester/semester/annual term.",
+   "key": "3rd week",
+   "evidence": "Feedback at the end of the third week of every trimester/Semester/annual term",
+   "page": 35
+  },
+  "B067": {
+   "question": "Is my identity shared with the faculty when I give course feedback?",
+   "answer": "No. The student's identity is kept confidential.",
+   "key": "confidential",
+   "evidence": "the student's identity is kept confidential",
+   "page": 35
+  },
+  "B068": {
+   "question": "What does a faculty mentor do?",
+   "answer": "Helps students assimilate the NMIMS culture, make informed course choices and identify the resources they need.",
+   "key": "culture|selection of courses|resources",
+   "evidence": "help assimilate the SVKM's NMIMS culture, facilitate intelligent choice-making regarding the selection of courses",
+   "page": 35
+  },
+  "B069": {
+   "question": "Do students going to a Grade A contest get travel reimbursement?",
+   "answer": "Yes, 100% reimbursement for travel (non-AC sleeper/3-tier) to and from the contest.",
+   "key": "100%",
+   "evidence": "Students going for GRADE A will be provided with 100% reimbursement for travel",
+   "page": 37
+  },
+  "B070": {
+   "question": "When are contest reimbursements paid?",
+   "answer": "Only after the student has returned from the contest (bills, tickets and certificates must be submitted).",
+   "key": "returned",
+   "evidence": "All reimbursements will be made only after the student has returned from the contest",
+   "page": 37
+  },
+  "B071": {
+   "question": "What requirements must I meet to receive my degree at the convocation?",
+   "answer": "Migration certificate, attendance requirements, all assignments and projects submitted, all dues cleared, and all exams passed.",
+   "key": "migration certificate|dues",
+   "evidence": "These requirements include a migration certificate, attendance requirements, submission of all assignments and projects",
+   "page": 37
+  },
+  "B072": {
+   "question": "How many representatives does each school send to the University Students' Council (NUSC)?",
+   "answer": "Two student council representatives.",
+   "key": "2 student council representatives|2 representatives|2 student",
+   "evidence": "From each school/campus, two student council representatives will constitute the SVKM's NMIMS University Student Council",
+   "page": 38
+  },
+  "B073": {
+   "question": "What are the executive committee positions of NUSC?",
+   "answer": "President, Vice President, General Secretary and Treasurer.",
+   "key": "treasurer|general secretary",
+   "evidence": "executive committee positions, i.e., President, Vice President, General Secretary, and Treasurer",
+   "page": 38
+  },
+  "B074": {
+   "question": "How long does it take to get the library and security deposit refunded?",
+   "answer": "Allow 3 weeks; the refund is made through NEFT.",
+   "key": "3 weeks",
+   "evidence": "Please allow 3 weeks for the issue of the Refund through NEFT",
+   "page": 39
+  },
+  "B075": {
+   "question": "Whose signature do I need on my hostel deposit receipt?",
+   "answer": "The Hostel in-charge's signature.",
+   "key": "hostel in-charge|hostel incharge",
+   "evidence": "procure the signature of the Hostel in-charge on the receipt",
+   "page": 39
+  },
+  "B076": {
+   "question": "Who is the Ombudsman of the University?",
+   "answer": "Justice Abhay Thipsay (Retd.).",
+   "key": "abhay thipsay|thipsay",
+   "evidence": "Justice Abhay Thipsay (Retd. Justice) has been appointed as Ombudsman",
+   "page": 42
+  },
+  "B077": {
+   "question": "Within what time must the Ombudsman dispose of a case?",
+   "answer": "Within one month of receiving it.",
+   "key": "1 month",
+   "evidence": "dispose of cases within one month of the receipt for speedy redress of grievances",
+   "page": 42
+  },
+  "B078": {
+   "question": "Who chairs the University-level Anti-Ragging Committee?",
+   "answer": "Dr. Tanmoy Chakraborty, the Registrar.",
+   "key": "tanmoy chakraborty",
+   "evidence": "1. Dr. Tanmoy Chakraborty, Registrar Chairperson registrar@nmims.edu",
+   "page": 40
+  },
+  "B079": {
+   "question": "Who chairs the University's Women Grievance Redressal Cell?",
+   "answer": "Prof. Amita Vaidya.",
+   "key": "amita vaidya",
+   "evidence": "1. Prof. Amita Vaidya, Director, (SAMSOE, NMIMS) Chairperson",
+   "page": 41
+  },
+  "B080": {
+   "question": "What number should I dial for the fire brigade?",
+   "answer": "101 (or 22620 5301).",
+   "key": "101",
+   "evidence": "Dial 101 or 22620 5301 for the fire brigade",
+   "page": 44
+  },
+  "B081": {
+   "question": "Should I use the lift to escape during a fire?",
+   "answer": "No. Do not use the lift; use the nearest staircase.",
+   "key": "not use|stair",
+   "evidence": "Do not use the lift to escape.",
+   "page": 44
+  },
+  "B082": {
+   "question": "How much moving water can make a person fall during a flood?",
+   "answer": "Six inches of moving water.",
+   "key": "6 inch",
+   "evidence": "Six inches of moving water can make you fall",
+   "page": 43
+  },
+  "B083": {
+   "question": "Where should I take cover inside a building during an earthquake?",
+   "answer": "Under the lintel of an inner door, in the corner of a room, or under a table or bed.",
+   "key": "lintel|corner|table",
+   "evidence": "staying under the lintel of an inner door, in the corner of a room, under a table",
+   "page": 43
+  },
+  "B084": {
+   "question": "Is gambling content blocked on the campus network?",
+   "answer": "Yes. Gambling is one of the blocked website categories.",
+   "key": "block",
+   "evidence": "Advocacy Organizations 19 Gambling",
+   "page": 45
+  },
+  "B085": {
+   "question": "What is the women's helpline number listed in the infoline?",
+   "answer": "1091.",
+   "key": "1091",
+   "evidence": "Women's Help Line 1091",
+   "page": 46
+  },
+  "B086": {
+   "question": "Who is the Controller of Examinations of the University?",
+   "answer": "Mr. Ashish Apte.",
+   "key": "ashish apte",
+   "evidence": "Mr. Ashish Apte Controller of Examinations",
+   "page": 47
+  },
+  "B087": {
+   "question": "Who is the University Librarian?",
+   "answer": "Mr. Shivanand Sadlapur.",
+   "key": "shivanand sadlapur|sadlapur",
+   "evidence": "Mr. Shivanand Sadlapur Librarian",
+   "page": 47
+  },
+  "B088": {
+   "question": "Who is the Vice Chancellor of the University?",
+   "answer": "Dr. Sougata Ray.",
+   "key": "sougata ray",
+   "evidence": "Dr. Sougata Ray Vice Chancellor",
+   "page": 47
+  },
+  "B089": {
+   "question": "What is the maximum time allowed to complete a B Tech programme?",
+   "answer": "6 years (the programme itself is 4 years).",
+   "key": "6 years|6 year",
+   "evidence": "MBA Tech 5 7 2 B Tech 4 6",
+   "page": 70
+  },
+  "B090": {
+   "question": "Are crop tops allowed for girl students at MPSTME?",
+   "answer": "No. Off-shoulder, spaghetti and crop tops, transparent dresses and shorts are strictly not allowed.",
+   "key": "not allowed|not permitted",
+   "evidence": "off shoulder tops/spaghetti tops/crop tops/transparent dress/shorts are strictly not allowed",
+   "page": 70
+  },
+  "B091": {
+   "question": "Who is the convener of the MPSTME disciplinary committee?",
+   "answer": "Dr Sudipto Sarkar.",
+   "key": "sudipto sarkar",
+   "evidence": "1.5.2 Disciplinary Committee 1. Dr Sudipto Sarkar Convener",
+   "page": 71
+  },
+  "B092": {
+   "question": "Who chairs the MPSTME Woman Grievance Redressal Committee?",
+   "answer": "Dr. Archana Bhise.",
+   "key": "archana bhise",
+   "evidence": "1.5.3 Woman Grievance Redressal Committee 1. Dr. Archana Bhise Chairperson",
+   "page": 71
+  },
+  "B093": {
+   "question": "Can the class representative cancel or postpone lectures?",
+   "answer": "No. The CR is not authorized to cancel, postpone or reschedule lectures directly with the faculty.",
+   "key": "not authorized|not authorised|not allowed|can not",
+   "evidence": "The CR is not authorized to cancel, postpone, or reschedule lectures directly with the faculty",
+   "page": 72
+  },
+  "B094": {
+   "question": "How long is the MBA Tech technical internship?",
+   "answer": "About 8 weeks (6-8 weeks), after Semester VI.",
+   "key": "8 weeks",
+   "evidence": "Technical Internship post 6 Semester -8 weeks",
+   "page": 74
+  },
+  "B095": {
+   "question": "How long is the MBA Tech management internship?",
+   "answer": "16 weeks (14-16 weeks), after the 8th semester.",
+   "key": "16 weeks",
+   "evidence": "Management Internship post 8th Semester - 16 weeks",
+   "page": 74
+  },
+  "B096": {
+   "question": "Who is in charge of international relations at MPSTME?",
+   "answer": "Dr. Dhirendra Mishra, Professor-in-charge of International Relations.",
+   "key": "dhirendra mishra",
+   "evidence": "Name - Dr. Dhirendra Mishra Designation - Professor, Computer Engineering, Professor-in charge of International Relations",
+   "page": 76
+  },
+  "B097": {
+   "question": "Are remedial classes held before the re-exams?",
+   "answer": "Yes, on demand, when more than 10 students need them; otherwise doubts are cleared one-to-one.",
+   "key": "more than 10|on demand",
+   "evidence": "Remedial classes will be conducted by the faculty on demand, if number of students are more than 10",
+   "page": 77
+  },
+  "B098": {
+   "question": "How many re-examinations are held for a course in an academic year?",
+   "answer": "Only one re-examination per course.",
+   "key": "only 1|1 reexam",
+   "evidence": "Only one re-examination will be conducted for each course immediately after declaration of results of final examination",
+   "page": 77
+  },
+  "B099": {
+   "question": "What must I do if I want to improve my ICA marks?",
+   "answer": "Take re-admission for the complete academic year.",
+   "key": "readmission|re-admission|re admission",
+   "evidence": "he/ she will have to take re admission for the complete academic year",
+   "page": 77
+  },
+  "B100": {
+   "question": "What grade and grade points do I get for 80 to 89.99 percent?",
+   "answer": "A+ grade, 9 grade points (Excellent).",
+   "key": "9|excellent",
+   "evidence": "80 89.99 A+ 9 Excellent",
+   "page": 80
+  },
+  "B101": {
+   "question": "When is an M Tech or MCA student promoted to the next year?",
+   "answer": "Only when there is no F grade in the year after re-examinations.",
+   "key": "no f grade",
+   "evidence": "A student will be promoted to the subsequent year of the programme only when he/ she has no F grade",
+   "page": 79
+  },
+  "B102": {
+   "question": "How many re-exam attempts do M Tech or MCA year-back students get?",
+   "answer": "Only two re-exam attempts during the academic year.",
+   "key": "2 reexam|2 attempt",
+   "evidence": "year-back students will have only two re-exam attempts during the academic year",
+   "page": 79
+  },
+  "B103": {
+   "question": "Are teaching assistantships available for M Tech students?",
+   "answer": "Yes, a limited number of technical assistantships may be available.",
+   "key": "assistantship|limited",
+   "evidence": "A limited number of technical assistantships from time to time may be available for all students of M. Tech.",
+   "page": 82
+  },
+  "B104": {
+   "question": "Can a D.Voc candidate with a year back join B Tech first year?",
+   "answer": "No. Candidates with a year back are not permitted to take admission in B Tech first year.",
+   "key": "not permitted|not allowed|not eligible",
+   "evidence": "Candidates with a year back are not permitted to take admission in B Tech first year.",
+   "page": 82
+  },
+  "B105": {
+   "question": "Who is eligible for lateral admission to the second year of B Tech?",
+   "answer": "Candidates who have completed the third year of the Diploma, in open competition if there is a vacancy.",
+   "key": "3rd year of diploma|3rd year",
+   "evidence": "Candidates who have successfully completed the third year of Diploma are eligible for Lateral admission",
+   "page": 82
+  },
+  "B106": {
+   "question": "Is the community service course a credit course?",
+   "answer": "No. It is a mandatory non-credit course that must be passed.",
+   "key": "non-credit|non credit",
+   "evidence": "It is mandatory non-credit course.",
+   "page": 82
+  },
+  "B107": {
+   "question": "Who is the Dean of MPSTME?",
+   "answer": "Dr. Koteswararao Anne.",
+   "key": "koteswararao anne",
+   "evidence": "Dr. Koteswararao Anne Dean Dr. Sudipto Sarkar Director",
+   "page": 172
+  },
+  "B108": {
+   "question": "Who is the head of the Data Science department at MPSTME?",
+   "answer": "Dr. Siba Panda.",
+   "key": "siba panda",
+   "evidence": "Dr. Siba Panda HOD, Data Science",
+   "page": 172
+  }
+ },
+ "out_of_scope": [
+  "What is the hostel curfew time for students?",
+  "What is the annual tuition fee for B Tech Data Science?",
+  "What is the campus Wi-Fi password?",
+  "What time does the college canteen close?",
+  "Is there a gym on campus and what are its timings?",
+  "What is the average placement package for B Tech students?",
+  "When is the MPSTME college fest held?",
+  "What is the NPAT cutoff score for B Tech admission?",
+  "Is there a college shuttle bus from the railway station?",
+  "How much is the parking fee for two-wheelers on campus?",
+  "What is the annual intake of the B Tech Computer Engineering programme?",
+  "Does the university help students get education loans?",
+  "How do I get a bonafide certificate from the college?",
+  "Is there a medical insurance scheme for students?",
+  "Which companies recruited MPSTME students last year?",
+  "Is there a dance club at MPSTME?",
+  "Who won the best teacher award this year?",
+  "Do I need a NOC to do an internship abroad?",
+  "How can I change my branch after the first year of B Tech?",
+  "What time does the library open on weekdays?",
+  "What is the price of the institute blazer?",
+  "How many parking spots are reserved for students on campus?",
+  "How much do I have to pay for the Coursera licence?",
+  "What is the hostel fee for a double-sharing room?"
+ ]
+}

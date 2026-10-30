@@ -1,0 +1,8 @@
+{
+ "unit_match": 0.55,
+ "any_overlap": 0.3730601668357849,
+ "substantial_overlap": 0.6648010611534119,
+ "unit_duplicate": 0.5483264923095703,
+ "prereq_resolve": 0.75,
+ "prereq_topic": 0.4
+}

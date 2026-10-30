@@ -1,0 +1,418 @@
+{
+ "all-MiniLM-L6-v2|6-v2|w1.0|question|exp=False": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.944
+  },
+  "all": {
+   "recall@3": 0.863,
+   "recall@5": 0.871,
+   "recall@10": 0.871,
+   "mrr@10": 0.815
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.5,
+   "recall@10": 0.5,
+   "mrr@10": 0.464
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 0.947,
+   "mrr@10": 0.895
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.909
+  }
+ },
+ "all-MiniLM-L6-v2|6-v2|w0.8|question|exp=False": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.944
+  },
+  "all": {
+   "recall@3": 0.863,
+   "recall@5": 0.863,
+   "recall@10": 0.887,
+   "mrr@10": 0.808
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.5,
+   "recall@10": 0.571,
+   "mrr@10": 0.438
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 0.947,
+   "mrr@10": 0.895
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 0.955,
+   "recall@10": 1.0,
+   "mrr@10": 0.909
+  }
+ },
+ "all-MiniLM-L6-v2|6-v2|w0.8|question|exp=True": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.944
+  },
+  "all": {
+   "recall@3": 0.863,
+   "recall@5": 0.871,
+   "recall@10": 0.919,
+   "mrr@10": 0.812
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.5,
+   "recall@10": 0.643,
+   "mrr@10": 0.444
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 1.0,
+   "mrr@10": 0.9
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.909
+  }
+ },
+ "all-MiniLM-L6-v2|6-v2|w0.8|both|exp=True": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.917
+  },
+  "all": {
+   "recall@3": 0.855,
+   "recall@5": 0.871,
+   "recall@10": 0.968,
+   "mrr@10": 0.806
+  },
+  "paraphrased": {
+   "recall@3": 0.571,
+   "recall@5": 0.571,
+   "recall@10": 0.857,
+   "mrr@10": 0.443
+  },
+  "informal": {
+   "recall@3": 0.895,
+   "recall@5": 0.895,
+   "recall@10": 1.0,
+   "mrr@10": 0.883
+  },
+  "multi_condition": {
+   "recall@3": 0.909,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.955
+  }
+ },
+ "all-MiniLM-L6-v2|6-v2|w0.6|both|exp=True": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.917
+  },
+  "all": {
+   "recall@3": 0.839,
+   "recall@5": 0.887,
+   "recall@10": 0.984,
+   "mrr@10": 0.788
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.643,
+   "recall@10": 0.929,
+   "mrr@10": 0.396
+  },
+  "informal": {
+   "recall@3": 0.895,
+   "recall@5": 0.895,
+   "recall@10": 1.0,
+   "mrr@10": 0.884
+  },
+  "multi_condition": {
+   "recall@3": 0.909,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.909
+  }
+ },
+ "bge-small-en-v1.5|6-v2|w1.0|question|exp=False": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.944
+  },
+  "all": {
+   "recall@3": 0.847,
+   "recall@5": 0.855,
+   "recall@10": 0.871,
+   "mrr@10": 0.8
+  },
+  "paraphrased": {
+   "recall@3": 0.429,
+   "recall@5": 0.429,
+   "recall@10": 0.5,
+   "mrr@10": 0.4
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 0.947,
+   "mrr@10": 0.895
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.909
+  }
+ },
+ "bge-small-en-v1.5|6-v2|w0.8|question|exp=False": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.944
+  },
+  "all": {
+   "recall@3": 0.847,
+   "recall@5": 0.855,
+   "recall@10": 0.871,
+   "mrr@10": 0.792
+  },
+  "paraphrased": {
+   "recall@3": 0.429,
+   "recall@5": 0.429,
+   "recall@10": 0.5,
+   "mrr@10": 0.364
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 0.947,
+   "mrr@10": 0.895
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.909
+  }
+ },
+ "bge-small-en-v1.5|6-v2|w0.8|question|exp=True": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.944
+  },
+  "all": {
+   "recall@3": 0.863,
+   "recall@5": 0.871,
+   "recall@10": 0.903,
+   "mrr@10": 0.81
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.5,
+   "recall@10": 0.571,
+   "mrr@10": 0.436
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 1.0,
+   "mrr@10": 0.9
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.909
+  }
+ },
+ "bge-small-en-v1.5|6-v2|w0.8|both|exp=True": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.917
+  },
+  "all": {
+   "recall@3": 0.839,
+   "recall@5": 0.887,
+   "recall@10": 0.952,
+   "mrr@10": 0.794
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.643,
+   "recall@10": 0.786,
+   "mrr@10": 0.392
+  },
+  "informal": {
+   "recall@3": 0.895,
+   "recall@5": 0.895,
+   "recall@10": 1.0,
+   "mrr@10": 0.881
+  },
+  "multi_condition": {
+   "recall@3": 0.909,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.955
+  }
+ },
+ "bge-small-en-v1.5|6-v2|w0.6|both|exp=True": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.917
+  },
+  "all": {
+   "recall@3": 0.839,
+   "recall@5": 0.903,
+   "recall@10": 0.968,
+   "mrr@10": 0.781
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.643,
+   "recall@10": 0.857,
+   "mrr@10": 0.329
+  },
+  "informal": {
+   "recall@3": 0.895,
+   "recall@5": 0.947,
+   "recall@10": 1.0,
+   "mrr@10": 0.886
+  },
+  "multi_condition": {
+   "recall@3": 0.909,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.955
+  }
+ },
+ "all-MiniLM-L6-v2|12-v2|w1.0|question|exp=False": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.972
+  },
+  "all": {
+   "recall@3": 0.863,
+   "recall@5": 0.863,
+   "recall@10": 0.903,
+   "mrr@10": 0.807
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.5,
+   "recall@10": 0.643,
+   "mrr@10": 0.407
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 0.947,
+   "mrr@10": 0.895
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 0.955,
+   "recall@10": 1.0,
+   "mrr@10": 0.894
+  }
+ },
+ "all-MiniLM-L6-v2|12-v2|w0.8|question|exp=False": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.944
+  },
+  "all": {
+   "recall@3": 0.847,
+   "recall@5": 0.863,
+   "recall@10": 0.903,
+   "mrr@10": 0.787
+  },
+  "paraphrased": {
+   "recall@3": 0.429,
+   "recall@5": 0.5,
+   "recall@10": 0.643,
+   "mrr@10": 0.391
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 0.947,
+   "mrr@10": 0.868
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 0.955,
+   "recall@10": 1.0,
+   "mrr@10": 0.894
+  }
+ },
+ "all-MiniLM-L6-v2|12-v2|w0.8|question|exp=True": {
+  "direct": {
+   "recall@3": 1.0,
+   "recall@5": 1.0,
+   "recall@10": 1.0,
+   "mrr@10": 0.972
+  },
+  "all": {
+   "recall@3": 0.863,
+   "recall@5": 0.863,
+   "recall@10": 0.952,
+   "mrr@10": 0.812
+  },
+  "paraphrased": {
+   "recall@3": 0.5,
+   "recall@5": 0.5,
+   "recall@10": 0.786,
+   "mrr@10": 0.424
+  },
+  "informal": {
+   "recall@3": 0.947,
+   "recall@5": 0.947,
+   "recall@10": 1.0,
+   "mrr@10": 0.9
+  },
+  "multi_condition": {
+   "recall@3": 0.955,
+   "recall@5": 0.955,
+   "recall@10": 1.0,
+   "mrr@10": 0.894
+  }
+ }
+}

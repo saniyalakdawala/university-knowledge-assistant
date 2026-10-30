@@ -1,0 +1,11 @@
+SYNTHETIC SAMPLE JOB DESCRIPTION, written for the Group 9 demo (not a real posting)
+Role: MLOps Engineer, Fine-Tuned LLM Deployment
+Responsibilities:
+- Deploy fine-tuned language models as low-latency inference services and monitor them in production.
+- Apply quantization and efficient inference techniques to reduce serving cost.
+- Set up experiment tracking, model versioning and reproducible fine-tuning pipelines.
+- Monitor deployed models for drift, toxicity and bias, and maintain guardrails.
+Requirements:
+- Experience with Docker, cloud GPUs and continuous integration for machine learning.
+- Understanding of how large language models are pre-trained, fine-tuned and evaluated.
+- Python and REST API development.

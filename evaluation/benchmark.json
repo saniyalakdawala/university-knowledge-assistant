@@ -1,0 +1,1842 @@
+{
+ "seed": 42,
+ "questions": [
+  {
+   "category": "direct",
+   "question": "How are the curated Coursera courses assessed?",
+   "facts": [
+    "B024"
+   ],
+   "split": "dev",
+   "id": "BM000"
+  },
+  {
+   "category": "direct",
+   "question": "Can I contact a faculty member directly to get into an elective course?",
+   "facts": [
+    "B009"
+   ],
+   "split": "test",
+   "id": "BM001"
+  },
+  {
+   "category": "direct",
+   "question": "When is the first student feedback taken in each term?",
+   "facts": [
+    "B066"
+   ],
+   "split": "test",
+   "id": "BM002"
+  },
+  {
+   "category": "direct",
+   "question": "How are library books issued?",
+   "facts": [
+    "B056"
+   ],
+   "split": "test",
+   "id": "BM003"
+  },
+  {
+   "category": "direct",
+   "question": "If I take re-admission and still fail to get promoted, can I take re-admission again in the same year?",
+   "facts": [
+    "B049"
+   ],
+   "split": "dev",
+   "id": "BM004"
+  },
+  {
+   "category": "direct",
+   "question": "How do I apply for grievance redressal of my exam marks?",
+   "facts": [
+    "B033"
+   ],
+   "split": "test",
+   "id": "BM005"
+  },
+  {
+   "category": "direct",
+   "question": "Can I take a CBCS course as an audit course?",
+   "facts": [
+    "B023"
+   ],
+   "split": "test",
+   "id": "BM006"
+  },
+  {
+   "category": "direct",
+   "question": "Who heads the University's Internal Complaints Committee for sexual harassment?",
+   "facts": [
+    "Q060"
+   ],
+   "split": "dev",
+   "id": "BM007"
+  },
+  {
+   "category": "direct",
+   "question": "When is the fall session for interdisciplinary courses held?",
+   "facts": [
+    "B021"
+   ],
+   "split": "test",
+   "id": "BM008"
+  },
+  {
+   "category": "direct",
+   "question": "How long do I have to raise an issue about my ICA marks on the portal?",
+   "facts": [
+    "Q013"
+   ],
+   "split": "dev",
+   "id": "BM009"
+  },
+  {
+   "category": "direct",
+   "question": "When should I clear doubts about my attendance with the faculty?",
+   "facts": [
+    "B010"
+   ],
+   "split": "dev",
+   "id": "BM010"
+  },
+  {
+   "category": "direct",
+   "question": "How are the marks split between internals and the semester-end exam?",
+   "facts": [
+    "Q084"
+   ],
+   "split": "test",
+   "id": "BM011"
+  },
+  {
+   "category": "direct",
+   "question": "Can I book a hostel room through the student portal?",
+   "facts": [
+    "Q070"
+   ],
+   "split": "test",
+   "id": "BM012"
+  },
+  {
+   "category": "direct",
+   "question": "Who grants an academic break?",
+   "facts": [
+    "B048"
+   ],
+   "split": "test",
+   "id": "BM013"
+  },
+  {
+   "category": "direct",
+   "question": "Within how many years can a student who exited a UG programme be re-admitted?",
+   "facts": [
+    "B050"
+   ],
+   "split": "test",
+   "id": "BM014"
+  },
+  {
+   "category": "direct",
+   "question": "How do I lodge a complaint about the computing facilities?",
+   "facts": [
+    "B061"
+   ],
+   "split": "test",
+   "id": "BM015"
+  },
+  {
+   "category": "direct",
+   "question": "What requirements must I meet to receive my degree at the convocation?",
+   "facts": [
+    "B071"
+   ],
+   "split": "test",
+   "id": "BM016"
+  },
+  {
+   "category": "direct",
+   "question": "Who sits on a school's woman grievance redressal committee?",
+   "facts": [
+    "B006"
+   ],
+   "split": "dev",
+   "id": "BM017"
+  },
+  {
+   "category": "direct",
+   "question": "For how many days is the re-exam application portal open?",
+   "facts": [
+    "Q083"
+   ],
+   "split": "dev",
+   "id": "BM018"
+  },
+  {
+   "category": "direct",
+   "question": "Where do students register for interdisciplinary courses?",
+   "facts": [
+    "B022"
+   ],
+   "split": "dev",
+   "id": "BM019"
+  },
+  {
+   "category": "direct",
+   "question": "What is the women's helpline number listed in the infoline?",
+   "facts": [
+    "B085"
+   ],
+   "split": "test",
+   "id": "BM020"
+  },
+  {
+   "category": "direct",
+   "question": "Who chairs the University-level Anti-Ragging Committee?",
+   "facts": [
+    "B078"
+   ],
+   "split": "test",
+   "id": "BM021"
+  },
+  {
+   "category": "direct",
+   "question": "Where should I take cover inside a building during an earthquake?",
+   "facts": [
+    "B083"
+   ],
+   "split": "test",
+   "id": "BM022"
+  },
+  {
+   "category": "direct",
+   "question": "Whom do I contact for help with the student portal?",
+   "facts": [
+    "B064"
+   ],
+   "split": "dev",
+   "id": "BM023"
+  },
+  {
+   "category": "direct",
+   "question": "What happens if I do not submit my mandatory admission documents on time?",
+   "facts": [
+    "B046"
+   ],
+   "split": "dev",
+   "id": "BM024"
+  },
+  {
+   "category": "direct",
+   "question": "What CGPA does a D.Voc student need to join B Tech first year?",
+   "facts": [
+    "Q088"
+   ],
+   "split": "dev",
+   "id": "BM025"
+  },
+  {
+   "category": "direct",
+   "question": "If I'm found ineligible for my degree at convocation, by when can I appeal?",
+   "facts": [
+    "Q076"
+   ],
+   "split": "test",
+   "id": "BM026"
+  },
+  {
+   "category": "direct",
+   "question": "When are contest reimbursements paid?",
+   "facts": [
+    "B070"
+   ],
+   "split": "test",
+   "id": "BM027"
+  },
+  {
+   "category": "direct",
+   "question": "How can MPSTME students reach the university psychologist?",
+   "facts": [
+    "Q075"
+   ],
+   "split": "test",
+   "id": "BM028"
+  },
+  {
+   "category": "direct",
+   "question": "Which court has jurisdiction over disputes between a student and the University?",
+   "facts": [
+    "B001"
+   ],
+   "split": "test",
+   "id": "BM029"
+  },
+  {
+   "category": "direct",
+   "question": "What happens to an ICA component in which unfair practice is reported?",
+   "facts": [
+    "B019"
+   ],
+   "split": "test",
+   "id": "BM030"
+  },
+  {
+   "category": "direct",
+   "question": "Where do I email an academic grievance?",
+   "facts": [
+    "Q018"
+   ],
+   "split": "test",
+   "id": "BM031"
+  },
+  {
+   "category": "direct",
+   "question": "Are mobile phones allowed on campus?",
+   "facts": [
+    "Q051"
+   ],
+   "split": "dev",
+   "id": "BM032"
+  },
+  {
+   "category": "direct",
+   "question": "How often do students receive a Statement of Grades?",
+   "facts": [
+    "B038"
+   ],
+   "split": "test",
+   "id": "BM033"
+  },
+  {
+   "category": "direct",
+   "question": "What grade and grade points do I get for 80 to 89.99 percent?",
+   "facts": [
+    "B100"
+   ],
+   "split": "dev",
+   "id": "BM034"
+  },
+  {
+   "category": "direct",
+   "question": "Within how many days after an ICA component are students told their marks?",
+   "facts": [
+    "B017"
+   ],
+   "split": "dev",
+   "id": "BM035"
+  },
+  {
+   "category": "direct",
+   "question": "How soon after winning a contest must I submit the details?",
+   "facts": [
+    "Q072"
+   ],
+   "split": "test",
+   "id": "BM036"
+  },
+  {
+   "category": "direct",
+   "question": "Who is the Vice Chancellor of the University?",
+   "facts": [
+    "B088"
+   ],
+   "split": "dev",
+   "id": "BM037"
+  },
+  {
+   "category": "direct",
+   "question": "Do ONLY ICA courses count when the school finalises attendance defaulters?",
+   "facts": [
+    "B012"
+   ],
+   "split": "test",
+   "id": "BM038"
+  },
+  {
+   "category": "direct",
+   "question": "From which date is attendance counted for a student admitted late?",
+   "facts": [
+    "B011"
+   ],
+   "split": "dev",
+   "id": "BM039"
+  },
+  {
+   "category": "direct",
+   "question": "Through whom must I apply for a scholarship?",
+   "facts": [
+    "B042"
+   ],
+   "split": "test",
+   "id": "BM040"
+  },
+  {
+   "category": "direct",
+   "question": "How long does it take to get the library and security deposit refunded?",
+   "facts": [
+    "B074"
+   ],
+   "split": "test",
+   "id": "BM041"
+  },
+  {
+   "category": "direct",
+   "question": "On what basis are university prizes awarded?",
+   "facts": [
+    "B040"
+   ],
+   "split": "dev",
+   "id": "BM042"
+  },
+  {
+   "category": "direct",
+   "question": "Can I apply for revaluation of my viva or lab exam?",
+   "facts": [
+    "Q036"
+   ],
+   "split": "test",
+   "id": "BM043"
+  },
+  {
+   "category": "direct",
+   "question": "What is the penalty for revealing my identity in the answer book?",
+   "facts": [
+    "B031"
+   ],
+   "split": "dev",
+   "id": "BM044"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the time limit for flagging an error once the monthly record of my class presence comes out?",
+   "facts": [
+    "Q003"
+   ],
+   "split": "test",
+   "id": "BM045"
+  },
+  {
+   "category": "paraphrased",
+   "question": "At what point does the college notify my family about how regularly I come to lectures?",
+   "facts": [
+    "Q004"
+   ],
+   "split": "test",
+   "id": "BM046"
+  },
+  {
+   "category": "paraphrased",
+   "question": "I was unwell and have just rejoined; what is the cut-off for handing in my doctor's note?",
+   "facts": [
+    "Q005"
+   ],
+   "split": "test",
+   "id": "BM047"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the consequence of falling short of the required presence in a course?",
+   "facts": [
+    "Q006"
+   ],
+   "split": "test",
+   "id": "BM048"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the largest concession on missed lectures for illness or for sports and cultural participation?",
+   "facts": [
+    "Q008"
+   ],
+   "split": "test",
+   "id": "BM049"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the pass mark for subjects evaluated purely through continuous internal work?",
+   "facts": [
+    "Q010"
+   ],
+   "split": "test",
+   "id": "BM050"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Will bonus marks ever be added to continuous assessment scores?",
+   "facts": [
+    "Q012"
+   ],
+   "split": "test",
+   "id": "BM051"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Having plagiarised coursework and been permitted to redo it, what is the ceiling on my score?",
+   "facts": [
+    "Q014"
+   ],
+   "split": "test",
+   "id": "BM052"
+  },
+  {
+   "category": "paraphrased",
+   "question": "For what period can I use the free online learning subscription from the university?",
+   "facts": [
+    "Q017"
+   ],
+   "split": "test",
+   "id": "BM053"
+  },
+  {
+   "category": "paraphrased",
+   "question": "How long before the paper starts do I need to be in the examination room?",
+   "facts": [
+    "Q019"
+   ],
+   "split": "dev",
+   "id": "BM054"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Will I be let in if I turn up over half an hour after the paper has begun?",
+   "facts": [
+    "Q020"
+   ],
+   "split": "dev",
+   "id": "BM055"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the sanction if somebody sits a paper on behalf of another person?",
+   "facts": [
+    "Q023"
+   ],
+   "split": "test",
+   "id": "BM056"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What additional writing duration do candidates who use a writer receive?",
+   "facts": [
+    "Q026"
+   ],
+   "split": "dev",
+   "id": "BM057"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Is there any mark concession for learners diagnosed with reading difficulties?",
+   "facts": [
+    "Q029"
+   ],
+   "split": "test",
+   "id": "BM058"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the window after results to request a copy of my evaluated script?",
+   "facts": [
+    "Q030"
+   ],
+   "split": "test",
+   "id": "BM059"
+  },
+  {
+   "category": "paraphrased",
+   "question": "My rechecked script differs from the original score by over a fifth. What follows?",
+   "facts": [
+    "Q033"
+   ],
+   "split": "dev",
+   "id": "BM060"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What share of a cohort earns the academic honour roll?",
+   "facts": [
+    "Q037"
+   ],
+   "split": "test",
+   "id": "BM061"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Which website do I use for central government study funding?",
+   "facts": [
+    "Q041"
+   ],
+   "split": "test",
+   "id": "BM062"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Do female engineering students have a dedicated funding scheme?",
+   "facts": [
+    "Q042"
+   ],
+   "split": "test",
+   "id": "BM063"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the cap on study gaps I can take during my degree?",
+   "facts": [
+    "Q046"
+   ],
+   "split": "dev",
+   "id": "BM064"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the result of leaving tuition dues unpaid past the penalty window?",
+   "facts": [
+    "Q050"
+   ],
+   "split": "dev",
+   "id": "BM065"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Which refreshments are okay in the lecture room?",
+   "facts": [
+    "Q052"
+   ],
+   "split": "dev",
+   "id": "BM066"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Who is the final authority when I contest a misconduct ruling?",
+   "facts": [
+    "Q055"
+   ],
+   "split": "test",
+   "id": "BM067"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Must I get clearance before leaving town in the middle of a semester?",
+   "facts": [
+    "Q057"
+   ],
+   "split": "test",
+   "id": "BM068"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the daily penalty on overdue loans from the university reading room?",
+   "facts": [
+    "Q062"
+   ],
+   "split": "test",
+   "id": "BM069"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Can outstanding dues to the reading room delay my graduation certificate?",
+   "facts": [
+    "Q064"
+   ],
+   "split": "test",
+   "id": "BM070"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What cloud drive allocation does each learner receive?",
+   "facts": [
+    "Q065"
+   ],
+   "split": "test",
+   "id": "BM071"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What notice does tech support need for additional network capacity during a function?",
+   "facts": [
+    "Q066"
+   ],
+   "split": "test",
+   "id": "BM072"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What login ID am I given by default on the learning management system?",
+   "facts": [
+    "Q067"
+   ],
+   "split": "test",
+   "id": "BM073"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Up to how many failed subjects can a BTech student carry and still get promoted?",
+   "facts": [
+    "Q079"
+   ],
+   "split": "dev",
+   "id": "BM074"
+  },
+  {
+   "category": "paraphrased",
+   "question": "How much do I pay per paper to reappear?",
+   "facts": [
+    "Q081"
+   ],
+   "split": "dev",
+   "id": "BM075"
+  },
+  {
+   "category": "paraphrased",
+   "question": "How is a no-show at the final paper recorded in my results?",
+   "facts": [
+    "Q085"
+   ],
+   "split": "dev",
+   "id": "BM076"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the procedure for skipping on-campus recruitment?",
+   "facts": [
+    "Q087"
+   ],
+   "split": "test",
+   "id": "BM077"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the consequence of being found intoxicated within college grounds?",
+   "facts": [
+    "B005"
+   ],
+   "split": "dev",
+   "id": "BM078"
+  },
+  {
+   "category": "paraphrased",
+   "question": "May I request a professor to push back a due date?",
+   "facts": [
+    "B007"
+   ],
+   "split": "test",
+   "id": "BM079"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the minimum class strength for running an optional subject?",
+   "facts": [
+    "B016"
+   ],
+   "split": "dev",
+   "id": "BM080"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What sanction applies when a whole room cheats together?",
+   "facts": [
+    "B029"
+   ],
+   "split": "test",
+   "id": "BM081"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the longest leave of absence from studies permitted?",
+   "facts": [
+    "B047"
+   ],
+   "split": "dev",
+   "id": "BM082"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What if I vanish from college for three weeks with no notice?",
+   "facts": [
+    "B051"
+   ],
+   "split": "test",
+   "id": "BM083"
+  },
+  {
+   "category": "paraphrased",
+   "question": "I noticed a hacking attempt; whom do I write to?",
+   "facts": [
+    "B060"
+   ],
+   "split": "dev",
+   "id": "BM084"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Which retired judge handles student complaints as an independent authority?",
+   "facts": [
+    "B076"
+   ],
+   "split": "test",
+   "id": "BM085"
+  },
+  {
+   "category": "paraphrased",
+   "question": "In a blaze, is the elevator safe to take?",
+   "facts": [
+    "B081"
+   ],
+   "split": "test",
+   "id": "BM086"
+  },
+  {
+   "category": "paraphrased",
+   "question": "What is the upper limit in years to finish an engineering degree?",
+   "facts": [
+    "B089"
+   ],
+   "split": "test",
+   "id": "BM087"
+  },
+  {
+   "category": "paraphrased",
+   "question": "May I carry journals and consultation-only volumes out of the reading room?",
+   "facts": [
+    "B055"
+   ],
+   "split": "test",
+   "id": "BM088"
+  },
+  {
+   "category": "paraphrased",
+   "question": "Could I be turned away from a paper for not having my university identification?",
+   "facts": [
+    "B026"
+   ],
+   "split": "test",
+   "id": "BM089"
+  },
+  {
+   "category": "informal",
+   "question": "bro how much attendance do i need to sit for finals",
+   "facts": [
+    "Q001"
+   ],
+   "split": "test",
+   "id": "BM090"
+  },
+  {
+   "category": "informal",
+   "question": "attendance sheet says im absent but i was there wht do i do",
+   "facts": [
+    "Q002"
+   ],
+   "split": "test",
+   "id": "BM091"
+  },
+  {
+   "category": "informal",
+   "question": "got a reexam today, do i get marked present for my normal lectures",
+   "facts": [
+    "Q007"
+   ],
+   "split": "dev",
+   "id": "BM092"
+  },
+  {
+   "category": "informal",
+   "question": "is there reexam for ica only subjects",
+   "facts": [
+    "Q011"
+   ],
+   "split": "test",
+   "id": "BM093"
+  },
+  {
+   "category": "informal",
+   "question": "can i wear my apple watch in the exam",
+   "facts": [
+    "Q021"
+   ],
+   "split": "test",
+   "id": "BM094"
+  },
+  {
+   "category": "informal",
+   "question": "tried to bribe a prof for marks what happens",
+   "facts": [
+    "Q025"
+   ],
+   "split": "test",
+   "id": "BM095"
+  },
+  {
+   "category": "informal",
+   "question": "need a writer for my exam how early to sort that out",
+   "facts": [
+    "Q027"
+   ],
+   "split": "dev",
+   "id": "BM096"
+  },
+  {
+   "category": "informal",
+   "question": "can i get reval without taking photocopy",
+   "facts": [
+    "Q032"
+   ],
+   "split": "test",
+   "id": "BM097"
+  },
+  {
+   "category": "informal",
+   "question": "how many grace marks can i get if i fail",
+   "facts": [
+    "Q035"
+   ],
+   "split": "test",
+   "id": "BM098"
+  },
+  {
+   "category": "informal",
+   "question": "our batch is 30 ppl how many prizes do we get",
+   "facts": [
+    "Q038"
+   ],
+   "split": "dev",
+   "id": "BM099"
+  },
+  {
+   "category": "informal",
+   "question": "cant afford fees can i take a yr off",
+   "facts": [
+    "Q045"
+   ],
+   "split": "test",
+   "id": "BM100"
+  },
+  {
+   "category": "informal",
+   "question": "readmission fees kitna hai",
+   "facts": [
+    "Q047"
+   ],
+   "split": "dev",
+   "id": "BM101"
+  },
+  {
+   "category": "informal",
+   "question": "how many times can i redo the same yr",
+   "facts": [
+    "Q049"
+   ],
+   "split": "dev",
+   "id": "BM102"
+  },
+  {
+   "category": "informal",
+   "question": "forgot my id today what do i do",
+   "facts": [
+    "Q053"
+   ],
+   "split": "test",
+   "id": "BM103"
+  },
+  {
+   "category": "informal",
+   "question": "used my phone in library what happens",
+   "facts": [
+    "Q063"
+   ],
+   "split": "dev",
+   "id": "BM104"
+  },
+  {
+   "category": "informal",
+   "question": "pendrive in smartboard allowed?",
+   "facts": [
+    "Q068"
+   ],
+   "split": "dev",
+   "id": "BM105"
+  },
+  {
+   "category": "informal",
+   "question": "site is blocked on college wifi how to unblock",
+   "facts": [
+    "Q069"
+   ],
+   "split": "test",
+   "id": "BM106"
+  },
+  {
+   "category": "informal",
+   "question": "hostel deposit refund how long",
+   "facts": [
+    "Q073"
+   ],
+   "split": "test",
+   "id": "BM107"
+  },
+  {
+   "category": "informal",
+   "question": "whats the passing marks for a subject",
+   "facts": [
+    "Q078"
+   ],
+   "split": "test",
+   "id": "BM108"
+  },
+  {
+   "category": "informal",
+   "question": "got 3 KTs can i go to next year",
+   "facts": [
+    "Q080"
+   ],
+   "split": "dev",
+   "id": "BM109"
+  },
+  {
+   "category": "informal",
+   "question": "missed reexam form deadline how much extra",
+   "facts": [
+    "Q082"
+   ],
+   "split": "dev",
+   "id": "BM110"
+  },
+  {
+   "category": "informal",
+   "question": "how long is the btech internship",
+   "facts": [
+    "Q086"
+   ],
+   "split": "test",
+   "id": "BM111"
+  },
+  {
+   "category": "informal",
+   "question": "when do we do community service thing",
+   "facts": [
+    "Q089"
+   ],
+   "split": "dev",
+   "id": "BM112"
+  },
+  {
+   "category": "informal",
+   "question": "how do they pick the CR",
+   "facts": [
+    "Q090"
+   ],
+   "split": "test",
+   "id": "BM113"
+  },
+  {
+   "category": "informal",
+   "question": "how often r we supposed to check the portal",
+   "facts": [
+    "B002"
+   ],
+   "split": "test",
+   "id": "BM114"
+  },
+  {
+   "category": "informal",
+   "question": "lost my id card now what",
+   "facts": [
+    "B003"
+   ],
+   "split": "dev",
+   "id": "BM115"
+  },
+  {
+   "category": "informal",
+   "question": "can i record lectures on my phone",
+   "facts": [
+    "B004"
+   ],
+   "split": "dev",
+   "id": "BM116"
+  },
+  {
+   "category": "informal",
+   "question": "mid sem min duration?",
+   "facts": [
+    "B013"
+   ],
+   "split": "dev",
+   "id": "BM117"
+  },
+  {
+   "category": "informal",
+   "question": "failed an only ica subject can i still give my other finals",
+   "facts": [
+    "B018"
+   ],
+   "split": "test",
+   "id": "BM118"
+  },
+  {
+   "category": "informal",
+   "question": "caught cheating in ica, can i still make deans list",
+   "facts": [
+    "B020"
+   ],
+   "split": "test",
+   "id": "BM119"
+  },
+  {
+   "category": "informal",
+   "question": "how much time do profs give for coursera per week",
+   "facts": [
+    "B025"
+   ],
+   "split": "dev",
+   "id": "BM120"
+  },
+  {
+   "category": "informal",
+   "question": "can i leave exam in the last 10 mins",
+   "facts": [
+    "B027"
+   ],
+   "split": "dev",
+   "id": "BM121"
+  },
+  {
+   "category": "informal",
+   "question": "caught with phone in exam, how screwed am i",
+   "facts": [
+    "B028"
+   ],
+   "split": "test",
+   "id": "BM122"
+  },
+  {
+   "category": "informal",
+   "question": "caught cheating a second time whats the punishment",
+   "facts": [
+    "B032"
+   ],
+   "split": "test",
+   "id": "BM123"
+  },
+  {
+   "category": "informal",
+   "question": "last date for reval?",
+   "facts": [
+    "B035"
+   ],
+   "split": "test",
+   "id": "BM124"
+  },
+  {
+   "category": "informal",
+   "question": "will my scholarship carry over if i defer admission",
+   "facts": [
+    "B044"
+   ],
+   "split": "dev",
+   "id": "BM125"
+  },
+  {
+   "category": "informal",
+   "question": "can i eat chips in the library",
+   "facts": [
+    "B053"
+   ],
+   "split": "test",
+   "id": "BM126"
+  },
+  {
+   "category": "informal",
+   "question": "lost a library book what do i pay",
+   "facts": [
+    "B054"
+   ],
+   "split": "dev",
+   "id": "BM127"
+  },
+  {
+   "category": "informal",
+   "question": "forgot portal password help",
+   "facts": [
+    "B065"
+   ],
+   "split": "dev",
+   "id": "BM128"
+  },
+  {
+   "category": "informal",
+   "question": "do profs know who gave them bad feedback",
+   "facts": [
+    "B067"
+   ],
+   "split": "test",
+   "id": "BM129"
+  },
+  {
+   "category": "informal",
+   "question": "how long does the ombudsman take",
+   "facts": [
+    "B077"
+   ],
+   "split": "test",
+   "id": "BM130"
+  },
+  {
+   "category": "informal",
+   "question": "can CR cancel a lecture",
+   "facts": [
+    "B093"
+   ],
+   "split": "test",
+   "id": "BM131"
+  },
+  {
+   "category": "informal",
+   "question": "can i improve my ica marks somehow",
+   "facts": [
+    "B099"
+   ],
+   "split": "dev",
+   "id": "BM132"
+  },
+  {
+   "category": "informal",
+   "question": "mtech year back students get how many reexam tries",
+   "facts": [
+    "B102"
+   ],
+   "split": "test",
+   "id": "BM133"
+  },
+  {
+   "category": "informal",
+   "question": "dvoc guy with a year back can he join btech fy",
+   "facts": [
+    "B104"
+   ],
+   "split": "test",
+   "id": "BM134"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What is the minimum attendance to write the exam, and what happens if I go below it?",
+   "facts": [
+    "Q001",
+    "Q006"
+   ],
+   "split": "test",
+   "id": "BM135"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What are the minimum durations of term-end and mid-term exams?",
+   "facts": [
+    "Q009",
+    "B013"
+   ],
+   "split": "dev",
+   "id": "BM136"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What's the pass mark for an only-ICA course and can I take a re-exam if I fail it?",
+   "facts": [
+    "Q010",
+    "Q011"
+   ],
+   "split": "test",
+   "id": "BM137"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How early must I reach the hall, and will I be allowed in if I'm more than half an hour late?",
+   "facts": [
+    "Q019",
+    "Q020"
+   ],
+   "split": "dev",
+   "id": "BM138"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What is the punishment for impersonation, and what happens to someone caught using unfair means more than twice?",
+   "facts": [
+    "Q023",
+    "Q024"
+   ],
+   "split": "test",
+   "id": "BM139"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What are the deadlines to apply for a photocopy of my script and for revaluation?",
+   "facts": [
+    "Q030",
+    "B035"
+   ],
+   "split": "test",
+   "id": "BM140"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How many academic breaks can I take and what is the maximum length of one?",
+   "facts": [
+    "Q046",
+    "B047"
+   ],
+   "split": "dev",
+   "id": "BM141"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What is the re-admission fee and how many times can I take re-admission in the same year?",
+   "facts": [
+    "Q047",
+    "Q049"
+   ],
+   "split": "dev",
+   "id": "BM142"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How many books can I borrow from the library, and what is the fine if I return them late?",
+   "facts": [
+    "Q061",
+    "Q062"
+   ],
+   "split": "test",
+   "id": "BM143"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How many F grades can I carry into the next year, and what happens if I have more than that?",
+   "facts": [
+    "Q079",
+    "Q080"
+   ],
+   "split": "dev",
+   "id": "BM144"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What is the re-exam fee per subject and what is the late fee if I miss the deadline?",
+   "facts": [
+    "Q081",
+    "Q082"
+   ],
+   "split": "dev",
+   "id": "BM145"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How long are the MBA Tech technical internship and the management internship?",
+   "facts": [
+    "B094",
+    "B095"
+   ],
+   "split": "test",
+   "id": "BM146"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How many prizes are given for a batch of 30 students, and how many for a batch above 60?",
+   "facts": [
+    "Q038",
+    "B039"
+   ],
+   "split": "dev",
+   "id": "BM147"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What travel reimbursement do Grade A contest participants get, and what is the condition for Grade B?",
+   "facts": [
+    "B069",
+    "Q071"
+   ],
+   "split": "test",
+   "id": "BM148"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How many representatives does each school send to NUSC, and what are its executive positions?",
+   "facts": [
+    "B072",
+    "B073"
+   ],
+   "split": "test",
+   "id": "BM149"
+  },
+  {
+   "category": "multi_condition",
+   "question": "Who is the Controller of Examinations and who is the University Librarian?",
+   "facts": [
+    "B086",
+    "B087"
+   ],
+   "split": "dev",
+   "id": "BM150"
+  },
+  {
+   "category": "multi_condition",
+   "question": "Who is the convener of the MPSTME disciplinary committee and who chairs the Woman Grievance Redressal Committee?",
+   "facts": [
+    "B091",
+    "B092"
+   ],
+   "split": "test",
+   "id": "BM151"
+  },
+  {
+   "category": "multi_condition",
+   "question": "Who is the Dean of MPSTME, and who heads the Data Science department?",
+   "facts": [
+    "B107",
+    "B108"
+   ],
+   "split": "test",
+   "id": "BM152"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How much OneDrive space do I get and how long should my password be?",
+   "facts": [
+    "Q065",
+    "B059"
+   ],
+   "split": "test",
+   "id": "BM153"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What is the student portal address and what do I do if I forget the password?",
+   "facts": [
+    "B063",
+    "B065"
+   ],
+   "split": "dev",
+   "id": "BM154"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What number do I dial for the fire brigade, and should I use the lift during a fire?",
+   "facts": [
+    "B080",
+    "B081"
+   ],
+   "split": "test",
+   "id": "BM155"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How long does a hostel deposit refund take, and how soon must activity expenses be settled?",
+   "facts": [
+    "Q073",
+    "Q074"
+   ],
+   "split": "test",
+   "id": "BM156"
+  },
+  {
+   "category": "multi_condition",
+   "question": "Can grace marks be added to ICA, and how many grace marks can a failing student get?",
+   "facts": [
+    "Q012",
+    "Q035"
+   ],
+   "split": "test",
+   "id": "BM157"
+  },
+  {
+   "category": "multi_condition",
+   "question": "How long is the B Tech internship and how long is the MBA Tech technical internship?",
+   "facts": [
+    "Q086",
+    "B094"
+   ],
+   "split": "test",
+   "id": "BM158"
+  },
+  {
+   "category": "multi_condition",
+   "question": "When are remedial classes held before re-exams, and how many re-exams are held per course in a year?",
+   "facts": [
+    "B097",
+    "B098"
+   ],
+   "split": "test",
+   "id": "BM159"
+  },
+  {
+   "category": "multi_condition",
+   "question": "Can first-year undergraduates take CBCS courses, and how many interdisciplinary courses can I take?",
+   "facts": [
+    "Q016",
+    "Q015"
+   ],
+   "split": "dev",
+   "id": "BM160"
+  },
+  {
+   "category": "multi_condition",
+   "question": "Who can apply for admission deferment, and can a second-year student get it?",
+   "facts": [
+    "B043",
+    "Q044"
+   ],
+   "split": "test",
+   "id": "BM161"
+  },
+  {
+   "category": "multi_condition",
+   "question": "What is the retotalling deadline, and what happens if revaluation changes my marks by more than 20%?",
+   "facts": [
+    "Q031",
+    "Q033"
+   ],
+   "split": "dev",
+   "id": "BM162"
+  },
+  {
+   "category": "multi_condition",
+   "question": "Which database does the finance lab use and which plagiarism software does NMIMS subscribe to?",
+   "facts": [
+    "B058",
+    "B057"
+   ],
+   "split": "test",
+   "id": "BM163"
+  },
+  {
+   "category": "multi_condition",
+   "question": "Is gambling content blocked on campus, and how do I get a blocked site opened?",
+   "facts": [
+    "B084",
+    "Q069"
+   ],
+   "split": "test",
+   "id": "BM164"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Does the university provide a laundry service?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM165"
+  },
+  {
+   "category": "unanswerable",
+   "question": "How much do I have to pay for the Coursera licence?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM166"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Which cab services operate near the campus?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM167"
+  },
+  {
+   "category": "unanswerable",
+   "question": "How much is the parking fee for two-wheelers on campus?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM168"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Is there a college shuttle bus from the railway station?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM169"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Which bank gives the lowest interest for students of NMIMS?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM170"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the average placement package for B Tech students?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM171"
+  },
+  {
+   "category": "unanswerable",
+   "question": "does college give free laptops to students",
+   "facts": [],
+   "split": "dev",
+   "id": "BM172"
+  },
+  {
+   "category": "unanswerable",
+   "question": "How do I get a bonafide certificate from the college?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM173"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the annual tuition fee for B Tech Data Science?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM174"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the annual intake of the B Tech Computer Engineering programme?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM175"
+  },
+  {
+   "category": "unanswerable",
+   "question": "How many solar panels are installed on the MPSTME building?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM176"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Who won the best teacher award this year?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM177"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Is there an ATM inside the campus?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM178"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the price of the institute blazer?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM179"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the NAAC grade of the university?",
+   "facts": [],
+   "split": "dev",
+   "id": "BM180"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Does the university help students get education loans?",
+   "facts": [],
+   "split": "test",
+   "id": "BM181"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the fee for a duplicate marksheet?",
+   "facts": [],
+   "split": "test",
+   "id": "BM182"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What time does the library open on weekdays?",
+   "facts": [],
+   "split": "test",
+   "id": "BM183"
+  },
+  {
+   "category": "unanswerable",
+   "question": "who won the inter college cricket tournament",
+   "facts": [],
+   "split": "test",
+   "id": "BM184"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the university's QS world ranking?",
+   "facts": [],
+   "split": "test",
+   "id": "BM185"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Is there a medical insurance scheme for students?",
+   "facts": [],
+   "split": "test",
+   "id": "BM186"
+  },
+  {
+   "category": "unanswerable",
+   "question": "How can I book a badminton court on campus?",
+   "facts": [],
+   "split": "test",
+   "id": "BM187"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the NPAT cutoff score for B Tech admission?",
+   "facts": [],
+   "split": "test",
+   "id": "BM188"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What are the opening hours of the stationery shop?",
+   "facts": [],
+   "split": "test",
+   "id": "BM189"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is on the cafeteria menu this week?",
+   "facts": [],
+   "split": "test",
+   "id": "BM190"
+  },
+  {
+   "category": "unanswerable",
+   "question": "How can I change my branch after the first year of B Tech?",
+   "facts": [],
+   "split": "test",
+   "id": "BM191"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the hostel fee for a double-sharing room?",
+   "facts": [],
+   "split": "test",
+   "id": "BM192"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Who is the football coach of the university team?",
+   "facts": [],
+   "split": "test",
+   "id": "BM193"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Can I bring my pet to campus?",
+   "facts": [],
+   "split": "test",
+   "id": "BM194"
+  },
+  {
+   "category": "unanswerable",
+   "question": "When is the MPSTME college fest held?",
+   "facts": [],
+   "split": "test",
+   "id": "BM195"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Is there a swimming pool on campus?",
+   "facts": [],
+   "split": "test",
+   "id": "BM196"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Do I need a NOC to do an internship abroad?",
+   "facts": [],
+   "split": "test",
+   "id": "BM197"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Is there a dance club at MPSTME?",
+   "facts": [],
+   "split": "test",
+   "id": "BM198"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the monthly bus fare to Andheri?",
+   "facts": [],
+   "split": "test",
+   "id": "BM199"
+  },
+  {
+   "category": "unanswerable",
+   "question": "whats the last local train after evening lectures",
+   "facts": [],
+   "split": "test",
+   "id": "BM200"
+  },
+  {
+   "category": "unanswerable",
+   "question": "How many parking spots are reserved for students on campus?",
+   "facts": [],
+   "split": "test",
+   "id": "BM201"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the campus Wi-Fi password?",
+   "facts": [],
+   "split": "test",
+   "id": "BM202"
+  },
+  {
+   "category": "unanswerable",
+   "question": "what is the salary of the dean",
+   "facts": [],
+   "split": "test",
+   "id": "BM203"
+  },
+  {
+   "category": "unanswerable",
+   "question": "bro is there a nap room",
+   "facts": [],
+   "split": "test",
+   "id": "BM204"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What time does the college canteen close?",
+   "facts": [],
+   "split": "test",
+   "id": "BM205"
+  },
+  {
+   "category": "unanswerable",
+   "question": "any good pg near campus under 15k",
+   "facts": [],
+   "split": "test",
+   "id": "BM206"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Is there a gym on campus and what are its timings?",
+   "facts": [],
+   "split": "test",
+   "id": "BM207"
+  },
+  {
+   "category": "unanswerable",
+   "question": "What is the hostel curfew time for students?",
+   "facts": [],
+   "split": "test",
+   "id": "BM208"
+  },
+  {
+   "category": "unanswerable",
+   "question": "Which companies recruited MPSTME students last year?",
+   "facts": [],
+   "split": "test",
+   "id": "BM209"
+  },
+  {
+   "category": "unanswerable",
+   "question": "where can i get good biryani near college",
+   "facts": [],
+   "split": "test",
+   "id": "BM210"
+  }
+ ]
+}

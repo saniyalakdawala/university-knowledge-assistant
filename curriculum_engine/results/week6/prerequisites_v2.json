@@ -1,0 +1,421 @@
+{
+ "own_content_threshold_from_val": 0.6,
+ "tuning_on_val": [
+  {
+   "own_threshold": 0.5,
+   "objective": 0.584,
+   "removal_recall": 0.63,
+   "intact_false_alarm": 0.05,
+   "rename_false_alarm": 0.042
+  },
+  {
+   "own_threshold": 0.55,
+   "objective": 0.61,
+   "removal_recall": 0.664,
+   "intact_false_alarm": 0.059,
+   "rename_false_alarm": 0.05
+  },
+  {
+   "own_threshold": 0.6,
+   "objective": 0.627,
+   "removal_recall": 0.681,
+   "intact_false_alarm": 0.059,
+   "rename_false_alarm": 0.05
+  },
+  {
+   "own_threshold": 0.65,
+   "objective": 0.627,
+   "removal_recall": 0.681,
+   "intact_false_alarm": 0.059,
+   "rename_false_alarm": 0.05
+  },
+  {
+   "own_threshold": 0.7,
+   "objective": 0.627,
+   "removal_recall": 0.681,
+   "intact_false_alarm": 0.059,
+   "rename_false_alarm": 0.05
+  },
+  {
+   "own_threshold": 0.75,
+   "objective": 0.627,
+   "removal_recall": 0.681,
+   "intact_false_alarm": 0.059,
+   "rename_false_alarm": 0.05
+  },
+  {
+   "own_threshold": 0.8,
+   "objective": 0.627,
+   "removal_recall": 0.681,
+   "intact_false_alarm": 0.059,
+   "rename_false_alarm": 0.05
+  },
+  {
+   "own_threshold": null,
+   "objective": 0.627,
+   "removal_recall": 0.681,
+   "intact_false_alarm": 0.059,
+   "rename_false_alarm": 0.05
+  }
+ ],
+ "filters_on_test_phrases": {
+  "alias_met": 157,
+  "non_subject": 5
+ },
+ "flags_test": {
+  "v1": 33,
+  "v2": 14
+ },
+ "flags_by_type_test": {
+  "v1": {
+   "not_offered_earlier": 20,
+   "assumed_topic_not_taught": 13
+  },
+  "v2": {
+   "not_offered_earlier": 10,
+   "assumed_topic_not_taught": 4
+  }
+ },
+ "tests_test": {
+  "v1": {
+   "cases": 83,
+   "removal_recall": {
+    "value": 0.88,
+    "ci95": [
+     0.803,
+     0.946
+    ],
+    "n": 83
+   },
+   "intact_false_alarm": {
+    "value": 0.036,
+    "ci95": [
+     0.0,
+     0.078
+    ],
+    "n": 83
+   },
+   "rename_false_alarm": {
+    "value": 0.12,
+    "ci95": [
+     0.056,
+     0.197
+    ],
+    "n": 83
+   }
+  },
+  "v2": {
+   "cases": 83,
+   "removal_recall": {
+    "value": 0.711,
+    "ci95": [
+     0.61,
+     0.807
+    ],
+    "n": 83
+   },
+   "intact_false_alarm": {
+    "value": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n": 83
+   },
+   "rename_false_alarm": {
+    "value": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n": 83
+   }
+  }
+ },
+ "same_labels": {
+  "labelled_flags": 20,
+  "v1_precision": 0.1,
+  "v2_still_flagged": 9,
+  "v2_precision_on_those": 0.222,
+  "correct_flags_dropped_by_v2": 0,
+  "wrong_flags_dropped_by_v2": 11,
+  "items": [
+   {
+    "key": "CIVIL|f48c6dd41|Chemistry (Semester- II)",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "CIVIL|fdb685ff5|Engineering Mathematics",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "CIVIL|fec17aa83|geography",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "CIVIL|fec17aa83|computer usage",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "CSBS|f1264dd02|Computer Science BTCS01003",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "CSBS|f54ab3907|Algorithms",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "CSBS|f625eb2ac|Engineering Mathematics",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "CSE-DS|f419e5fc7|Microprocessor",
+    "label": "wrong",
+    "still_flagged_by_v2": true
+   },
+   {
+    "key": "CSE-DS|f419e5fc7|Microcontroller",
+    "label": "correct",
+    "still_flagged_by_v2": true
+   },
+   {
+    "key": "CSE-DS|f419e5fc7|Cyber Security",
+    "label": "correct",
+    "still_flagged_by_v2": true
+   },
+   {
+    "key": "DS|f21bad262|Management",
+    "label": "wrong",
+    "still_flagged_by_v2": true
+   },
+   {
+    "key": "DS|f63b62ca4|DS I",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "EXTC|f307d818b|subjects studied till semester V",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "MECHANICAL|f4d98b873|Ordinary Differential Equations",
+    "label": "wrong",
+    "still_flagged_by_v2": true
+   },
+   {
+    "key": "MECHATRONICS|f3750a0e0|Engineering Mathematics - I",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "MECHATRONICS|f3750a0e0|III",
+    "label": "wrong",
+    "still_flagged_by_v2": false
+   },
+   {
+    "key": "MECHATRONICS|f7271db71|Periodic function",
+    "label": "wrong",
+    "still_flagged_by_v2": true
+   },
+   {
+    "key": "MECHATRONICS|f7271db71|Even",
+    "label": "wrong",
+    "still_flagged_by_v2": true
+   },
+   {
+    "key": "MECHATRONICS|f7271db71|odd Function",
+    "label": "wrong",
+    "still_flagged_by_v2": true
+   },
+   {
+    "key": "MECHATRONICS|f7271db71|Circular Function",
+    "label": "wrong",
+    "still_flagged_by_v2": true
+   }
+  ],
+  "labelled_courses": 13
+ },
+ "fresh_sample": {
+  "test_v2": {
+   "n": 14,
+   "precision": 0.5,
+   "ci95": [
+    0.176,
+    0.875
+   ]
+  },
+  "val_v1": {
+   "n": 20,
+   "precision": 0.2,
+   "ci95": [
+    0.05,
+    0.5
+   ]
+  },
+  "val_v2": {
+   "n": 20,
+   "precision": 0.45,
+   "ci95": [
+    0.208,
+    0.737
+   ]
+  }
+ },
+ "fresh_sample_agreement": {
+  "items": 45,
+  "both_passes_agree": 45,
+  "percent_agreement": 1.0,
+  "needed_pass3": 0
+ },
+ "v2a_first_attempt": {
+  "flags_test": 13,
+  "tests_test": {
+   "cases": 83,
+   "removal_recall": {
+    "value": 0.627,
+    "ci95": [
+     0.506,
+     0.733
+    ],
+    "n": 83
+   },
+   "intact_false_alarm": {
+    "value": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n": 83
+   },
+   "rename_false_alarm": {
+    "value": 0.0,
+    "ci95": [
+     0.0,
+     0.0
+    ],
+    "n": 83
+   }
+  },
+  "same_labels": {
+   "labelled_flags": 20,
+   "v1_precision": 0.1,
+   "v2_still_flagged": 9,
+   "v2_precision_on_those": 0.222,
+   "correct_flags_dropped_by_v2": 0,
+   "wrong_flags_dropped_by_v2": 11,
+   "items": [
+    {
+     "key": "CIVIL|f48c6dd41|Chemistry (Semester- II)",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "CIVIL|fdb685ff5|Engineering Mathematics",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "CIVIL|fec17aa83|geography",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "CIVIL|fec17aa83|computer usage",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "CSBS|f1264dd02|Computer Science BTCS01003",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "CSBS|f54ab3907|Algorithms",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "CSBS|f625eb2ac|Engineering Mathematics",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "CSE-DS|f419e5fc7|Microprocessor",
+     "label": "wrong",
+     "still_flagged_by_v2": true
+    },
+    {
+     "key": "CSE-DS|f419e5fc7|Microcontroller",
+     "label": "correct",
+     "still_flagged_by_v2": true
+    },
+    {
+     "key": "CSE-DS|f419e5fc7|Cyber Security",
+     "label": "correct",
+     "still_flagged_by_v2": true
+    },
+    {
+     "key": "DS|f21bad262|Management",
+     "label": "wrong",
+     "still_flagged_by_v2": true
+    },
+    {
+     "key": "DS|f63b62ca4|DS I",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "EXTC|f307d818b|subjects studied till semester V",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "MECHANICAL|f4d98b873|Ordinary Differential Equations",
+     "label": "wrong",
+     "still_flagged_by_v2": true
+    },
+    {
+     "key": "MECHATRONICS|f3750a0e0|Engineering Mathematics - I",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "MECHATRONICS|f3750a0e0|III",
+     "label": "wrong",
+     "still_flagged_by_v2": false
+    },
+    {
+     "key": "MECHATRONICS|f7271db71|Periodic function",
+     "label": "wrong",
+     "still_flagged_by_v2": true
+    },
+    {
+     "key": "MECHATRONICS|f7271db71|Even",
+     "label": "wrong",
+     "still_flagged_by_v2": true
+    },
+    {
+     "key": "MECHATRONICS|f7271db71|odd Function",
+     "label": "wrong",
+     "still_flagged_by_v2": true
+    },
+    {
+     "key": "MECHATRONICS|f7271db71|Circular Function",
+     "label": "wrong",
+     "still_flagged_by_v2": true
+    }
+   ],
+   "labelled_courses": 13
+  },
+  "why_revised": "pooling words of all earlier course names met too many removed prerequisites (removal recall fell)"
+ },
+ "bias_note": "v2's rules were designed from test-split failure cases (F05-F07), so v2 precision on the same test labels is optimistic"
+}

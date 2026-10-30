@@ -1,0 +1,127 @@
+{
+ "n": 52,
+ "legacy": {
+  "accuracy": 0.7115,
+  "by_route": {
+   "srb": "22/22",
+   "curriculum": "10/20",
+   "both": "5/10"
+  },
+  "misses": [
+   {
+    "question": "What courses are in semester 4 of B Tech IT?",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "find redundant courses in B Tech Computer Engineering",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "how many credits is Cloud Computing",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "Which courses cover blockchain?",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "What do we study in Computer Networks?",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "compare B Tech IT and B Tech Computer Science",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "electives offered in B Tech Data Science",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "what is the L-P-T of Database Management Systems",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "is compiler design part of the COMP programme",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "Does anyone teach quantum computing here?",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "Which semester has Deep Learning and what is the passing mark?",
+    "expected": "both",
+    "got": "curriculum"
+   },
+   {
+    "question": "If I fail Data Structures can I take it again, and what comes after it in the curriculum?",
+    "expected": "both",
+    "got": "curriculum"
+   },
+   {
+    "question": "What courses are in semester 5 of B Tech IT and what is the attendance rule?",
+    "expected": "both",
+    "got": "srb"
+   },
+   {
+    "question": "Is Cloud Computing an elective, and how do I get a scholarship?",
+    "expected": "both",
+    "got": "srb"
+   },
+   {
+    "question": "compare ML and DL and tell me the grace marks rule",
+    "expected": "both",
+    "got": "srb"
+   }
+  ]
+ },
+ "rules": {
+  "accuracy": 0.9231,
+  "by_route": {
+   "srb": "20/22",
+   "curriculum": "18/20",
+   "both": "10/10"
+  },
+  "misses": [
+   {
+    "question": "whom do i contact about a cyber security incident",
+    "expected": "srb",
+    "got": "curriculum"
+   },
+   {
+    "question": "How long is the B Tech internship?",
+    "expected": "srb",
+    "got": "both"
+   },
+   {
+    "question": "Which courses cover blockchain?",
+    "expected": "curriculum",
+    "got": "srb"
+   },
+   {
+    "question": "Does anyone teach quantum computing here?",
+    "expected": "curriculum",
+    "got": "srb"
+   }
+  ]
+ },
+ "rules_plus_groq": {
+  "accuracy": 1.0,
+  "by_route": {
+   "srb": "22/22",
+   "curriculum": "20/20",
+   "both": "10/10"
+  },
+  "misses": []
+ }
+}

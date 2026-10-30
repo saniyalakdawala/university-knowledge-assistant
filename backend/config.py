@@ -34,8 +34,8 @@ CE_MODEL_NAME = os.getenv("CE_MODEL", "cross-encoder/ms-marco-MiniLM-L-6-v2")
 # Retrieval & Gate hyperparameters
 RETRIEVAL_BETA = float(os.getenv("RETRIEVAL_BETA", "0.6"))     # Hybrid lexical vs semantic weight
 RERANK_ALPHA = float(os.getenv("RERANK_ALPHA", "0.7"))         # Cross-encoder rank weight
-CONFIDENCE_GATE = float(os.getenv("CONFIDENCE_GATE", "0.46"))  # Dev-tuned refusal threshold
-TOP_K_PASSAGES = int(os.getenv("TOP_K_PASSAGES", "3"))         # Top-k passages fed to answerer
+CONFIDENCE_GATE = float(os.getenv("CONFIDENCE_GATE", "0.10"))  # Dev-tuned refusal threshold
+TOP_K_PASSAGES = int(os.getenv("TOP_K_PASSAGES", "4"))         # Top-k passages fed to answerer
 
 # Mandatory Groq LLM Configurations
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
@@ -59,3 +59,17 @@ IS_RENDER = (
     or (os.getenv("PORT") is not None and os.getenv("PORT") != "8000")
 )
 LOW_MEMORY = os.getenv("LOW_MEMORY", "true" if IS_RENDER else "false").lower() in ("true", "1", "yes")
+
+# Retrieval v2 (section-aware chunks, multi-query RRF, cross-encoder reranking). Defaults were tuned on the benchmark's dev split.
+QUERY_EXPANSION = os.getenv("QUERY_EXPANSION", "true").lower() in ("true", "1", "yes")
+VARIANT_WEIGHT = float(os.getenv("VARIANT_WEIGHT", "0.5"))
+RERANK_WITH = os.getenv("RERANK_WITH", "both")
+RRF_K = int(os.getenv("RRF_K", "60"))
+RERANK_CANDIDATES = int(os.getenv("RERANK_CANDIDATES", "30"))
+RERANK_WEIGHT = float(os.getenv("RERANK_WEIGHT", "0.6"))
+MAX_CHUNK_WORDS = int(os.getenv("MAX_CHUNK_WORDS", "130"))
+GROQ_MAX_RETRIES = int(os.getenv("GROQ_MAX_RETRIES", "0"))
+LLM_DISK_CACHE = os.getenv("LLM_DISK_CACHE", "")      # evaluation only: reuse Groq replies between runs
+
+# Curriculum Intelligence: "local" runs the vendored engine in this process; "remote" calls a running engine at GROUP9_API_URL first
+CURRICULUM_BACKEND = os.getenv("CURRICULUM_BACKEND", "local").lower()
